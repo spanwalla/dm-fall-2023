@@ -44,7 +44,7 @@ Natural::Natural(long long int num) {
 short &Natural::operator[](int index)
 {
     if (index < 0)
-        index += len();
+        index = 0;
     if (index >= len())
         throw std::out_of_range("Index out of range!");
     return digits[index];
