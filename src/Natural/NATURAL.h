@@ -20,9 +20,19 @@ public:
     Natural();
     friend std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
 
-    int COM_NN_D(const Natural& number) const;
+    short COM_NN_D(Natural& number) const; // тут немного поменял
     bool NZER_N_B() const;
     void ADD_1N_N();
+    
+    //немного добавил
+    size_t len() const;
+    short& operator[] (int index);
+    Natural& operator-=(Natural& number); // допускается возможность виртуальности
+    void zfill(unsigned count);
+    Natural& operator=(Natural& number);
+    void clean_zero(); // удаляет незнач. нули
+    Natural SUB_NN_N(Natural &number);
+  
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке

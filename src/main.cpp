@@ -6,6 +6,9 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n("10284829");
-    std::cout << n << ' ' << n.NZER_N_B() << std::endl;
+    Natural n("143");
+    Natural t("142");
+    std::cout << n << ' ' << t << '\n';
+    std::cout << n.SUB_NN_N(t) <<  '\n';
+   // std::cout << n.COM_NN_D(t) << '\n';
 }
