@@ -7,4 +7,7 @@ set(CMAKE_CXX_STANDARD 20)
 #         main.cpp)
 add_executable(dm_fall_2023 main.cpp Natural/NATURAL.cpp
         Natural/NZER_N_B.cpp
+        Integer/INTEGER.cpp
+        Integer/INTEGER.h
+        Integer/INTEGER.h
 )
