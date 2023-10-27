@@ -4,8 +4,6 @@
 // С помощью COM_NN_D определяем какое число больше
 // Затем из большего вычитаем меньшее
 //
-#ifndef SUB_NN_N_cpp
-#define SUB_NN_N_cpp
 #include "NATURAL.h"
 
 void Natural::SUB_NN_N(const Natural &number)
@@ -25,4 +23,3 @@ void Natural::SUB_NN_N(const Natural &number)
     clean_zero(); // очищает нули в начале
 }
 
-#endif
