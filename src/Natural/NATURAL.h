@@ -31,8 +31,7 @@ public:
     Natural& operator=(Natural& number);
     void clean_zero(); // удаляет незнач. нули
     Natural SUB_NN_N(Natural &number);
-    //Natural SUB_NDN_N(Natural &number, int digit);
-    //int DIV_NN_Dk(Natural &number, int digit);
+
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
