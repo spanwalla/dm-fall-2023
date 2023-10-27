@@ -1,4 +1,11 @@
-//Add getter for digits
+
+//
+// Created by Leonid Ivashinnikov (2382) on 25.10.2023.
+// Конструкторы класса и оператор вывода в поток.
+// Создание объекта из строки и целого числа long long int.
+// Значение по умолчанию: 0. В векторе числа хранятся в обратном порядке!!! В нулевом индексе хранится самый младший разряд.
+//
+
 
 #include "NATURAL.h"
 Natural::Natural(const std::string& number) {
@@ -35,6 +42,14 @@ Natural::Natural(long long int num) {
     if (digits.empty())
         this->digits.push_back(0);
 }
+void Natural:: MUL_Nk_N(unsigned long long int k){
 
+    if (digits[digits.size()-1] != 0)
+        digits.insert(digits.begin(), k, 0);
+    else {
+        digits.clear();
+        digits.push_back(0);
+    }
+}
 
 

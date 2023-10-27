@@ -6,8 +6,7 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n1("47");
-    Natural n2("46");
-    //n.MUL_Nk_N(5);
-    std::cout << n1.COM_NN_D(n2) << std::endl;
+    Natural n1("0");
+    n1.MUL_Nk_N(5);
+    std::cout << n1 << std::endl;
 }
