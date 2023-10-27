@@ -8,24 +8,6 @@
 #define SUB_NN_N_cpp
 #include "NATURAL.h"
 
-short Natural::COM_NN_D(const Natural &number) const
-{
-    if (len() == number.len())
-    {
-        for (int i = len() - 1; i >= 0; i--)
-        {
-            if (digits[i] > number.digits[i])
-                return 2;
-            if (digits[i] < number.digits[i])
-                return 1;
-        }
-        return 0;
-    }
-    else if (len() > number.len())
-        return 2;
-    return 1;
-}
-
 void Natural::SUB_NN_N(const Natural &number)
 {
     Natural temp = number;
