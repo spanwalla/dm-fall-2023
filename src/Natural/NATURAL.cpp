@@ -1,5 +1,5 @@
-
 //Add getter for digits
+
 #include "NATURAL.h"
 Natural::Natural(const std::string& number) {
     for (auto c : std::ranges::reverse_view(number)) {
