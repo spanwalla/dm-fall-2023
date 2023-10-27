@@ -59,7 +59,7 @@ void Natural::zfill(unsigned count)
     digits.insert(digits.end(), count, 0);
 }
 
-Natural &Natural::operator=(Natural &number)
+Natural &Natural::operator=(const Natural &number)
 {
     if (this == &number)
         return *this;

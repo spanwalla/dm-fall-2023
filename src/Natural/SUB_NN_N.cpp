@@ -8,7 +8,7 @@
 #define SUB_NN_N_cpp
 #include "NATURAL.h"
 
-Natural Natural::SUB_NN_N(Natural &number)
+Natural Natural::SUB_NN_N(const Natural &number)
 {
     Natural temp_one;
     Natural temp_two;

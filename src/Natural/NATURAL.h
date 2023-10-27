@@ -20,16 +20,16 @@ public:
     Natural();
     friend std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
 
-    short COM_NN_D(Natural& number) const; // тут немного поменял
+    short COM_NN_D(const Natural& number) const; // тут немного поменял
     bool NZER_N_B() const;
     void ADD_1N_N();
     
     //немного добавил
     size_t len() const;
     void zfill(unsigned count);
-    Natural& operator=(Natural& number);
+    Natural& operator=(const Natural& number);
     void clean_zero(); // удаляет незнач. нули
-    Natural SUB_NN_N(Natural &number);
+    Natural SUB_NN_N(const Natural &number);
 
 
 private:
