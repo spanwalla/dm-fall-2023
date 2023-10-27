@@ -6,20 +6,20 @@
 //
 #include "NATURAL.h"
 
-void Natural::SUB_NN_N(Natural &number)
+void Natural::SUB_NN_N(const Natural &number)
 {
+    Natural temp = number;
     int carry = 0;
-    if (COM_NN_D(number) == 1)
+    if (COM_NN_D(temp) == 1)
         throw std::logic_error("The first number must be less than the second");
-    number.zfill(len() - number.len()); // заполняет нулями с конца
+    temp.zfill(len() - temp.len()); // заполняет нулями с конца
     for (int i = 0; i < len(); i++)
     {
-        short difference = digits[i] - number.digits[i] - carry;
+        short difference = digits[i] - temp.digits[i] - carry;
         carry = difference < 0 ? 1 : 0;
         difference = difference < 0 ? difference += 10 : difference;
         digits[i] = difference;
     }
-    clean_zero();
-    number.clean_zero(); // очищает нули в начале
+    clean_zero(); // очищает нули в начале
 }
 

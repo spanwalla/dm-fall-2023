@@ -7,7 +7,7 @@
 #include "NATURAL.h"
 
 // SUB_NDN_N считает n1 - n2*k >= 0
-void Natural::SUB_NDN_N(Natural &number, short digit)
+void Natural::SUB_NDN_N(const Natural &number, short digit)
 {
     Natural temp = number;
     temp.MUL_ND_N(digit);
