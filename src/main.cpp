@@ -6,7 +6,9 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n("451");
-    n.MUL_ND_NN(1);
-    std::cout << n << std::endl;
+    Natural n("10");
+    Natural t("0");
+    std::cout << n << ' ' << t << '\n';
+    std::cout << n.SUB_NN_N(t) <<  '\n';
+   // std::cout << n.COM_NN_D(t) << '\n';
 }
