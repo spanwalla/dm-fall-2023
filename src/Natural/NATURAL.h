@@ -10,7 +10,6 @@
 #include <stdexcept>
 #include <algorithm>
 #include <ranges>
-
 #include <iostream>
 
 class Natural {
@@ -21,7 +20,7 @@ public:
     friend std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
     Natural& operator=(const Natural& number);
 
-    bool NZER_N_B() const;
+    [[nodiscard]] bool NZER_N_B() const;
     void SUB_NN_N(const Natural &number);
     void MUL_ND_N(short digit);
     void SUB_NDN_N(const Natural &number, short digit);
@@ -31,7 +30,7 @@ public:
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
 
-    size_t len() const;
+    [[nodiscard]] std::size_t len() const;
     void zfill(unsigned count);
     void clean_zero(); // удаляет незначащие нули
 };
