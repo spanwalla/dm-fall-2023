@@ -10,19 +10,11 @@
 
 Natural Natural::SUB_NN_N(const Natural &number)
 {
-    Natural temp_one;
-    Natural temp_two;
+    Natural temp_one = *this;
+    Natural temp_two = number;
     int carry = 0;
-    if (COM_NN_D(number) == 2)
-    {
-        temp_one = *this;
-        temp_two = number;
-    }
-    else
-    {
-        temp_one = number;
-        temp_two = *this;
-    }
+    if (COM_NN_D(number) != 2)
+        std::swap(temp_one, temp_two);
     temp_two.zfill(temp_one.len() - temp_two.len()); // заполняет нулями с конца
     for (int i = 0; i < temp_one.len(); i++)
     {
