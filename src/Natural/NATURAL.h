@@ -23,7 +23,10 @@ public:
 
     bool NZER_N_B() const;
     void SUB_NN_N(const Natural &number);
-    void MUL_ND_NN(short digit);
+    void MUL_ND_N(short digit);
+    void SUB_NDN_N(const Natural &number, short digit);
+
+   
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
