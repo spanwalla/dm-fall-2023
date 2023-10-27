@@ -7,13 +7,10 @@
 void Natural::MUL_ND_NN(short digit){
     int carry = 0;
     int tmp = 0;
-    switch(digit){
-        case 0:
+    if (digit == 0){
             this->digits = {0};
-            break;
-        case 1:
-            break;
-        default:
+    }else{
+        if(digit > 1 && digit < 10){
             for(int i{0}; i < this->digits.size(); ++i){
                 tmp = (this->digits[i] * digit) + carry;
                 this->digits[i] = tmp % 10;
@@ -22,6 +19,7 @@ void Natural::MUL_ND_NN(short digit){
             if (carry != 0){
                 this->digits.push_back(carry);
             }
+        }
     }
 }
 
