@@ -1,12 +1,6 @@
-//
-// Created by Leonid Ivashinnikov (2382) on 25.10.2023.
-// Конструкторы класса и оператор вывода в поток.
-// Создание объекта из строки и целого числа long long int.
-// Значение по умолчанию: 0. В векторе числа хранятся в обратном порядке!!! В нулевом индексе хранится самый младший разряд.
-//
 
+//Add getter for digits
 #include "NATURAL.h"
-
 Natural::Natural(const std::string& number) {
     for (auto c : std::ranges::reverse_view(number)) {
         if (!std::isdigit(c))
@@ -26,7 +20,9 @@ std::ostream& operator << (std::ostream& out, const Natural& number) {
         out << digit;
     return out;
 }
-
+ std::vector <short> Natural::get_digit(){
+     return this->digits;
+}
 Natural::Natural(long long int num) {
     if (num < 0)
         throw std::invalid_argument("Number must be greater than or equal to 0.");
@@ -39,3 +35,6 @@ Natural::Natural(long long int num) {
     if (digits.empty())
         this->digits.push_back(0);
 }
+
+
+
