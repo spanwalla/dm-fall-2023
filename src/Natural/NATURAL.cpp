@@ -40,7 +40,6 @@ Natural::Natural(long long int num) {
         this->digits.push_back(0);
 }
 
-//ТУТ Я ДОБАВЛЯЛ
 
 size_t Natural::len() const
 {

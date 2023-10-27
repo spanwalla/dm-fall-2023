@@ -10,7 +10,7 @@ void Natural::SUB_NN_N(const Natural &number)
 {
     Natural temp = number;
     int carry = 0;
-    if (COM_NN_D(number) == 1)
+    if (COM_NN_D(temp) == 1)
         throw std::logic_error("The first number must be less than the second");
     temp.zfill(len() - temp.len()); // заполняет нулями с конца
     for (int i = 0; i < len(); i++)
