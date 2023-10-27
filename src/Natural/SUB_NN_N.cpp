@@ -8,8 +8,8 @@
 #define SUB_NN_N_cpp
 #include "NATURAL.h"
 
-// КОД ДИМЫ
-/* short Natural::COM_NN_D(Natural &number) const
+
+short Natural::COM_NN_D(Natural &number) const
 {
     if (len() == number.len())
     {
@@ -25,24 +25,73 @@
     else if (len() > number.len())
         return 2;
     return 1;
-} */
+}
+
+/* int carry = 0;
+    if (COM_NN_D(number) == 0)
+    {
+        digits = {0};
+    }
+    else if (COM_NN_D(number) == 2)
+    {
+        number.zfill(len() - number.len()); // выравниваю длину нулями
+        for (int i = 0; i < len(); i++)
+        {
+            short difference = digits[i] - number[i] - carry;
+            if (difference < 0)
+            {
+                difference += 10;
+                carry = 1;
+            }
+            else
+            {
+                carry = 0;
+            }
+            digits[i] = difference;
+        }
+    }
+    else
+    {
+        throw std::logic_error("A natural number cannot be negative!");
+    }
+    clean_zero();
+    number.clean_zero(); */
+
 
 
 
 
 Natural Natural::SUB_NN_N(Natural &number)
 {
+    
     Natural temp;
+    int carry = 0;
     if (COM_NN_D(number) == 2)
     {
         temp = *this;
-        temp -= number;
+        number.zfill(len() - number.len()); // выравниваю длину нулями
+        for (int i = 0; i < len(); i++)
+        {
+            short difference = temp[i] - number[i] - carry;
+            carry = difference < 0 ? 1 : 0;
+            difference = difference < 0 ? difference += 10 : difference;
+            temp[i] = difference;
+        }
     }
     else
     {
         temp = number;
-        temp -= *this;
+        zfill(temp.len() - len()); // выравниваю длину нулями
+        for (int i = 0; i < len(); i++)
+        {
+            short difference = temp[i] - digits[i] - carry;
+            carry = difference < 0 ? 1 : 0;
+            difference = difference < 0 ? difference += 10 : difference;
+            temp[i] = difference;
+        }
     }
+    clean_zero();
+    temp.clean_zero();
     return temp;
 }
 

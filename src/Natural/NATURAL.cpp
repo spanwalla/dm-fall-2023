@@ -44,7 +44,9 @@ Natural::Natural(long long int num) {
 short &Natural::operator[](int index)
 {
     if (index < 0)
-        index = 0;
+        index += len();
+        if (index < 0)
+            index = 0;
     if (index >= len())
         throw std::out_of_range("Index out of range!");
     return digits[index];
@@ -55,39 +57,6 @@ size_t Natural::len() const
     return digits.size();
 }
 
-Natural &Natural::operator-=(Natural &number)
-{
-    int carry = 0;
-    if (COM_NN_D(number) == 0)
-    {
-        digits = {0};
-    }
-    else if (COM_NN_D(number) == 2)
-    {
-        number.zfill(len() - number.len()); // выравниваю длину нулями
-        for (int i = 0; i < len(); i++)
-        {
-            short difference = digits[i] - number[i] - carry;
-            if (difference < 0)
-            {
-                difference += 10;
-                carry = 1;
-            }
-            else
-            {
-                carry = 0;
-            }
-            digits[i] = difference;
-        }
-    }
-    else
-    {
-        throw std::logic_error("A natural number cannot be negative!");
-    }
-    clean_zero();
-    number.clean_zero();
-    return *this;
-}
 
 void Natural::clean_zero()
 {
