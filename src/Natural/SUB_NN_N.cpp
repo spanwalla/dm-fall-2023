@@ -10,22 +10,21 @@
 
 Natural Natural::SUB_NN_N(const Natural &number)
 {
-    Natural temp_one = *this;
-    Natural temp_two = number;
+    Natural temp = number;
     int carry = 0;
-    if (COM_NN_D(number) != 2)
-        std::swap(temp_one, temp_two);
-    temp_two.zfill(temp_one.len() - temp_two.len()); // заполняет нулями с конца
-    for (int i = 0; i < temp_one.len(); i++)
+    if (COM_NN_D(number) == 1)
+        throw std::logic_error("The first number must be less than the second");
+    temp.zfill(len() - temp.len()); // заполняет нулями с конца
+    for (int i = 0; i < len(); i++)
     {
-        short difference = temp_one.digits[i] - temp_two.digits[i] - carry;
+        short difference = digits[i] - temp.digits[i] - carry;
         carry = difference < 0 ? 1 : 0;
         difference = difference < 0 ? difference += 10 : difference;
-        temp_one.digits[i] = difference;
+        digits[i] = difference;
     }
-    temp_one.clean_zero(); // очищает нули в начале
-    temp_two.clean_zero();
-    return temp_one;
+    clean_zero(); // очищает нули в начале
+    temp.clean_zero();
+    return *this;
 }
 
 #endif
