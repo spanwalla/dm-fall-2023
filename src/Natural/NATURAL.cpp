@@ -41,16 +41,6 @@ Natural::Natural(long long int num) {
 }
 
 //ТУТ Я ДОБАВЛЯЛ
-short &Natural::operator[](int index)
-{
-    if (index < 0)
-        index += len();
-        if (index < 0)
-            index = 0;
-    if (index >= len())
-        throw std::out_of_range("Index out of range!");
-    return digits[index];
-}
 
 size_t Natural::len() const
 {
@@ -74,7 +64,6 @@ Natural &Natural::operator=(Natural &number)
     if (this == &number)
         return *this;
     digits.clear();
-    for (int i = 0; i < number.len(); i++)
-        digits.push_back(number[i]);
+    std::copy(number.digits.begin(), number.digits.end(), std::back_inserter(digits));
     return *this;
 }

@@ -26,7 +26,6 @@ public:
     
     //немного добавил
     size_t len() const;
-    short& operator[] (int index); // допускается возможность виртуальности
     void zfill(unsigned count);
     Natural& operator=(Natural& number);
     void clean_zero(); // удаляет незнач. нули

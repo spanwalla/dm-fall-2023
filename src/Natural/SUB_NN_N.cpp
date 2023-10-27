@@ -8,40 +8,32 @@
 #define SUB_NN_N_cpp
 #include "NATURAL.h"
 
-
-
 Natural Natural::SUB_NN_N(Natural &number)
 {
-    
-    Natural temp;
+    Natural temp_one;
+    Natural temp_two;
     int carry = 0;
     if (COM_NN_D(number) == 2)
     {
-        temp = *this;
-        number.zfill(len() - number.len()); // выравниваю длину нулями
-        for (int i = 0; i < len(); i++)
-        {
-            short difference = temp[i] - number[i] - carry;
-            carry = difference < 0 ? 1 : 0;
-            difference = difference < 0 ? difference += 10 : difference;
-            temp[i] = difference;
-        }
+        temp_one = *this;
+        temp_two = number;
     }
     else
     {
-        temp = number;
-        zfill(temp.len() - len()); // выравниваю длину нулями
-        for (int i = 0; i < len(); i++)
-        {
-            short difference = temp[i] - digits[i] - carry;
-            carry = difference < 0 ? 1 : 0;
-            difference = difference < 0 ? difference += 10 : difference;
-            temp[i] = difference;
-        }
+        temp_one = number;
+        temp_two = *this;
     }
-    clean_zero();
-    temp.clean_zero();
-    return temp;
+    temp_two.zfill(temp_one.len() - temp_two.len()); // заполняет нулями с конца
+    for (int i = 0; i < temp_one.len(); i++)
+    {
+        short difference = temp_one.digits[i] - temp_two.digits[i] - carry;
+        carry = difference < 0 ? 1 : 0;
+        difference = difference < 0 ? difference += 10 : difference;
+        temp_one.digits[i] = difference;
+    }
+    temp_one.clean_zero(); // очищает нули в начале
+    temp_two.clean_zero();
+    return temp_one;
 }
 
 #endif
