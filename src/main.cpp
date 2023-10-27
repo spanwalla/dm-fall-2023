@@ -6,8 +6,8 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n1("34345");
-    Natural n2("23142");
+    Natural n1("142000");
+    Natural n2("142000");
     //n.COM_NN_D("154");
     std::cout <<n1.COM_NN_D(n2) << std::endl;
 }
