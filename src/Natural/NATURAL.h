@@ -22,9 +22,9 @@ public:
     Natural& operator=(const Natural& number);
 
     bool NZER_N_B() const;
-    void SUB_NN_N(const Natural &number);
+    void SUB_NN_N(Natural &number);
     void MUL_ND_N(short digit);
-    void SUB_NDN_N(const Natural &number, short digit);
+    void SUB_NDN_N(Natural &number, short digit);
 
    
 
