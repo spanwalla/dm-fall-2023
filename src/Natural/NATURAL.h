@@ -25,15 +25,16 @@ public:
     void ADD_1N_N();
     
     //немного добавил
-    size_t len() const;
-    void zfill(unsigned count);
     Natural& operator=(const Natural& number);
-    void clean_zero(); // удаляет незнач. нули
     void SUB_NN_N(const Natural &number);
 
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
+
+    size_t len() const;
+    void zfill(unsigned count);
+    void clean_zero(); // удаляет незнач. нули
 };
 
 
