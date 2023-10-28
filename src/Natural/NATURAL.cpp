@@ -1,3 +1,4 @@
+
 //
 // Created by Leonid Ivashinnikov (2382) on 25.10.2023.
 // Конструкторы класса и оператор вывода в поток.
@@ -5,8 +6,8 @@
 // Значение по умолчанию: 0. В векторе числа хранятся в обратном порядке!!! В нулевом индексе хранится самый младший разряд.
 //
 
-#include "NATURAL.h"
 
+#include "NATURAL.h"
 Natural::Natural(const std::string& number) {
     for (auto c : std::ranges::reverse_view(number)) {
         if (!std::isdigit(c))
