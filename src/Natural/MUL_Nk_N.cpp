@@ -1,12 +1,12 @@
 #include "NATURAL.h"
-//Created by Chepasov Dmitry(2382)
+//Created by Chepasov Dmitry(2382) 27.10.23
 //Умножает на 10^k
 void Natural:: MUL_Nk_N(unsigned long long int k){
 
-    if (digits[digits.end()] != 0)
-        digits.insert(digits.begin(), k, 0);
+    if (this->digits[digits.size()-1] != 0)
+        this->digits.insert(digits.begin(), k, 0);
     else {
-        digits.erase();
-        digits.push_back(0);
+        this->digits.clear();
+        this->digits.push_back(0);
     }
 }

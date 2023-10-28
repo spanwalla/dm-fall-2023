@@ -27,7 +27,6 @@ public:
     void MUL_Nk_N(unsigned long long int k);
     int COM_NN_D(Natural cmp);
 
-    std::vector <short> get_digit();
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке

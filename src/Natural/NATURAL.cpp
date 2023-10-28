@@ -27,9 +27,7 @@ std::ostream& operator << (std::ostream& out, const Natural& number) {
         out << digit;
     return out;
 }
- std::vector <short> Natural::get_digit(){
-     return this->digits;
-}
+
 Natural::Natural(long long int num) {
     if (num < 0)
         throw std::invalid_argument("Number must be greater than or equal to 0.");
@@ -42,14 +40,6 @@ Natural::Natural(long long int num) {
     if (digits.empty())
         this->digits.push_back(0);
 }
-void Natural:: MUL_Nk_N(unsigned long long int k){
 
-    if (digits[digits.size()-1] != 0)
-        digits.insert(digits.begin(), k, 0);
-    else {
-        digits.clear();
-        digits.push_back(0);
-    }
-}
 
 

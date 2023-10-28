@@ -6,7 +6,7 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n1("0");
+    Natural n1("50000000000");
     n1.MUL_Nk_N(5);
     std::cout << n1 << std::endl;
 }
