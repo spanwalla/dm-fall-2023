@@ -20,12 +20,11 @@ public:
     friend std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
     Natural& operator=(const Natural& number);
 
+    [[nodiscard]] int COM_NN_D(const Natural& cmp);
     [[nodiscard]] bool NZER_N_B() const;
     void SUB_NN_N(const Natural &number);
     void MUL_ND_N(short digit);
     void SUB_NDN_N(const Natural &number, short digit);
-
-   
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке

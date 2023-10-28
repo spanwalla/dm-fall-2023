@@ -41,11 +41,9 @@ Natural::Natural(long long int num) {
         this->digits.push_back(0);
 }
 
-
 std::size_t Natural::len() const {
     return digits.size();
 }
-
 
 void Natural::clean_zero() {
     while (digits.size() > 1 && digits.back() == 0)
