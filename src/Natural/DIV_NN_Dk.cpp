@@ -19,8 +19,7 @@ Natural Natural::DIV_NN_Dk(const Natural &number)
 
     std::size_t index_last_one = temp_one.len() - 1;
     Natural buffer;
-    buffer.digits.clear();
-    buffer.digits.insert(buffer.digits.begin(), temp_one.digits[index_last_one]); //добавляем в буффер старшую цифру числа, которое делим
+    buffer.digits[0] = temp_one.digits[index_last_one]; //добавляем в буффер старшую цифру числа, которое делим
     while(buffer.COM_NN_D(temp_two) == 1)
         buffer.digits.insert(buffer.digits.begin(), temp_one.digits[--index_last_one]);//увеличиваем число в буффере, пока оно не станет больше делителя
 
