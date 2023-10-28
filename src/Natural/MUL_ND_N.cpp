@@ -4,7 +4,7 @@
 
 #include "NATURAL.h"
 
-void Natural::MUL_ND_NN(short digit){
+void Natural::MUL_ND_N(short digit){
     int carry = 0;
     int tmp = 0;
     if (digit == 0){

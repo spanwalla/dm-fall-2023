@@ -15,6 +15,7 @@ Natural::Natural(const std::string& number) {
     }
     if (digits.empty())
         this->digits.push_back(0);
+    clean_zero(); // Убрать незначащие нули.
 }
 
 Natural::Natural() {
@@ -40,3 +41,23 @@ Natural::Natural(long long int num) {
         this->digits.push_back(0);
 }
 
+std::size_t Natural::len() const {
+    return digits.size();
+}
+
+void Natural::clean_zero() {
+    while (digits.size() > 1 && digits.back() == 0)
+        digits.pop_back();
+}
+
+void Natural::zfill(unsigned count) {
+    digits.insert(digits.end(), count, 0);
+}
+
+Natural &Natural::operator=(const Natural &number) {
+    if (this == &number)
+        return *this;
+    digits.clear();
+    std::copy(number.digits.begin(), number.digits.end(), std::back_inserter(digits));
+    return *this;
+}
