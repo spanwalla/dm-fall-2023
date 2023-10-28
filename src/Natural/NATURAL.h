@@ -24,6 +24,7 @@ public:
     bool NZER_N_B() const;
     void ADD_1N_N();
     void MUL_ND_NN(short digit);
+    void ADD_NN_N(Natural& addable_number);
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
