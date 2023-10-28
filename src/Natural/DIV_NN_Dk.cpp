@@ -10,7 +10,7 @@ Natural Natural::DIV_NN_Dk(const Natural &number)
 {
     Natural first_number;
     if (COM_NN_D(number) == 1)
-        throw std::logic_error("The first number must be greater than the second"); // здесь мы кладем большую цифру в temp_one, меньшую в temp_two
+        throw std::logic_error("The first number must be greater than the second"); // выкидываем ошибку, если 2 число больше 1
 
     if (!number.NZER_N_B())
         throw std::invalid_argument("The number must not be zero!");
