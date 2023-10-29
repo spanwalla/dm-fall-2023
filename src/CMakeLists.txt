@@ -12,6 +12,7 @@ add_executable(dm_fall_2023 main.cpp Natural/NATURAL.cpp
         Natural/SUB_NN_N.cpp
         Natural/MUL_ND_N.cpp
         Natural/MUL_Nk_N.cpp
+        Natural/MUL_NN_N.cpp
         Natural/SUB_NDN_N.cpp
         Natural/DIV_NN_Dk.cpp
         Integer/INTEGER.cpp
