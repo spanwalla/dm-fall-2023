@@ -26,6 +26,7 @@ public:
     void SUB_NN_N(const Natural &number);
     void MUL_ND_N(short digit);
     void MUL_Nk_N(unsigned long long int k);
+    void MUL_NN_N(Natural number);
     void SUB_NDN_N(const Natural &number, short digit);
     Natural DIV_NN_Dk(const Natural &number);
 
