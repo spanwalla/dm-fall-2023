@@ -2,19 +2,26 @@
  #include "NATURAL.h"
 void Natural::ADD_NN_N(Natural& addable_number){
 unsigned carry = 0;
-size_t index_this =0;
-size_t index_addable =0;
-if (this->digits.size() < addable_number.digits.size()) std::swap(this->digits,addable_number.digits); //Меняем их, так как сложение будет происходить в столбоик правильно, если число большее сверху
-while(index_this < this->digits.size() || index_addable < addable_number.digits.size()){
-    auto digitsum = this->digits[index_this] + addable_number.digits[index_addable] + carry;
+size_t index =0;
+if (this->digits.size() < addable_number.digits.size())
+for (int i = 0;i<(addable_number).digits.size()-this->digits.size();i++){
+  this->digits.push_back(0);
+}
+if (this->digits.size() > addable_number.digits.size())
+for (int i = 0;i<(this->digits.size()-addable_number.digits.size());i++){
+  addable_number.digits.push_back(0);
+}
 
+while(index < this->digits.size()){
+    auto digitsum = this->digits[index] + addable_number.digits[index] + carry;
+    //std::cout<<"digits: "<<digitsum<<'\n';
     carry = digitsum / 10;
-    digitsum %= 10;
+    if(digitsum>=10)
+      digitsum %= 10;
 
-    this->digits[index_this] = digitsum;
-    index_this++;
-    index_addable++;
+    this->digits[index] = digitsum;
+    index++;
     }
-    if(carry != 0)
-      this->digits.push_back(carry);
+   if(carry != 0)
+     this->digits.push_back(carry);
 }
