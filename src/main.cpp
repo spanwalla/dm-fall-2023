@@ -9,5 +9,5 @@ int main() {
     Natural n1("100000");
     Natural n2("53333");
     n1.ADD_NN_N(n2);
-    std::cout << "summ:" <<n1 << std::endl;
+    std::cout << "summ: " << n1 << std::endl;
 }
