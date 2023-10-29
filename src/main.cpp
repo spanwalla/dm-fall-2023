@@ -1,12 +1,13 @@
 //
-// Created by Leonid Ivashinnikov (2382) on 25.10.2023.
+// Created by Chepasov Dmitry (2382) on 27.10.2023.
 //
 
 #include <iostream>
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n("299");
-    n.ADD_1N_N();
-    std::cout << n << std::endl;
+    Natural n1("100000");
+    Natural n2("53333");
+    n1.ADD_NN_N(n2);
+    std::cout << "summ: " << n1 << std::endl;
 }
