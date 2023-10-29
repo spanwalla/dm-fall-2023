@@ -1,5 +1,19 @@
-//Create by Chepasov Dmitry (GR 2382) 28.10.23
-#include "NATURAL.h"
+//Create by Chepasov Dmitry (gr 2382) 28.10.23
+ #include "NATURAL.h"
 void Natural::ADD_NN_N(Natural& addable_number){
-    std::transform (addable_number.digits.begin(), addable_number.digits.end(),this->digits.begin(), this->digits.begin(),std::plus<int>());
+unsigned carry = 0;
+size_t index_this =0;
+size_t index_addable =0;
+while(index_this < this->digits.size()+1 || index_addable < addable_number.digits.size()+1){
+    auto digitsum = this->digits[index_this] + addable_number.digits[index_addable] + carry;
+
+    carry = digitsum / 10;
+    digitsum %= 10;
+
+    this->digits[index_this] = digitsum;
+    index_this++;
+    index_addable++;
+    }
+    if(carry != 0)
+      this->digits.push_back(carry);
 }
