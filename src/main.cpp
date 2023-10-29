@@ -6,8 +6,7 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n1("100000");
-    Natural n2("53333");
-    n1.ADD_NN_N(n2);
-    std::cout << "summ:" <<n1 << std::endl;
+    Natural n1("554");
+    Natural n2("37");
+    std::cout << n1.DIV_NN_N(n2) << '\n';
 }
