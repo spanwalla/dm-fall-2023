@@ -22,6 +22,7 @@ public:
 
     [[nodiscard]] int COM_NN_D(const Natural& cmp);
     [[nodiscard]] bool NZER_N_B() const;
+    void ADD_NN_N(const Natural& number);
     void SUB_NN_N(const Natural &number);
     void MUL_ND_N(short digit);
     void MUL_Nk_N(unsigned long long int k);
