@@ -10,7 +10,6 @@
 #include <stdexcept>
 #include <algorithm>
 #include <ranges>
-
 #include <iostream>
 
 class Natural {
@@ -19,14 +18,23 @@ public:
     explicit Natural(long long int num);
     Natural();
     friend std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
+    Natural& operator=(const Natural& number);
 
-    int COM_NN_D(const Natural& number) const;
-    bool NZER_N_B() const;
+    [[nodiscard]] int COM_NN_D(const Natural& cmp);
+    [[nodiscard]] bool NZER_N_B() const;
     void ADD_NN_N(const Natural& number);
-    void MUL_ND_NN(short digit);
+    void SUB_NN_N(const Natural &number);
+    void MUL_ND_N(short digit);
+    void MUL_Nk_N(unsigned long long int k);
+    void SUB_NDN_N(const Natural &number, short digit);
+    Natural DIV_NN_Dk(const Natural &number);
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
+
+    [[nodiscard]] std::size_t len() const;
+    void zfill(unsigned count);
+    void clean_zero(); // удаляет незначащие нули
 };
 
 

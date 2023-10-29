@@ -1,5 +1,5 @@
 //
-// Created by Leonid Ivashinnikov (2382) on 25.10.2023.
+// Created by Chepasov Dmitry (2382) on 27.10.2023.
 //
 
 #include <iostream>
