@@ -8,11 +8,11 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(dm_fall_2023 main.cpp Natural/NATURAL.cpp
         Natural/COM_NN_D.cpp
         Natural/NZER_N_B.cpp
-        Natural/ADD_1N_N.cpp
         Natural/ADD_NN_N.cpp
         Natural/SUB_NN_N.cpp
         Natural/MUL_ND_N.cpp
         Natural/MUL_Nk_N.cpp
+        Natural/MUL_NN_N.cpp
         Natural/SUB_NDN_N.cpp
         Natural/DIV_NN_Dk.cpp
         Integer/INTEGER.cpp
