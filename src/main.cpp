@@ -6,8 +6,8 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n1("199");
-    Natural n2("92131312313123");
+    Natural n1("1231");
+    Natural n2("12123782137");
     n1.ADD_NN_N(n2);
-    std::cout << n1 << std::endl;
+    std::cout << n2 << std::endl;
 }
