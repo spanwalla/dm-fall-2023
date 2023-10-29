@@ -19,5 +19,4 @@ void Natural::ADD_1N_N(){
      if(ind == this->digits.size()) this->digits.push_back(1);
     }
     else this->digits[ind] ++;
-   ;
 }
