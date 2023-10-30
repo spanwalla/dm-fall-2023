@@ -29,6 +29,7 @@ public:
     void MUL_NN_N(Natural number);
     void SUB_NDN_N(const Natural &number, short digit);
     Natural DIV_NN_Dk(const Natural &number);
+    Natural DIV_NN_N(Natural& number);
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
