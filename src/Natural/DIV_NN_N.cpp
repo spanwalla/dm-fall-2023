@@ -1,7 +1,7 @@
 // Created by Sofya Bodareva (2382) on 28.10.2023
 // Поиск неполного частного двух натуральных чисел
 
-#include "Natural.h"
+#include "NATURAL.h"
 
 Natural Natural::DIV_NN_N(Natural& number) {
     if (this->COM_NN_D(number) == 0) // если числа равны, их неполное частное равно 1

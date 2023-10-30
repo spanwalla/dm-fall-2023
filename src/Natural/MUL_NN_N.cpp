@@ -1,7 +1,6 @@
 // Сreated by Sofya Bodareva (2382) on 29.10.2023
 // Умножение двух натуральных чисел
-
-#include "Natural.h"
+#include "NATURAL.h"
 
 void Natural::MUL_NN_N(Natural number) {
     if ((this->NZER_N_B() == false) || (number.NZER_N_B() == false)) { // проверка обоих чисел на 0
