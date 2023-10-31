@@ -31,6 +31,7 @@ public:
     Natural DIV_NN_Dk(const Natural &number);
     Natural DIV_NN_N(Natural& number);
     Natural MOD_NN_N(Natural& number);
+    Natural GCF_NN_N(const Natural& number);
     Natural LCM_NN_N(const Natural& number);
 
 private:
