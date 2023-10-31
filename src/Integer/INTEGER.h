@@ -20,7 +20,7 @@ public:
     friend std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
     // Перегрузить оператор взятия по индексу.
     // Доступ к натуральному числу отсюда или дублировать функции Natural или ваши идеи
-
+    int POZ_Z_D();
 private:
     Natural number;
     bool sign; // true - если знак отрицательный, для нуля ставить знак false, но логика не должна ломаться если у нуля стоит true
