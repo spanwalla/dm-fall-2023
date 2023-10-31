@@ -15,8 +15,9 @@ class Rational {
 public:
     explicit Rational(const std::string& number);
     Rational();
+    bool is_zero() const;
+    bool is_sign() const;
     friend std::ostream& operator << (std::ostream& out, const Rational& number); // Оператор вывода в поток.
-    // Доступ к натуральному числу отсюда или дублировать функции Natural или ваши идеи
 
 private:
     Integer numerator; // числитель
