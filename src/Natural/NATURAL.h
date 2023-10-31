@@ -32,6 +32,7 @@ public:
     Natural DIV_NN_N(Natural& number);
     Natural MOD_NN_N(Natural& number);
     Natural GCF_NN_N(const Natural& number);
+    Natural LCM_NN_N(const Natural& number);
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке

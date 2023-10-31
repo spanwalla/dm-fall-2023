@@ -6,7 +6,8 @@
 #include "Natural/NATURAL.h"
 
 int main() {
-    Natural n1("31435246345");
-    Natural n2("578964875364535");
+    Natural n1("512");
+    Natural n2("745");
     std::cout << n1.GCF_NN_N(n2) << '\n';
+    std::cout << n1.LCM_NN_N(n2) << '\n';
 }
