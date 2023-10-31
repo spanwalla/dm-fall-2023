@@ -1,4 +1,4 @@
-// created by Sofya Bodareva (2382) on 30.10.2023
+// Created by Sofya Bodareva (2382) on 30.10.2023
 // Остаток от деления первого натурального числа на второе
 
 #include "NATURAL.h"
@@ -13,7 +13,7 @@ Natural Natural::MOD_NN_N(Natural& number) {
         return *this;
     else if (COM_NN_D(Natural(1)) == 0) // если делимое равно 1, остаток всегда 1
         return Natural(1);
-    else{
+    else {
         Natural tmp1 = *this;
         Natural tmp2 = tmp1.DIV_NN_N(number); // вычисляем неполное частное
         tmp2.MUL_NN_N(number);
