@@ -6,6 +6,8 @@
 #include "NATURAL.h"
 
 Natural Natural::GCF_NN_N(const Natural& number) {
+    if (!NZER_N_B() && !number.NZER_N_B())
+        throw std::logic_error("One of the numbers must have non-zero value.");
     Natural temp_one = *this;
     Natural temp_two = number;
     while (temp_one.NZER_N_B() && temp_two.NZER_N_B()) {

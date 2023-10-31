@@ -3,7 +3,7 @@
 
 #include "NATURAL.h"
 
-void Natural:: MUL_Nk_N(unsigned long long int k) {
+void Natural::MUL_Nk_N(unsigned long long int k) {
     if (this->digits[digits.size()-1] != 0)
         this->digits.insert(digits.begin(), k, 0);
     else {
