@@ -5,6 +5,7 @@
 // Затем из большего вычитаем меньшее
 //
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 void Natural::SUB_NN_N(const Natural &number) {

@@ -1,6 +1,7 @@
 // Created by Sofya Bodareva (2382) on 30.10.2023
 // Остаток от деления первого натурального числа на второе
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 Natural Natural::MOD_NN_N(Natural& number) {
