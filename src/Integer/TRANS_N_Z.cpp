@@ -5,7 +5,6 @@
 
 #include "INTEGER.h"
 
-Integer& Integer::TRANS_N_Z(Natural nat){
-    auto* Int = new Integer(nat);
-    return *Int;
+Integer Integer::TRANS_N_Z(Natural& nat){
+    return Integer(nat);
 }

@@ -18,7 +18,7 @@ public:
     explicit Integer(Natural& number);
     Integer();
     friend std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
-    Integer& TRANS_N_Z(Natural nat);
+    friend Integer TRANS_N_Z(Natural& nat);
     // Перегрузить оператор взятия по индексу.
     // Доступ к натуральному числу отсюда или дублировать функции Natural или ваши идеи
 
