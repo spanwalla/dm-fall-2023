@@ -2,7 +2,7 @@
 // Функция находит абсолютную величину числа
 #include "INTEGER.h"
 
-Natural Integer::ABS_Z_N(const Integer& integer) {
-    Natural absValue = integer.number;
+Natural Integer::ABS_Z_N() {
+    Natural absValue = this->number;
     return absValue;
 }
