@@ -3,5 +3,7 @@
 #include "INTEGER.h"
 
 Integer Integer::ABS_Z_Z() {
-    return this->number;
+    Integer abs = *this;
+    abs.sign = false;
+    return abs;
 }
