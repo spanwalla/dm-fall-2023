@@ -3,7 +3,7 @@
 // у класса целых есть поле натурального числа, мы просто возвращаем это поле
 
 #define CLS_EXPORTS
-#include "INTEGER.h
+#include "INTEGER.h"
 
 Natural Integer::TRANS_Z_N(){
     if(!this->sign)
