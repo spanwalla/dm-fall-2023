@@ -25,6 +25,8 @@ public:
     Integer();
     friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
 
+    Natural TRANS_Z_N();
+
 private:
     Natural number;
     bool sign; // true - если знак отрицательный, для нуля ставить знак false, но логика не должна ломаться если у нуля стоит true
