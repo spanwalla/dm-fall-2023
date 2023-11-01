@@ -17,14 +17,18 @@
 #include <algorithm>
 #include <stdexcept>
 
-class Integer {
+
+class CLS Integer {
 public:
     explicit Integer(const std::string& number);
     explicit Integer(long long int number);
     explicit Integer(Natural& number);
     Integer();
     friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
+
     int POZ_Z_D();
+    Natural TRANS_Z_N();
+
 private:
     Natural number;
     bool sign; // true - если знак отрицательный, для нуля ставить знак false, но логика не должна ломаться если у нуля стоит true

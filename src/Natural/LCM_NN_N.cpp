@@ -3,6 +3,7 @@
 // НОК натуральных чисел
 // 
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 Natural Natural::LCM_NN_N(const Natural& number) {
