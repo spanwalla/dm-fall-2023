@@ -25,6 +25,7 @@ public:
     Integer();
     friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
 
+    Integer ABS_Z_Z();
     int POZ_Z_D();
     void MUL_ZM_Z();
     static Integer TRANS_N_Z(Natural& nat);
