@@ -27,6 +27,7 @@ public:
 
     int POZ_Z_D();
     void MUL_ZM_Z();
+    static Integer TRANS_N_Z(Natural& nat);
     Natural TRANS_Z_N();
 private:
     Natural number;
