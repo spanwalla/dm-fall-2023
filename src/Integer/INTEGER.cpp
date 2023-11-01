@@ -5,6 +5,7 @@
 // Создание объекта из строки, числа long long int. Значение по умолчанию: 0.
 //
 
+#define CLS_EXPORTS
 #include "INTEGER.h"
 
 Integer::Integer(const std::string &number) {

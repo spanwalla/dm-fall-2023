@@ -3,6 +3,7 @@
 // НОД натуральных чисел
 // 
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 Natural Natural::GCF_NN_N(const Natural& number) {

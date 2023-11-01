@@ -2,8 +2,8 @@
 // Created by Muravin Egor (2382) on 28.10.2023.
 // Вычисление первой цифры деления большего натурального на меньшее, домноженное на 10^k, где k - номер позиции этой цифры (номер считается с нуля)
 //
-//
-//
+
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 Natural Natural::DIV_NN_Dk(const Natural &number)

@@ -2,6 +2,7 @@
 // Умножение натурального числа на цифру
 // для чисел больших 1 логика как для умножения в столбик
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 void Natural::MUL_ND_N(short digit){
