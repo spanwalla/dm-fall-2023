@@ -4,6 +4,8 @@
 // Умножаем число на некий коэф.
 // Используем SUB_NN_N чтобы найди абсолютную разницу
 //
+
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 // SUB_NDN_N считает n1 - n2*k >= 0

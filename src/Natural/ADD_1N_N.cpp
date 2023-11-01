@@ -1,5 +1,6 @@
 // Created by Dmitriy Chepasov (2382) on 29.10.2023
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 void Natural::ADD_1N_N() {

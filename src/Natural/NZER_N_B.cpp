@@ -5,6 +5,7 @@
 // Если встретили не ноль, возвращаем true. Если ничего не встретили, false.
 //
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 bool Natural::NZER_N_B() const {

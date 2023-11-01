@@ -23,7 +23,11 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Natural/GCF_NN_N.cpp
         src/Natural/LCM_NN_N.cpp
         src/Integer/INTEGER.cpp
+        src/Integer/MUL_ZM_Z.cpp
+        src/Integer/POZ_Z_D.cpp
+        src/Integer/MUL_ZM_Z.cpp
         src/Integer/TRANS_N_Z.cpp
+        src/Integer/TRANS_Z_N.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 

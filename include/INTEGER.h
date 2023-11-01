@@ -24,10 +24,11 @@ public:
     explicit Integer(Natural& number);
     Integer();
     friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
-    static Integer TRANS_N_Z(Natural& nat);
-    // Перегрузить оператор взятия по индексу.
-    // Доступ к натуральному числу отсюда или дублировать функции Natural или ваши идеи
 
+    int POZ_Z_D();
+    void MUL_ZM_Z();
+    static Integer TRANS_N_Z(Natural& nat);
+    Natural TRANS_Z_N();
 private:
     Natural number;
     bool sign; // true - если знак отрицательный, для нуля ставить знак false, но логика не должна ломаться если у нуля стоит true
