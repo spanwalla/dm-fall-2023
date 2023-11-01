@@ -5,21 +5,26 @@
 #ifndef DM_FALL_2023_INTEGER_H
 #define DM_FALL_2023_INTEGER_H
 
-#include "../Natural/NATURAL.h"
+#ifdef CLS_EXPORTS
+#define CLS __declspec(dllexport)
+#else
+#define CLS __declspec(dllimport)
+#endif
+
+#include "NATURAL.h"
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
 
-class Integer {
+class CLS Integer {
 public:
     explicit Integer(const std::string& number);
     explicit Integer(long long int number);
     explicit Integer(Natural& number);
     Integer();
-    friend std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
-    // Перегрузить оператор взятия по индексу.
-    // Доступ к натуральному числу отсюда или дублировать функции Natural или ваши идеи
+    friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
+
     void MUL_ZM_Z();
 private:
     Natural number;
