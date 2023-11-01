@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <stdexcept>
 
+
 class CLS Integer {
 public:
     explicit Integer(const std::string& number);
@@ -25,6 +26,7 @@ public:
     Integer();
     friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
 
+    int POZ_Z_D();
     Natural TRANS_Z_N();
 
 private:
