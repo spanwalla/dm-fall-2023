@@ -2,7 +2,8 @@
 // Преобразование целого в натуральное
 // у класса целых есть поле натурального числа, мы просто возвращаем это поле
 
-#include "INTEGER.h"
+#define CLS_EXPORTS
+#include "INTEGER.h
 
 Natural Integer::TRANS_Z_N(){
     if(!this->sign)
