@@ -5,6 +5,12 @@
 #ifndef DM_FALL_2023_INTEGER_H
 #define DM_FALL_2023_INTEGER_H
 
+#ifdef CLS_EXPORTS
+#define CLS __declspec(dllexport)
+#else
+#define CLS __declspec(dllimport)
+#endif
+
 #include "NATURAL.h"
 #include <string>
 #include <vector>
@@ -17,7 +23,7 @@ public:
     explicit Integer(long long int number);
     explicit Integer(Natural& number);
     Integer();
-    friend std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
+    friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
     int POZ_Z_D();
 private:
     Natural number;
