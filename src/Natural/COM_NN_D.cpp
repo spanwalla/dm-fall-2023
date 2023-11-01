@@ -1,5 +1,7 @@
 // Created by Chepasov Dmitry 27.10.2023 Group: 2382
 // Compare two digits
+
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 int Natural::COM_NN_D(const Natural& cmp) {

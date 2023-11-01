@@ -1,5 +1,7 @@
 // Сreated by Sofya Bodareva (2382) on 29.10.2023
 // Умножение двух натуральных чисел
+
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 void Natural::MUL_NN_N(Natural number) {

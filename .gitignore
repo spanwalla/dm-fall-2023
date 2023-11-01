@@ -30,6 +30,3 @@
 *.exe
 *.out
 *.app
-
-# main.cpp
-src/main.cpp

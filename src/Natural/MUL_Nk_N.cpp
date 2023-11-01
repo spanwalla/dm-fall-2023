@@ -1,6 +1,7 @@
 // Created by Chepasov Dmitry (2382) 27.10.2023
 // Умножает на 10^k
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 void Natural::MUL_Nk_N(unsigned long long int k) {
