@@ -4,5 +4,6 @@
 #include "INTEGER.h"
 
 void Integer::MUL_ZM_Z(){
-    this->sign = !this->sign;
+    if (number.NZER_N_B())
+        this->sign = !this->sign;
 }
