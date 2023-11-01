@@ -20,7 +20,7 @@ public:
     friend std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
     // Перегрузить оператор взятия по индексу.
     // Доступ к натуральному числу отсюда или дублировать функции Natural или ваши идеи
-    Natural ABS_Z_N();
+    Integer ABS_Z_N();
 
 private:
     Natural number;
