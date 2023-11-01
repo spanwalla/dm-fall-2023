@@ -1,6 +1,7 @@
 // Created by Sofya Bodareva (2382) on 28.10.2023
 // Поиск неполного частного двух натуральных чисел
 
+#define CLS_EXPORTS
 #include "NATURAL.h"
 
 Natural Natural::DIV_NN_N(Natural& number) {
