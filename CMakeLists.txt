@@ -29,6 +29,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Integer/TRANS_N_Z.cpp
         src/Integer/TRANS_Z_N.cpp
         src/Integer/ADD_ZZ_Z.cpp
+        src/Integer/MUL_ZZ_Z.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
