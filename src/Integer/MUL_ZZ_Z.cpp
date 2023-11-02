@@ -6,5 +6,5 @@
 
 void Integer::MUL_ZZ_Z(Integer num){
     this->number.MUL_NN_N(num.number);
-    (this->sign == num.sign || this->POZ_Z_D() == 0 || num.POZ_Z_D() == 0) ? this->sign = 0 : this->sign = 1;
+    this->sign = !(this->sign == num.sign || this->POZ_Z_D() == 0 || num.POZ_Z_D() == 0);
 }
