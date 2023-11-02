@@ -31,6 +31,7 @@ public:
     static Integer TRANS_N_Z(Natural& nat);
     Natural TRANS_Z_N();
     void MUL_ZZ_Z(Integer num);
+    Integer DIV_ZZ_Z(Integer& divisor);
 private:
     Natural number;
     bool sign; // true - если знак отрицательный, для нуля ставить знак false, но логика не должна ломаться если у нуля стоит true
