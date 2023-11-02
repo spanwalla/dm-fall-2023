@@ -16,6 +16,7 @@ public:
     explicit Polinom(const std::string& content);
     Polinom();
     friend std::ostream& operator << (std::ostream& out, const Polinom& polinom); // Оператор вывода в поток.
+    int LED_P_Q();
 
 private:
     std::vector<Rational> polinom; // вектор, хранящий рациональные коэффициенты

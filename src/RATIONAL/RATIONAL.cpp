@@ -19,4 +19,7 @@ bool Rational::is_zero() const { return this->numerator.ABS_Z_N().COM_NN_D(Natur
 
 bool Rational::is_sign() const { return this->numerator.POZ_Z_D() == 1; }
 
-std::ostream& operator << (std::ostream& out, const Rational& number) { out << number.numerator << "/" << number.denominator; }
+std::ostream& operator << (std::ostream& out, const Rational& number) {
+    out << number.numerator << "/" << number.denominator;
+    return out;
+}
