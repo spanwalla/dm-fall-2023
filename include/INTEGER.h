@@ -30,6 +30,7 @@ public:
     void MUL_ZM_Z();
     static Integer TRANS_N_Z(Natural& nat);
     Natural TRANS_Z_N();
+    void ADD_ZZ_Z(Integer b);
     void MUL_ZZ_Z(Integer num);
 private:
     Natural number;
