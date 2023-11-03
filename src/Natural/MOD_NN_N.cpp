@@ -4,7 +4,7 @@
 #define CLS_EXPORTS
 #include "NATURAL.h"
 
-Natural Natural::MOD_NN_N(Natural& number) {
+Natural Natural::MOD_NN_N(const Natural& number) const {
     if (!number.NZER_N_B())
         throw std::logic_error("The number must not be zero!");
     

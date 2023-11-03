@@ -5,7 +5,7 @@
 #define CLS_EXPORTS
 #include "INTEGER.h"
 
-Natural Integer::TRANS_Z_N(){
+Natural Integer::TRANS_Z_N() const {
     if(!this->sign)
         return this->number;
     else

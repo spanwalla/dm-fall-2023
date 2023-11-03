@@ -4,7 +4,7 @@
 #define CLS_EXPORTS
 #include "NATURAL.h"
 
-Natural Natural::DIV_NN_N(Natural& number) {
+Natural Natural::DIV_NN_N(const Natural& number) const {
     if (this->COM_NN_D(number) == 0) // если числа равны, их неполное частное равно 1
         return Natural(1);
     else if (this->COM_NN_D(number) == 1) // если делимое меньше делителя, их неполное частное 0

@@ -4,7 +4,7 @@
 #define CLS_EXPORTS
 #include "INTEGER.h"
 
-Integer Integer::MOD_ZZ_Z(Integer &num) {
+Integer Integer::MOD_ZZ_Z(const Integer &num) const {
     Natural nat = this->number.MOD_NN_N(num.number);
     Integer remainder(nat);
     // если делимое отрицательное и остаток отличен от нуля

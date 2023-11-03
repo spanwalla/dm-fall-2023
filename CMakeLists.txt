@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.25)
 project(dm_fall_2023 VERSION 0.1)
 
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
+# windows
+# set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build)
 
@@ -33,6 +34,8 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Integer/DIV_ZZ_Z.cpp
         src/Integer/SUB_ZZ_Z.cpp
         src/Integer/MOD_ZZ_Z.cpp
+        src/Rational/RATIONAL.cpp
+        src/Polinom/POLINOM.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 

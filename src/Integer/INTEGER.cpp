@@ -35,6 +35,6 @@ std::ostream& operator << (std::ostream &out, const Integer &object) {
 
 Integer::Integer(): sign(false), number(Natural(0)) {}
 Integer::Integer(long long int number): sign(number < 0), number(Natural(std::abs(number))) {}
-Integer::Integer(Natural &number): sign(false), number(number) {}
+Integer::Integer(const Natural &number): sign(false), number(number) {}
 
 

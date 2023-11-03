@@ -1,0 +1,4 @@
+/home/mikhail/github/dm-fall-2023/build/CMakeFiles/cls.dir
+/home/mikhail/github/dm-fall-2023/build/CMakeFiles/main.dir
+/home/mikhail/github/dm-fall-2023/build/CMakeFiles/edit_cache.dir
+/home/mikhail/github/dm-fall-2023/build/CMakeFiles/rebuild_cache.dir

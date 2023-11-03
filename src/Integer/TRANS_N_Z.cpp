@@ -5,6 +5,6 @@
 #define CLS_EXPORTS
 #include "INTEGER.h"
 
-Integer Integer::TRANS_N_Z(Natural& nat){
+Integer Integer::TRANS_N_Z(const Natural& nat) {
     return Integer(nat);
 }
