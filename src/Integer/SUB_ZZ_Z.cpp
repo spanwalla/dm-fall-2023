@@ -4,20 +4,18 @@
 #define CLS_EXPORTS
 #include "INTEGER.h"
 
-Integer Integer::SUB_ZZ_Z(Integer b){
+void Integer::SUB_ZZ_Z(Integer b){
     if (this->sign == b.sign){
         if (this->number.COM_NN_D(b.number) != 1) { // a>=b
             this->number.SUB_NN_N(b.number);
-            return *this;
         }
         else{
-            b.sign = !b.sign;
+            this->sign = !b.sign;
             b.number.SUB_NN_N(this->number);
-            return b;
+            this->number = b.number;
         }
     }
     else{
         this->number.ADD_NN_N(b.number);
-        return *this;
     }
 }
