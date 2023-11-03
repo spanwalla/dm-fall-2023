@@ -5,7 +5,7 @@
 #include "INTEGER.h"
 
 void Integer::SUB_ZZ_Z(Integer b){
-    if (POZ_Z_D() == b.POZ_Z_D()){
+    if (this->sign == b.sign){
         if (this->number.COM_NN_D(b.number) != 1) { // a>=b
             this->number.SUB_NN_N(b.number);
         }
