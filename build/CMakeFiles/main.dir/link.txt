@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/main.dir/examples/main.cpp.o -o main  -Wl,-rpath,/home/mikhail/github/dm-fall-2023/build libcls.so 
