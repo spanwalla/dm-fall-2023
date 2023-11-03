@@ -6,20 +6,19 @@
 #define DM_FALL_2023_RATIONAL_H
 
 // windows
-/*
 #ifdef CLS_EXPORTS
 #define CLS __declspec(dllexport)
 #else
 #define CLS __declspec(dllimport)
 #endif
-*/
+
 
 // linux
-#ifdef CLS_EXPORTS
+/* #ifdef CLS_EXPORTS
 #define CLS __attribute__((visibility("default")))
 #else
 #define CLS
-#endif
+#endif */
 
 #include "NATURAL.h"
 #include "INTEGER.h"
