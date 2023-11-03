@@ -3,11 +3,11 @@
 //
 
 #define CLS_EXPORTS
-#include "POLINOM.h"
+#include "POLYNOMIAL.h"
 
 // получаемая строка выглядист так a(n)x^n+a(n-1)x^n-1+...+a(0) или a(n)*x^n+a(n-1)*x^n-1+...+a(0)
 // вместо плюсов могут стоять минусы
-Polinom::Polinom(const std::string& content) {
+Polynomial::Polynomial(const std::string& content) {
     std::string pol(content);
 
     std::vector<std::string> substr_pol;
@@ -20,7 +20,7 @@ Polinom::Polinom(const std::string& content) {
         size_t index_degree = pol.find('^');
         if (index_degree == std::string::npos && pol.find('x') != std::string::npos)
             size = std::max(size, (size_t)1);
-        else
+        else if (pol.find('^') != std::string::npos)
             size = std::max(size, (size_t)std::stoi(pol.substr(pol.find('^') + 1, index_sub)));
         
         if (index_sub == std::string::npos)
@@ -44,16 +44,17 @@ Polinom::Polinom(const std::string& content) {
         else
             coef_polinom[1] = Rational(singelton.substr(0, index_sub_left));
 
-        // std::cout << std::stoi(singelton.substr(index_sub_right + 1, singelton.size())) << "=" << singelton.substr(0, index_sub_left) << std::endl;
     }
     this->coef_polinom = std::move(coef_polinom);
 }
 
-Polinom::Polinom() { this->coef_polinom.push_back(Rational()); }
+Polynomial::Polynomial() : Polynomial("0") {}
 
-std::ostream& operator << (std::ostream& out, const Polinom& polinom) {
+std::ostream& operator << (std::ostream& out, const Polynomial& polinom) {
+    bool flag_zero = true;
     for (size_t i = polinom.coef_polinom.size() - 1; i != -1; --i) {
         if (!polinom.coef_polinom[i].is_zero()) {
+            flag_zero = false;
             if (i != polinom.coef_polinom.size() - 1)
                 out << (polinom.coef_polinom[i].is_sign() ? "" : "+");
             out << polinom.coef_polinom[i];
@@ -62,5 +63,7 @@ std::ostream& operator << (std::ostream& out, const Polinom& polinom) {
             }
         }
     }
+    if (flag_zero)
+        out << 0;
     return out;
 }

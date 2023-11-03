@@ -5,20 +5,17 @@
 #ifndef DM_FALL_2023_INTEGER_H
 #define DM_FALL_2023_INTEGER_H
 
-// windows
-#ifdef CLS_EXPORTS
-#define CLS __declspec(dllexport)
+#ifdef _WIN32
+    // Экспорт символов для Windows
+    #ifdef CLS_EXPORTS
+        #define CLS __declspec(dllexport)
+    #else
+        #define CLS __declspec(dllimport)
+    #endif
 #else
-#define CLS __declspec(dllimport)
+    // Экспорт символов для Linux
+    #define CLS __attribute__((visibility("default")))
 #endif
-
-
-// linux
-/* #ifdef CLS_EXPORTS
-#define CLS __attribute__((visibility("default")))
-#else
-#define CLS
-#endif */
 
 #include "NATURAL.h"
 #include <string>

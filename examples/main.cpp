@@ -6,10 +6,7 @@
 #include "CLS.h"
 
 int main() {
-    Rational a("100");
-    std::cout << a << std::endl;
-    Polinom b("+100x^5-12/5x+3");
+    Polynomial b("-10");
     std::cout << b << std::endl;
-
     return 0;
 }
