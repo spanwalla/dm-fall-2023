@@ -9,7 +9,7 @@ Integer Integer::MOD_ZZ_Z(Integer &num) {
     Integer remainder(nat);
     // если делимое отрицательное и остаток отличен от нуля
     // то остаток равен (делитель - остаток)
-    if (this->sign == 1 && remainder.number.NZER_N_B()){
+    if (this->sign && remainder.number.NZER_N_B()){
         // (остаток минус делитель) по модулю
         remainder.SUB_ZZ_Z(num.ABS_Z_Z());
         remainder.sign = false;
