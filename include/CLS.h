@@ -9,6 +9,5 @@
 #include "NATURAL.h"
 #include "INTEGER.h"
 #include "RATIONAL.h"
-#include "POLYNOMIAL.h"
 
 #endif //DM_FALL_2023_CLS_H
