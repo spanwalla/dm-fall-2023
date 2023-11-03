@@ -8,8 +8,7 @@
 int main() {
     Rational a("100");
     std::cout << a << std::endl;
-    Polinom b("+100x^5-12/5x+3");
-    std::cout << b << std::endl;
-
+    int c;
+    std::cin >> c;
     return 0;
 }

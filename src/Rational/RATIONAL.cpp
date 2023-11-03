@@ -22,6 +22,11 @@ bool Rational::is_zero() const { return this->numerator.POZ_Z_D() == 0; }
 bool Rational::is_sign() const { return this->numerator.POZ_Z_D() == 1; }
 
 std::ostream& operator << (std::ostream& out, const Rational& number) {
-    out << number.numerator << "/" << number.denominator;
+    if (number.is_zero())
+        out << 0;
+    else if (number.denominator.COM_NN_D(Natural(1)) == 0)
+        out << number.numerator;
+    else
+        out << number.numerator << "/" << number.denominator;
     return out;
 }

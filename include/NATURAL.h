@@ -5,20 +5,16 @@
 #ifndef DM_FALL_2023_NATURAL_H
 #define DM_FALL_2023_NATURAL_H
 
-// windows
-/*
-#ifdef CLS_EXPORTS
-#define CLS __declspec(dllexport)
+#ifdef _WIN32
+    // Экспорт символов для Windows
+    #ifdef CLS_EXPORTS
+        #define CLS __declspec(dllexport)
+    #else
+        #define CLS __declspec(dllimport)
+    #endif
 #else
-#define CLS __declspec(dllimport)
-#endif
-*/
-
-// linux
-#ifdef CLS_EXPORTS
-#define CLS __attribute__((visibility("default")))
-#else
-#define CLS
+    // Экспорт символов для Linux
+    #define CLS __attribute__((visibility("default")))
 #endif
 
 #include <string>
@@ -45,11 +41,11 @@ public:
     void MUL_Nk_N(unsigned long long int k);
     void MUL_NN_N(Natural number);
     void SUB_NDN_N(const Natural &number, short digit);
-    Natural DIV_NN_Dk(const Natural &number) const;
-    Natural DIV_NN_N(const Natural& number) const;
-    Natural MOD_NN_N(const Natural& number) const;
-    Natural GCF_NN_N(const Natural& number) const;
-    Natural LCM_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural DIV_NN_Dk(const Natural &number) const;
+    [[nodiscard]] Natural DIV_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural MOD_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural GCF_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural LCM_NN_N(const Natural& number) const;
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
