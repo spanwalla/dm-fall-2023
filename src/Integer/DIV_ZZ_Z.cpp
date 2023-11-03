@@ -4,7 +4,7 @@
 #define CLS_EXPORTS
 #include "INTEGER.h"
 
-Integer Integer::DIV_ZZ_Z(Integer& divisor) {
+Integer Integer::DIV_ZZ_Z(const Integer& divisor) const {
     if (!divisor.number.NZER_N_B())
         throw std::logic_error("The divisor must not be zero!");
     Natural nat = this->number.DIV_NN_N(divisor.number);

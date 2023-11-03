@@ -6,7 +6,7 @@
 #define CLS_EXPORTS
 #include "NATURAL.h"
 
-Natural Natural::LCM_NN_N(const Natural& number) {
+Natural Natural::LCM_NN_N(const Natural& number) const {
     Natural temp_one = *this;
     const Natural& temp_two = number;
     Natural nod = temp_one.GCF_NN_N(temp_two);

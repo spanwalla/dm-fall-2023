@@ -7,7 +7,7 @@
 #define CLS_EXPORTS
 #include "INTEGER.h"
 
-int Integer::POZ_Z_D() {
+int Integer::POZ_Z_D() const {
     if (number.NZER_N_B())
         return this->sign ? 1 : 2;
     else

@@ -6,7 +6,7 @@
 #define CLS_EXPORTS
 #include "NATURAL.h"
 
-Natural Natural::DIV_NN_Dk(const Natural &number)
+Natural Natural::DIV_NN_Dk(const Natural &number) const
 {
     Natural first_number;
     if (COM_NN_D(number) == 1)

@@ -4,7 +4,7 @@
 #define CLS_EXPORTS
 #include "NATURAL.h"
 
-int Natural::COM_NN_D(const Natural& cmp) {
+int Natural::COM_NN_D(const Natural& cmp) const {
         if (cmp.digits.size() == this->digits.size()) {
             for (int i = cmp.digits.size()-1; i >= 0; --i) {
                 if (cmp.digits[i] != this->digits[i])

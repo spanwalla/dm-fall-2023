@@ -4,7 +4,7 @@
 #define CLS_EXPORTS
 #include "INTEGER.h"
 
-Integer Integer::ABS_Z_Z() {
+Integer Integer::ABS_Z_Z() const {
     Integer abs = *this;
     abs.sign = false;
     return abs;
