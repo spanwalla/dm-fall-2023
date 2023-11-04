@@ -37,7 +37,7 @@ public:
     static Integer TRANS_N_Z(const Natural& nat);
     [[nodiscard]] Natural TRANS_Z_N() const;
     void ADD_ZZ_Z(Integer b);
-    void MUL_ZZ_Z(Integer num);
+    void MUL_ZZ_Z(const Integer& num);
     [[nodiscard]] Integer DIV_ZZ_Z(const Integer& divisor) const;
     void SUB_ZZ_Z(Integer b);
     [[nodiscard]] Integer MOD_ZZ_Z(const Integer &num) const;

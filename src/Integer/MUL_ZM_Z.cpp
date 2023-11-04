@@ -1,4 +1,4 @@
-// Created by Shegoleva Nadezhda (2382) on 31.10.2023.
+// Created by Nadezhda Shegoleva (2382) on 31.10.2023.
 // Функция умножает целое число на -1
 
 #define CLS_EXPORTS

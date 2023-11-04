@@ -1,4 +1,4 @@
-// Created by Shegoleva Nadezhda (2382) on 02.11.2023.
+// Created by Nadezhda Shegoleva (2382) on 02.11.2023.
 // Функция складывает два целых числа.
 
 #define CLS_EXPORTS
