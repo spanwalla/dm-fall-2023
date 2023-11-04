@@ -1,6 +1,7 @@
 // Created by Bukharin Maxim (2382) on 04.11.2023.
 // Проверка на целое
 
+#define CLS_EXPORTS
 #include "RATIONAL.h"
 
 bool Rational::INT_Q_B() const {
