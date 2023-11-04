@@ -5,10 +5,16 @@
 #ifndef DM_FALL_2023_NATURAL_H
 #define DM_FALL_2023_NATURAL_H
 
-#ifdef CLS_EXPORTS
-#define CLS __declspec(dllexport)
+#ifdef _WIN32
+    // Экспорт символов для Windows
+    #ifdef CLS_EXPORTS
+        #define CLS __declspec(dllexport)
+    #else
+        #define CLS __declspec(dllimport)
+    #endif
 #else
-#define CLS __declspec(dllimport)
+    // Экспорт символов для Linux
+    #define CLS __attribute__((visibility("default")))
 #endif
 
 #include <string>
@@ -26,7 +32,7 @@ public:
     friend CLS std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
     Natural& operator=(const Natural& number);
 
-    [[nodiscard]] int COM_NN_D(const Natural& cmp);
+    [[nodiscard]] int COM_NN_D(const Natural& cmp) const;
     [[nodiscard]] bool NZER_N_B() const;
     void ADD_1N_N();
     void ADD_NN_N(const Natural& number);
@@ -35,11 +41,11 @@ public:
     void MUL_Nk_N(unsigned long long int k);
     void MUL_NN_N(Natural number);
     void SUB_NDN_N(const Natural &number, short digit);
-    Natural DIV_NN_Dk(const Natural &number);
-    Natural DIV_NN_N(Natural& number);
-    Natural MOD_NN_N(Natural& number);
-    Natural GCF_NN_N(const Natural& number);
-    Natural LCM_NN_N(const Natural& number);
+    [[nodiscard]] Natural DIV_NN_Dk(const Natural &number) const;
+    [[nodiscard]] Natural DIV_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural MOD_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural GCF_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural LCM_NN_N(const Natural& number) const;
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
