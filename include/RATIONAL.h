@@ -31,6 +31,8 @@ public:
     [[nodiscard]] bool is_sign() const;
     friend CLS std::ostream& operator << (std::ostream& out, const Rational& number); // Оператор вывода в поток.
 
+    [[nodiscard]] bool INT_Q_B() const;
+
 private:
     Integer numerator; // числитель
     Natural denominator; // знаменатель
