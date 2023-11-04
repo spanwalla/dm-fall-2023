@@ -36,5 +36,8 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
+add_executable(calculator examples/calculator.cpp)
+target_link_libraries(calculator cls)
+
 add_executable(main examples/main.cpp)
 target_link_libraries(main cls)
