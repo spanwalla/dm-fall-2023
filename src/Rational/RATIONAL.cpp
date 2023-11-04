@@ -15,6 +15,8 @@ Rational::Rational(const std::string& number) {
         throw std::invalid_argument("The denominator cannot be zero.");
 }
 
+Rational::Rational(const Integer& number) : numerator(number), denominator(Natural("1")) {}
+
 Rational::Rational() : numerator("0"), denominator("1") {}
 
 bool Rational::is_zero() const { return this->numerator.POZ_Z_D() == 0; }
