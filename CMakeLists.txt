@@ -48,4 +48,4 @@ target_link_libraries(main cls)
 add_subdirectory(external/googletest)
 
 add_executable(test tests/natural_test.cpp)
-target_link_libraries(test cls gtest gmock pthread)
+target_link_libraries(test cls gtest gmock)
