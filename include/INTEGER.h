@@ -30,6 +30,16 @@ public:
     explicit Integer(const Natural& number);
     Integer();
     friend CLS std::ostream& operator << (std::ostream& out, const Integer& number); // Оператор вывода в поток.
+    friend CLS bool operator==(const Integer& number1, const Integer& number2);
+    friend CLS bool operator!=(const Integer& number1, const Integer& number2);
+    friend CLS bool operator>=(const Integer& number1, const Integer& number2);
+    friend CLS bool operator<=(const Integer& number1, const Integer& number2);
+    friend CLS bool operator>(const Integer& number1, const Integer& number2);
+    friend CLS bool operator<(const Integer& number1, const Integer& number2);
+    Integer& operator++();
+    Integer operator++(int);
+    Integer& operator--();
+    Integer operator--(int);
 
     [[nodiscard]] Integer ABS_Z_Z() const;
     [[nodiscard]] int POZ_Z_D() const;
