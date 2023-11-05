@@ -38,3 +38,54 @@ Integer::Integer(long long int number): sign(number < 0), number(Natural(std::ab
 Integer::Integer(const Natural &number): sign(false), number(number) {}
 
 
+bool Integer::operator==(const Integer& number){
+    return ((this->number == number.number) && (this->sign == number.sign));
+}
+
+
+bool Integer::operator>=(const Integer& number){
+    Integer temp(*this);
+    temp.SUB_ZZ_Z(number);
+    return ((!temp.sign) || (temp.number == Natural()));
+}
+
+
+bool Integer::operator<=(const Integer& number){
+    Integer temp(*this);
+    temp.SUB_ZZ_Z(number);
+    return ((temp.sign) || (temp.number == Natural()));
+}
+
+
+bool Integer::operator>(const Integer& number){
+    Integer temp(*this);
+    temp.SUB_ZZ_Z(number);
+    return (!temp.sign);
+}
+
+
+bool Integer::operator<(const Integer& number){
+    Integer temp(*this);
+    temp.SUB_ZZ_Z(number);
+    return (temp.sign);
+}
+
+Integer& Integer::operator++(){
+    this->ADD_ZZ_Z(Integer(1));
+    return *this;
+}
+
+Integer& Integer::operator++(int){
+    this->ADD_ZZ_Z(Integer(1));
+    return *this;
+}
+
+Integer& Integer::operator--(){
+    this->SUB_ZZ_Z(Integer(1));
+    return *this;
+}
+
+Integer& Integer::operator--(int){
+    this->SUB_ZZ_Z(Integer(1));
+    return *this;
+}
