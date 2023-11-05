@@ -62,3 +62,43 @@ Natural& Natural::operator=(const Natural &number) {
     std::copy(number.digits.begin(), number.digits.end(), std::back_inserter(digits));
     return *this;
 }
+
+bool Natural::operator==(const Natural& number){
+    return (this->COM_NN_D(number) == 0);
+}
+
+bool Natural::operator>=(const Natural& number){
+    return (this->COM_NN_D(number) == 2 || this->COM_NN_D(number) == 0);
+}
+
+bool Natural::operator<=(const Natural& number){
+    return (this->COM_NN_D(number) == 1 || this->COM_NN_D(number) == 0);
+}
+
+bool Natural::operator>(const Natural& number){
+    return (this->COM_NN_D(number) == 2);
+}
+
+bool Natural::operator<(const Natural& number){
+    return (this->COM_NN_D(number) == 1);
+}
+
+Natural& Natural::operator++(){
+    this->ADD_1N_N();
+    return *this;
+}
+
+Natural& Natural::operator++(int){
+    this->ADD_1N_N();
+    return *this;
+}
+
+Natural& Natural::operator--(){
+    this->SUB_NN_N(Natural(1));
+    return *this;
+}
+
+Natural& Natural::operator--(int){
+    this->SUB_NN_N(Natural(1));
+    return *this;
+}
