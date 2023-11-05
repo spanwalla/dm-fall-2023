@@ -2,8 +2,15 @@
 #include "CLS.h"
 
 int main() {
-    std::cout << "Simple test file." << std::endl;
-    Rational b("-10/3");
-    std::cout << b << std::endl;
+    Natural n(0);
+    std::cout << n << '\n';
+    ++n;
+    std::cout << n << '\n';
+    n++;
+    std::cout << n << '\n';
+    --n;
+    std::cout << n << '\n';
+    n--;
+    std::cout << n << '\n';
     return 0;
 }

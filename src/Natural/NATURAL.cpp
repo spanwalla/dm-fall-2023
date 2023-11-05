@@ -63,24 +63,27 @@ Natural& Natural::operator=(const Natural &number) {
     return *this;
 }
 
-bool Natural::operator==(const Natural& number){
-    return (this->COM_NN_D(number) == 0);
+bool operator==(const Natural& number1, const Natural& number2){
+    return (number1.COM_NN_D(number2) == 0);
 }
 
-bool Natural::operator>=(const Natural& number){
-    return (this->COM_NN_D(number) == 2 || this->COM_NN_D(number) == 0);
+bool operator!=(const Natural& number1, const Natural& number2){
+    return (number1.COM_NN_D(number2) != 0);
 }
 
-bool Natural::operator<=(const Natural& number){
-    return (this->COM_NN_D(number) == 1 || this->COM_NN_D(number) == 0);
+bool operator>(const Natural& number1, const Natural& number2){
+    return (number1.COM_NN_D(number2) == 2);
 }
 
-bool Natural::operator>(const Natural& number){
-    return (this->COM_NN_D(number) == 2);
+bool operator<(const Natural& number1, const Natural& number2){
+    return (number1.COM_NN_D(number2) == 1);
 }
 
-bool Natural::operator<(const Natural& number){
-    return (this->COM_NN_D(number) == 1);
+bool operator>=(const Natural& number1, const Natural& number2){
+    return (number1 > number2 || number1 == number2);
+}
+bool operator<=(const Natural& number1, const Natural& number2){
+    return (number1 < number2 || number1 == number2);
 }
 
 Natural& Natural::operator++(){
@@ -88,9 +91,10 @@ Natural& Natural::operator++(){
     return *this;
 }
 
-Natural& Natural::operator++(int){
-    this->ADD_1N_N();
-    return *this;
+Natural Natural::operator++(int){
+    Natural tmp(*this);
+    ++(*this);
+    return tmp;
 }
 
 Natural& Natural::operator--(){
@@ -98,7 +102,8 @@ Natural& Natural::operator--(){
     return *this;
 }
 
-Natural& Natural::operator--(int){
-    this->SUB_NN_N(Natural(1));
-    return *this;
+Natural Natural::operator--(int){
+    Natural tmp(*this);
+    --(*this);
+    return tmp;
 }
