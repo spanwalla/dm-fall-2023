@@ -2,8 +2,8 @@
 // Created by Mihail Fedorov (2382) on 31.10.2023.
 //
 
-#ifndef DM_FALL_2023_POLINOM_H
-#define DM_FALL_2023_POLINOM_H
+#ifndef DM_FALL_2023_POLYNOMIAL_H
+#define DM_FALL_2023_POLYNOMIAL_H
 
 #ifdef _WIN32
     // Экспорт символов для Windows
@@ -25,13 +25,13 @@
 
 class CLS Polynomial {
 public:
-    explicit Polynomial(const std::string& content);
+    explicit Polynomial(std::vector<Rational> coefficients);
     Polynomial();
-    friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polinom); // Оператор вывода в поток.
+    friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
 
 private:
-    std::vector<Rational> coef_polinom; // вектор, хранящий рациональные коэффициенты
+    std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты
 };
 
 
-#endif //DM_FALL_2023_POLINOM_H
+#endif //DM_FALL_2023_POLYNOMIAL_H

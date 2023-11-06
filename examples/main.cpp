@@ -6,7 +6,7 @@
 #include "CLS.h"
 
 int main() {
-    Polynomial b("-10");
+    Polynomial b({Rational("-10")});
     std::cout << b << std::endl;
     return 0;
 }
