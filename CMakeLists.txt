@@ -38,7 +38,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Rational/TRANS_Z_Q.cpp
         src/Rational/TRANS_Q_Z.cpp
 	src/Polynomial/POLYNOMIAL.cpp
-        src/Rational/ADD_QQ_Q.cpp
+        src/Rational/DIV_QQ_Q.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
