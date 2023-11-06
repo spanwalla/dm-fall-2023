@@ -1,5 +1,5 @@
 #include <iostream>
-#include "CLS.h"
+#include <CLS.h>
 
 int main() {
     Natural n(0);
