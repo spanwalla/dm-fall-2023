@@ -26,10 +26,16 @@
 class CLS Rational {
 public:
     explicit Rational(const std::string& number);
+    explicit Rational(const Integer& number);
     Rational();
-    bool is_zero() const;
-    bool is_sign() const;
+    [[nodiscard]] bool is_zero() const;
+    [[nodiscard]] bool is_sign() const;
     friend CLS std::ostream& operator << (std::ostream& out, const Rational& number); // Оператор вывода в поток.
+
+    [[nodiscard]] bool INT_Q_B() const;
+    static Rational TRANS_Z_Q(const Integer& number);
+    [[nodiscard]] Integer TRANS_Q_Z() const;
+    void RED_Q_Q();
 
 private:
     Integer numerator; // числитель

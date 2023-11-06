@@ -1,4 +1,4 @@
-// Created by Semenenko Anna (2382) on 02.11.2023.
+// Created by Anna Semenenko (2382) on 02.11.2023.
 // Частное от деления целого на целое (делитель отличен от нуля).
 
 #define CLS_EXPORTS

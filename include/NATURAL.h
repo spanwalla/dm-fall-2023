@@ -31,6 +31,16 @@ public:
     Natural();
     friend CLS std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
     Natural& operator=(const Natural& number);
+    friend CLS bool operator==(const Natural& number1, const Natural& number2);
+    friend CLS bool operator!=(const Natural& number1, const Natural& number2);
+    friend CLS bool operator>=(const Natural& number1, const Natural& number2);
+    friend CLS bool operator<=(const Natural& number1, const Natural& number2);
+    friend CLS bool operator>(const Natural& number1, const Natural& number2);
+    friend CLS bool operator<(const Natural& number1, const Natural& number2);
+    Natural& operator++();
+    Natural operator++(int);
+    Natural& operator--();
+    Natural operator--(int);
 
     [[nodiscard]] int COM_NN_D(const Natural& cmp) const;
     [[nodiscard]] bool NZER_N_B() const;
@@ -41,11 +51,11 @@ public:
     void MUL_Nk_N(unsigned long long int k);
     void MUL_NN_N(Natural number);
     void SUB_NDN_N(const Natural &number, short digit);
-    Natural DIV_NN_Dk(const Natural &number) const;
-    Natural DIV_NN_N(const Natural& number) const;
-    Natural MOD_NN_N(const Natural& number) const;
-    Natural GCF_NN_N(const Natural& number) const;
-    Natural LCM_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural DIV_NN_Dk(const Natural &number) const;
+    [[nodiscard]] Natural DIV_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural MOD_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural GCF_NN_N(const Natural& number) const;
+    [[nodiscard]] Natural LCM_NN_N(const Natural& number) const;
 
 private:
     std::vector<short> digits; // массив цифр, цифры записаны в обратном порядке
