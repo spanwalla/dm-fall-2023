@@ -246,6 +246,51 @@ public:
         std::cout << "MOD_ZZ_Z(" << a << ", " << b << "): " << a.MOD_ZZ_Z(b) << std::endl;
     }
 
+    void RED_Q_Q(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        std::cout << "RED_Q_Q(" << a << "): ";
+        a.RED_Q_Q();
+        std::cout << a << std::endl;
+    }
+
+    void INT_Q_B(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        std::cout << "INT_Q_B(" << a << "): " << a.INT_Q_B() << std::endl;
+    }
+
+    void TRANS_Z_Q(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Integer a(args[1]);
+        std::cout << "TRANS_Z_Q(" << a << "): " << Rational::TRANS_Z_Q(a) << std::endl;
+    }
+
+    void TRANS_Q_Z(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        std::cout << "TRANS_Q_Z(" << a << "): " << a.TRANS_Q_Z() << std::endl;
+    }
+
+    void ADD_QQ_Q(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        Rational b(args[2]);
+        std::cout << "ADD_QQ_Q(" << a << ", " << b << "): ";
+        a.ADD_QQ_Q(b);
+        std::cout << a << std::endl;
+    }
+
     void ProcessCommand(const std::string& s, const std::string& delimiter) {
         size_t pos_start = 0, pos_end, delim_len = delimiter.length();
         std::string token;
@@ -293,7 +338,12 @@ private:
             {"SUB_ZZ_Z", [this](auto && PH1) { SUB_ZZ_Z(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_ZZ_Z", [this](auto && PH1) { MUL_ZZ_Z(std::forward<decltype(PH1)>(PH1)); }},
             {"DIV_ZZ_Z", [this](auto && PH1) { DIV_ZZ_Z(std::forward<decltype(PH1)>(PH1)); }},
-            {"MOD_ZZ_Z", [this](auto && PH1) { MOD_ZZ_Z(std::forward<decltype(PH1)>(PH1)); }}
+            {"MOD_ZZ_Z", [this](auto && PH1) { MOD_ZZ_Z(std::forward<decltype(PH1)>(PH1)); }},
+            {"RED_Q_Q", [this](auto && PH1) { RED_Q_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"INT_Q_B", [this](auto && PH1) { INT_Q_B(std::forward<decltype(PH1)>(PH1)); }},
+            {"TRANS_Z_Q", [this](auto && PH1) { TRANS_Z_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"TRANS_Q_Z", [this](auto && PH1) { TRANS_Q_Z(std::forward<decltype(PH1)>(PH1)); }},
+            {"ADD_QQ_Q", [this](auto && PH1) { ADD_QQ_Q(std::forward<decltype(PH1)>(PH1)); }}
     };
 };
 
