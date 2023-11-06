@@ -2,6 +2,8 @@
 #include <CLS.h>
 
 int main() {
+    Polynomial b({Rational("-10")});
+    std::cout << b << std::endl;
     Natural n(0);
     std::cout << n << '\n';
     ++n;
