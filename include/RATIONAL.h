@@ -35,6 +35,7 @@ public:
     [[nodiscard]] bool INT_Q_B() const;
     static Rational TRANS_Z_Q(const Integer& number);
     [[nodiscard]] Integer TRANS_Q_Z() const;
+    void RED_Q_Q();
 
 private:
     Integer numerator; // числитель

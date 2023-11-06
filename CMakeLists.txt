@@ -36,6 +36,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Rational/INT_Q_B.cpp
         src/Rational/TRANS_Z_Q.cpp
         src/Rational/TRANS_Q_Z.cpp
+	src/Rational/RED_Q_Q.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
