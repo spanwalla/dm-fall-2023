@@ -1,4 +1,4 @@
-// Created by Kochurov Aleksandr (2382) on 05.11.2023.
+// Created by Aleksandr Kochurov (2382) on 05.11.2023.
 // Сложение дробей.
 
 
