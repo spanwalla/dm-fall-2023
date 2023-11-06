@@ -33,12 +33,13 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Integer/SUB_ZZ_Z.cpp
         src/Integer/MOD_ZZ_Z.cpp
         src/Rational/RATIONAL.cpp
-	src/Rational/RED_Q_Q.cpp
+		src/Rational/RED_Q_Q.cpp
         src/Rational/INT_Q_B.cpp
         src/Rational/TRANS_Z_Q.cpp
         src/Rational/TRANS_Q_Z.cpp
-	src/Polynomial/POLYNOMIAL.cpp
         src/Rational/ADD_QQ_Q.cpp
+		src/Polynomial/POLYNOMIAL.cpp
+		src/Polynomial/DEG_P_N.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 

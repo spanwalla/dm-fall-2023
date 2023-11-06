@@ -291,6 +291,14 @@ public:
         std::cout << a << std::endl;
     }
 
+    void DEG_P_N(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a({Rational("1"), Rational("2"), Rational("1")});
+        std::cout << "DEG_P_N(" << a << "): " << a.DEG_P_N() << std::endl;
+    }
+
     void ProcessCommand(const std::string& s, const std::string& delimiter) {
         size_t pos_start = 0, pos_end, delim_len = delimiter.length();
         std::string token;
@@ -343,7 +351,8 @@ private:
             {"INT_Q_B", [this](auto && PH1) { INT_Q_B(std::forward<decltype(PH1)>(PH1)); }},
             {"TRANS_Z_Q", [this](auto && PH1) { TRANS_Z_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"TRANS_Q_Z", [this](auto && PH1) { TRANS_Q_Z(std::forward<decltype(PH1)>(PH1)); }},
-            {"ADD_QQ_Q", [this](auto && PH1) { ADD_QQ_Q(std::forward<decltype(PH1)>(PH1)); }}
+            {"ADD_QQ_Q", [this](auto && PH1) { ADD_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }}
     };
 };
 
