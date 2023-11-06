@@ -1,3 +1,6 @@
+//created by Sofya Bodareva on 06.11.23
+//модульное тестирование функций натуральных чисел
+
 #include <gtest/gtest.h>
 #include "../include/CLS.h"
 
@@ -6,7 +9,7 @@
 
 // №1 - в первом числе больше цифр, чем во втором
 
-TEST(First_More_Digits, COM_NN_D_TEST){
+TEST(First_more_digits, COM_NN_D_TEST){
     Natural n1 ("12384723");
     Natural n2 ("342524");
 
@@ -16,7 +19,7 @@ TEST(First_More_Digits, COM_NN_D_TEST){
 
 // №2 - в числах одинаковое количество цифр, но первое больше
 
-TEST(First_Greater_And_Same_Number_Of_Digits, COM_NN_D_TEST){
+TEST(First_greater_and_same_number_of_digits, COM_NN_D_TEST){
     Natural n1("5555555555555");
     Natural n2("4444444444444");
 
@@ -25,7 +28,7 @@ TEST(First_Greater_And_Same_Number_Of_Digits, COM_NN_D_TEST){
 
 
 // №3 - числа равны
-TEST(Equal_Numbers, COM_NN_D_TEST){
+TEST(Equal_numbers, COM_NN_D_TEST){
     Natural n1("342353454");
     Natural n2("342353454");
 
@@ -35,7 +38,7 @@ TEST(Equal_Numbers, COM_NN_D_TEST){
 
 // №4 - во втором числе больше цифр, чем в первом
 
-TEST(Second_More_Digits, COM_NN_D_TEST){
+TEST(Second_more_digits, COM_NN_D_TEST){
     Natural n1("5439");
     Natural n2("738205");
 
@@ -45,7 +48,7 @@ TEST(Second_More_Digits, COM_NN_D_TEST){
 
 // №5 - в числах одинаковое количество цифр, но второе больше
 
-TEST(Second_Greater_And_Same_Number_Of_Digits, COM_NN_D_TEST){
+TEST(Second_greater_and_same_number_of_digits, COM_NN_D_TEST){
     Natural n1("8888888");
     Natural n2("8888889");
 
@@ -57,7 +60,7 @@ TEST(Second_Greater_And_Same_Number_Of_Digits, COM_NN_D_TEST){
 
 // №6 - число равно 0
 
-TEST(Number_Is_Zero, NZER_N_B_TEST){
+TEST(Number_is_zero, NZER_N_B_TEST){
     Natural n("0");
 
     ASSERT_EQ(n.NZER_N_B(), false);
@@ -65,7 +68,7 @@ TEST(Number_Is_Zero, NZER_N_B_TEST){
 
 // №7 - число не равно 0
 
-TEST(Number_Is_Not_Zero, NZER_N_B_TEST){
+TEST(Number_is_not_zero, NZER_N_B_TEST){
     Natural n("3856458436856238456236562");
 
     ASSERT_EQ(n.NZER_N_B(), true);
@@ -76,7 +79,7 @@ TEST(Number_Is_Not_Zero, NZER_N_B_TEST){
 
 // №8 - без переноса разрядов
 
-TEST(Add_Without_Offset, ADD_1N_N_TEST){
+TEST(Add_1_without_offset, ADD_1N_N_TEST){
     Natural n(1000);
 
     n.ADD_1N_N();
@@ -86,7 +89,7 @@ TEST(Add_Without_Offset, ADD_1N_N_TEST){
 
 // №9 - с переносом разряда без увеличения количества цифр
 
-TEST(Add_With_Offset_Inplace, ADD_1N_N_TEST){
+TEST(Add_1_with_offset_inplace, ADD_1N_N_TEST){
     Natural n(1999);
     
     n.ADD_1N_N();
@@ -96,7 +99,7 @@ TEST(Add_With_Offset_Inplace, ADD_1N_N_TEST){
 
 // №10 - с переносом разряда с увеличением количества цифр
 
-TEST(Add_With_Offset_Not_Inplace, ADD_1N_N_TEST){
+TEST(Add_1_with_offset_not_inplace, ADD_1N_N_TEST){
     Natural n(9999999999);
 
     n.ADD_1N_N();
@@ -106,7 +109,7 @@ TEST(Add_With_Offset_Not_Inplace, ADD_1N_N_TEST){
 
 // №11 - прибавление к 0
 
-TEST(Add_To_Zero, ADD_1N_N_TEST){
+TEST(Add_1_to_zero, ADD_1N_N_TEST){
     Natural n;
 
     n.ADD_1N_N();
@@ -119,7 +122,7 @@ TEST(Add_To_Zero, ADD_1N_N_TEST){
 
 // №12 - без переноса разряда
 
-TEST(Add_without_Offset, ADD_NN_N_TEST){
+TEST(Add_without_offset, ADD_NN_N_TEST){
     Natural n1 (123000);
     Natural n2 (6423);
 
@@ -130,7 +133,7 @@ TEST(Add_without_Offset, ADD_NN_N_TEST){
 
 //№13 - с переносом разряда без увеличвания количества цифр
 
-TEST(Add_with_Offset_Inplace, ADD_NN_N_TEST){
+TEST(Add_with_offset_inplace, ADD_NN_N_TEST){
     Natural n1(19999);
     Natural n2(2);
 
@@ -141,7 +144,7 @@ TEST(Add_with_Offset_Inplace, ADD_NN_N_TEST){
 
 // №14 - с переносом разряда с увеличением количества цифр
 
-TEST(Add_With_Offset_not_Inplace, ADD_NN_N_TEST){
+TEST(Add_with_offset_not_inplace, ADD_NN_N_TEST){
     Natural n1(99);
     Natural n2(6);
 
@@ -152,13 +155,545 @@ TEST(Add_With_Offset_not_Inplace, ADD_NN_N_TEST){
 
 // №15 - без переноса разряда с увеличением количества цифр
 
-TEST(Add_without_offset_But_Not_Inplace, ADD_NN_N_TEST){
+TEST(Add_without_offset_but_not_inplace, ADD_NN_N_TEST){
     Natural n1(64);
     Natural n2(100);
 
     n1.ADD_NN_N(n2);
 
     ASSERT_TRUE(n1 == Natural(164));
+}
+
+
+// Тесты для функции SUB_NN_N - вычитание для случая с неотрицательным результатом
+
+// №16 - без займа разрядов и уменьшения количества цифр
+
+TEST(Sub_without_offset_and_loss_digits, SUB_NN_N_TEST){
+    Natural n1("438293550345");
+    Natural n2("342");
+
+    n1.SUB_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural("438293550003"));
+}
+
+// №17 - с займом разрядов с уменьшением количества цифр
+
+TEST(Sub_with_offset_without_loss_digits, SUB_NN_N_TEST){
+    Natural n1("83883494938");
+    Natural n2("19");
+
+    n1.SUB_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural("83883494919"));
+}
+
+// №18 - с займом разрядов и с уменьшением количества цифр
+
+TEST(Sub_with_offset_and_loss_digits, SUB_NN_N_TEST){
+    Natural n1("1000000");
+    Natural n2("5437");
+
+    n1.SUB_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural(994563));
+}
+
+// №19 - числа равны
+
+TEST(Sub_equal_digits, SUB_NN_N_TEST){
+    Natural n1("54839");
+    Natural n2("54839");
+
+    n1.SUB_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural());
+}
+
+// №20 - без занимания разрядов с уменьшением количества цифр
+
+TEST(Sub_without_offset_with_loss_digits, SUB_NN_N_TEST){
+    Natural n1("245");
+    Natural n2("240");
+
+    n1.SUB_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural(5));
+}
+
+// №21 - второе больше первого
+
+TEST(Sub_error, SUB_NN_N_TEST){
+    Natural n1(15);
+    Natural n2(21);
+
+    ASSERT_THROW(n1.SUB_NN_N(n2), std::logic_error);
+}
+
+
+ // Тесты для функции MUL_ND_N - умножение натурального на цифру
+
+// №22 - умножение на 0
+
+TEST(MulND_digit_is_zero, MUL_ND_N_TEST){
+    Natural n("4583454385925689265892");
+
+    n.MUL_ND_N(0);
+
+    ASSERT_TRUE(n == Natural(0));
+}
+
+// №23 - умножение на 1
+
+TEST(MulND_digit_is_one, MUL_ND_N_TEST){
+    Natural n("4525");
+
+    n.MUL_ND_N(1);
+
+    ASSERT_TRUE(n == Natural(4525));
+}
+
+// №24 - умножение натурального нуля на цифру
+
+TEST(MulND_natural_is_zero, MUD_ND_N_TEST){
+    Natural n(0);
+
+    n.MUL_ND_N(4);
+
+    ASSERT_TRUE(n == Natural(0));
+}
+
+// №25 - умножение без увеличения количества цифр
+
+TEST(MulND_inplace, MUL_ND_N_TEST){
+    Natural n(15);
+
+    n.MUL_ND_N(5);
+
+    ASSERT_TRUE(n == Natural(75));
+}
+
+// №26 - умножение с увеличением количества цифр
+
+TEST(MulND_not_inplace, MUL_ND_N_TEST){
+    Natural n(21);
+
+    n.MUL_ND_N(5);
+
+    ASSERT_TRUE(n == Natural(105));
+}
+
+// №27 - попытка умножения на отрицательное
+
+TEST(MulND_negative_number, MUL_ND_N_TEST){
+    Natural n(5435);
+
+    n.MUL_ND_N(-3);
+
+    ASSERT_TRUE(n == Natural(5435));
+}
+
+// №28 - попытка умножения не на цифру
+
+TEST(MulND_not_digit, MUL_ND_N_TEST){
+    Natural n(5235);
+
+    n.MUL_ND_N(4533);
+
+    ASSERT_TRUE(n == Natural(5235));
+}
+
+
+// Тесты для фукнции MUL_Nk_N - умножение натурального на 10^k
+
+// №29 - число равно 0
+
+TEST(MulNk_natural_is_zero, MUL_Nk_N_TEST){
+    Natural n(0);
+
+    n.MUL_Nk_N(3942);
+
+    ASSERT_TRUE(n == Natural(0));
+}
+
+// №30 - k равно 0
+
+TEST(MulNk_k_is_zero, MUL_Nk_N_TEST){
+    Natural n(43);
+
+    n.MUL_Nk_N(0);
+
+    ASSERT_TRUE(n == Natural(43));
+}
+
+// №31 - общий случай
+
+TEST(MulNk_general_case, MUL_Nk_N_TEST){
+    Natural n(1223);
+
+    n.MUL_Nk_N(5);
+
+    ASSERT_TRUE(n == Natural("122300000"));
+}
+
+
+// Тесты фукнции MUL_NN_N - умножение натуральных чисел
+
+// №32 - без увеличения количества цифр
+
+TEST(Mul_inplace, MUL_NN_N_TEST){
+    Natural n1(33);
+    Natural n2(3);
+
+    n1.MUL_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural(99));
+}
+
+// №33 - с увеличением количества цифр
+
+TEST(Mul_not_inplace, MUL_NN_N_TEST){
+    Natural n1(66);
+    Natural n2(6);
+
+    n1.MUL_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural(396));
+}
+
+// №34 - общий случай
+
+TEST(Mul_general_case, MUL_NN_N_TEST){
+    Natural n1("53485738975");
+    Natural n2("634683463");
+
+    n1.MUL_NN_N(n2);
+
+    ASSERT_TRUE(n1 == Natural("33946514033767070425"));
+}
+
+
+/* Тесты для функции SUB_NDN_N - вычитание из натурального другого натурального
+домноженного на цифру для случая с неотрицательным результатом */
+
+// №35 - после умножения на цифру вычитаемое становится больше уменьшаемого
+
+TEST(SubNDN_error, SUB_NDN_N_TEST){
+    Natural n1(46);
+    Natural n2(15);
+
+    ASSERT_THROW(n1.SUB_NDN_N(n2, 4), std::logic_error);
+}
+
+// №36 - общий случай
+
+TEST(SubNDN_general_case, SUB_NDN_N_TEST){
+    Natural n1("3458734753857348597234");
+    Natural n2("5438579");
+
+    n1.SUB_NDN_N(n2, 5);
+
+    ASSERT_TRUE(n1 == Natural("3458734753857321404339"));
+}
+
+// №37 - умножение на 0
+
+TEST(Sub_NDN_digit_is_zero, SUB_NDN_N_TEST){
+    Natural n1("242344235");
+    Natural n2("243");
+
+    n1.SUB_NDN_N(n2, 0);
+
+    ASSERT_TRUE(n1 == Natural("242344235"));
+}
+
+
+/* Тесты для функции DIV_NN_Dk - вычисление первой цифры деления большего натурального
+ на меньшее, домноженное на 10^k, где k - номер позиции этой цифры */
+
+// №38 - числа равны
+
+TEST(DivDk_equal_naturals, DIV_NN_Dk_TEST){
+    Natural n1(100);
+    Natural n2(100);
+
+    ASSERT_TRUE(n1.DIV_NN_Dk(n2) == Natural(1));
+}
+
+// №39 - деление на 1
+
+TEST(DivDk_second_is_one, DIV_NN_Dk_TEST){
+    Natural n1(153);
+    Natural n2(1);
+
+    ASSERT_TRUE(n1.DIV_NN_Dk(n2) == Natural(100));
+}
+
+// №40 - делитель больше делимого 
+
+TEST(Div_Dk_error, DIV_NN_Dk_TEST){
+    Natural n1(132);
+    Natural n2(5452);
+
+    ASSERT_THROW(n1.DIV_NN_Dk(n2), std::logic_error);
+}
+
+// №41 - общий случай
+
+TEST(Div_Dk_general_case, DIV_NN_Dk_TEST){
+    Natural n1("52352354365765239789353453");
+    Natural n2("32545768743652356");
+
+    ASSERT_TRUE(n1.DIV_NN_Dk(n2) == Natural("1000000000"));
+}
+
+
+/* Тесты функции DIV_NN_N - неполное частное от деления первого натурального числа
+ на второе с остатком (делитель отличен от нуля) */
+
+// №42 - первое меньше второго
+
+TEST(Div_first_less_than_second, DIV_NN_N_TEST){
+    Natural n1(10);
+    Natural n2(64);
+
+    ASSERT_TRUE(n1.DIV_NN_N(n2) == Natural(0));
+}
+
+// №43 - первое равно 0
+
+TEST(Div_first_is_zero, DIV_NN_N_TEST){
+    Natural n1(0);
+    Natural n2(354325);
+
+    ASSERT_TRUE(n1.DIV_NN_N(n2) == n1);
+}
+
+// №44 - числа равны
+
+TEST(Div_equal_naturals, DIV_NN_N_TEST){
+    Natural n1(342);
+    Natural n2(342);
+
+    ASSERT_TRUE(n1.DIV_NN_N(n2) == Natural(1));
+}
+
+// №45 - второе равно 1
+
+TEST(Div_second_is_one, DIV_NN_N_TEST){
+    Natural n1(769);
+    Natural n2(1);
+
+    ASSERT_TRUE(n1.DIV_NN_N(n2) == n1);
+}
+
+// №46 - деление на 0
+
+TEST(Div_error, DIV_NN_N_TEST){
+    Natural n1(352);
+    Natural n2(0);
+
+    ASSERT_THROW(n1.DIV_NN_N(n2), std::logic_error);
+}
+
+// №47 - общий случай
+
+TEST(Div_general_case, DIV_NN_N_TEST){
+    Natural n1("5348758364583465364534");
+    Natural n2("9534775");
+
+    ASSERT_TRUE(n1.DIV_NN_N(n2) == Natural("560973737144658"));
+}
+
+
+/*Тесты функции MOD_NN_N - остаток от деления первого натурального числа
+на второе натуральное (делитель отличен от нуля)*/
+
+// №48 - первое меньше второго
+
+TEST(Mod_first_less_than_second, MOD_NN_N_TEST){
+    Natural n1(345);
+    Natural n2(79891);
+
+    ASSERT_TRUE(n1.MOD_NN_N(n2) == n1);
+}
+
+// №49 - первое равно 0
+
+TEST(Mod_first_is_zero, MOD_NN_N_TEST){
+    Natural n1("0");
+    Natural n2("54522542");
+
+    ASSERT_TRUE(n1.MOD_NN_N(n2) == n1);
+}
+
+// №50 - числа равны
+
+TEST(Mod_equal_naturals, MOD_NN_N_TEST){
+    Natural n1(653);
+    Natural n2(653);
+
+    ASSERT_TRUE(n1.MOD_NN_N(n2) == Natural(0));
+}
+
+// №51 - второе равно 1
+
+TEST(Mod_second_is_one, MOD_NN_N_TEST){
+    Natural n1(46463);
+    Natural n2(1);
+
+    ASSERT_TRUE(n1.MOD_NN_N(n2) == Natural(0));
+}
+
+// №52 - второе равно 0
+
+TEST(Mod_error, MOD_NN_N_TEST){
+    Natural n1(453);
+    Natural n2(0);
+
+    ASSERT_THROW(n1.MOD_NN_N(n2), std::logic_error);
+}
+
+//  №53 - общий случай
+
+TEST(Mod_general_case, MOD_NN_N_TEST){
+    Natural n1("94756347864263443634634523895892365");
+    Natural n2("6345683475986485684");
+
+    ASSERT_TRUE(n1.MOD_NN_N(n2) == Natural("1959217459544967717"));
+}
+
+
+//Тесты для функции GCF_NN_N - НОД натуральных чисел
+
+// №54 - Оба числа равны 0
+
+TEST(Gcf_error, GSF_NN_N_TEST){
+    Natural n1(0);
+    Natural n2(0);
+
+    ASSERT_THROW(n1.GCF_NN_N(n2), std::logic_error);
+}
+
+// №55 - одно из чисел равно 1
+
+TEST(Gcf_with_one, GCF_NN_N_TEST){
+    Natural n1(6345);
+    Natural n2(1);
+
+    ASSERT_TRUE(n1.GCF_NN_N(n2) ==  n2);
+}
+
+// №56 - первое число равно 0
+
+TEST(Gcf_first_is_zero, GCF_NN_N_TEST){
+    Natural n1(0);
+    Natural n2(4235);
+
+    ASSERT_TRUE(n1.GCF_NN_N(n2) == n2);
+}
+
+// №57 - числа равны
+
+TEST(Gcf_equal_naturals, GCF_NN_N_TEST){
+    Natural n1(785);
+    Natural n2(785);
+
+    ASSERT_TRUE(n1.GCF_NN_N(n2) == n1);
+}
+
+// №58 - одно из чисел кратно другому
+
+TEST(Gcf_one_number_is_a_multiple_of_another, GCF_NN_N_TEST){
+    Natural n1(30);
+    Natural n2(210);
+
+    ASSERT_TRUE(n1.GCF_NN_N(n2) == n1);
+}
+
+// №59 - числа взаимно простые
+
+TEST(Gcf_mutually_prime_numbers, GCF_NN_N_TEST){
+    Natural n1(101);
+    Natural n2(13);
+
+    ASSERT_TRUE(n1.GCF_NN_N(n2) == Natural(1));
+}
+
+// №60 - общий случай
+
+TEST(Gcf_general_case, GCF_NN_N_TEST){
+    Natural n1("97578237586235623787509234643634647563783684634");
+    Natural n2("13452759874967396");
+
+    ASSERT_TRUE(n1.GCF_NN_N(n2) == Natural(2));
+}
+
+
+// Тесты для функции LCM_NN_N - НОК натуральных чисел
+
+// №61 - одно из чисел 0
+
+TEST(Lcm_one_zero, LCM_NN_N_TEST){
+    Natural n1("345436");
+    Natural n2(0);
+
+    ASSERT_TRUE(n1.LCM_NN_N(n2) == n2);
+}
+
+// №62 - оба числа 0
+
+TEST(Lcm_error, LCM_NN_N_TEST){
+    Natural n1(0);
+    Natural n2(0);
+
+    ASSERT_THROW(n1.LCM_NN_N(n2), std::logic_error);
+}
+
+// №63 - одно из чисел равно 1
+
+TEST(Lcm_one_is_one, LCM_NN_N_TEST){
+    Natural n1("156876");
+    Natural n2(1);
+
+    ASSERT_TRUE(n1.LCM_NN_N(n2) == n1);
+}
+
+// №64 - числа равны
+
+TEST(Lcm_equal_naturals, LCM_NN_N_TEST){
+    Natural n1(987);
+    Natural n2(987);
+
+    ASSERT_TRUE(n1.LCM_NN_N(n2) == n1);
+}
+
+// №65 - одно из чисел кратно другому
+
+TEST(Lcm_one_number_is_a_multiple_of_another, LCM_NN_N_TEST){
+    Natural n1(256);
+    Natural n2(64);
+
+    ASSERT_TRUE(n1.LCM_NN_N(n2) == n1);
+}
+
+// №66 - числа взаимно простые
+
+TEST(Lcm_mutually_prime_numbers, LCM_NN_N_TEST){
+    Natural n1(13);
+    Natural n2(17);
+
+    ASSERT_TRUE(n1.LCM_NN_N(n2) == Natural(221));
+}
+
+// №67 - общий случай
+
+TEST(Lcm_general_case, LCM_NN_N_TEST){
+    Natural n1("2397592375972364");
+    Natural n2("634663264657547879987");
+
+    ASSERT_TRUE(n1.LCM_NN_N(n2) == Natural("1521663804652667493929718185900679268"));
 }
 
 int main(int argc, char** argv){
