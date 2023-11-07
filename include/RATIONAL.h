@@ -36,6 +36,8 @@ public:
     static Rational TRANS_Z_Q(const Integer& number);
     [[nodiscard]] Integer TRANS_Q_Z() const;
     void RED_Q_Q();
+    void ADD_QQ_Q(const Rational& number);
+    void SUB_QQ_Q(const Rational& number);
 
     void MUL_QQ_Q(const Rational& number);
 
