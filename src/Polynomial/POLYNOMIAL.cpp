@@ -7,6 +7,48 @@
 
 #include <utility>
 
+Polynomial::Polynomial(const std::string& content) {
+    std::string pol(content);
+
+    std::vector<std::string> substr_pol;
+    size_t size = 0;
+
+    while (!pol.empty()) {
+        size_t index_sub = std::min(pol.find('-', 1), pol.find('+', 1));
+        substr_pol.push_back(pol.substr(0, index_sub));
+
+        size_t index_degree = pol.find('^');
+        if (index_degree == std::string::npos && pol.find('x') != std::string::npos)
+            size = std::max(size, (size_t)1);
+        else if (pol.find('^') != std::string::npos)
+            size = std::max(size, (size_t)std::stoi(pol.substr(pol.find('^') + 1, index_sub)));
+        
+        if (index_sub == std::string::npos)
+            pol = "";
+        else
+            pol = pol.substr(index_sub);
+    }
+
+    std::vector<Rational> coefficients(size + 1, Rational());
+    for (auto singelton : substr_pol) {
+        size_t index_sub_left = std::min(singelton.find('x'), singelton.find('*'));
+        size_t index_sub_right = singelton.find('^');
+
+        if (index_sub_left == std::string::npos)
+            index_sub_left = singelton.size();
+
+        if (index_sub_right != std::string::npos)
+            coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += Rational(singelton.substr(0, index_sub_left));
+        else if (singelton.find('x') == std::string::npos)
+            coefficients[0] += Rational(singelton.substr(0, index_sub_left));
+        else
+            coefficients[1] += Rational(singelton.substr(0, index_sub_left));
+
+    }
+    this->coefficients = std::move(coefficients);
+    this->clean_zero();
+}
+
 Polynomial::Polynomial(std::vector<Rational> coefficients): coefficients(std::move(coefficients)) {
     this->clean_zero();
 }
