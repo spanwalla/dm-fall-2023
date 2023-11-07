@@ -39,6 +39,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Rational/TRANS_Q_Z.cpp
         src/Rational/ADD_QQ_Q.cpp
         src/Rational/SUB_QQ_Q.cpp
+        src/Rational/MUL_QQ_Q.cpp
         src/Polynomial/POLYNOMIAL.cpp
         src/Polynomial/DEG_P_N.cpp
 		    src/Polynomial/MUL_Pxk_P.cpp
@@ -49,7 +50,6 @@ add_executable(calculator examples/calculator.cpp)
 target_link_libraries(calculator cls)
 
 add_executable(main examples/main.cpp)
-
 target_link_libraries(main cls)
 
 add_subdirectory(external/googletest)
