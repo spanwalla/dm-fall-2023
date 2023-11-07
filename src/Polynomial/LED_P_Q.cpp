@@ -1,7 +1,10 @@
-//Created by Chepasov_Dmitry GR 2382 07.11.23
-#include "POLYNOMIAL.h"
+// Created by Dmitry Chepasov (2382) on 07.11.2023.
+// Старший коэффициент многочлена.
+
 #define CLS_EXPORTS
-Rational Polynomial::LED_P_Q(){
-        this->clean_zero();
-        return this->coefficients.back();
+#include "POLYNOMIAL.h"
+
+Rational Polynomial::LED_P_Q() {
+    this->clean_zero();
+    return this->coefficients.back();
 }
