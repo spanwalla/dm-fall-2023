@@ -37,48 +37,48 @@ Integer::Integer(): sign(false), number(Natural(0)) {}
 Integer::Integer(long long int number): sign(number < 0), number(Natural(std::abs(number))) {}
 Integer::Integer(const Natural &number): sign(false), number(number) {}
 
-bool operator==(const Integer& number1, const Integer& number2){
+bool operator==(const Integer& number1, const Integer& number2) {
     return ((number1.number.COM_NN_D(number2.number) == 0) && (number1.sign == number2.sign));
 }
 
-bool operator!=(const Integer& number1, const Integer& number2){
-    return ((!(number1.number.COM_NN_D(number2.number) == 0)) || (!(number1.sign == number2.sign)));
+bool operator!=(const Integer& number1, const Integer& number2) {
+    return (number1.number.COM_NN_D(number2.number) != 0 || number1.sign != number2.sign);
 }
 
-bool operator>(const Integer& number1, const Integer& number2){
+bool operator>(const Integer& number1, const Integer& number2) {
     Integer tmp(number1);
     tmp.SUB_ZZ_Z(number2);
     return (!tmp.sign);
 }
-bool operator<(const Integer& number1, const Integer& number2){
+bool operator<(const Integer& number1, const Integer& number2) {
     return (!(number1 > number2) && !(number1 == number2));
 }
 
-bool operator>=(const Integer& number1, const Integer& number2){
+bool operator>=(const Integer& number1, const Integer& number2) {
     return ((number1 > number2) || (number1 == number2));
 }
 
-bool operator<=(const Integer& number1, const Integer& number2){
+bool operator<=(const Integer& number1, const Integer& number2) {
     return (!(number1 > number2) || (number1 == number2));
 }
 
-Integer& Integer::operator++(){
+Integer& Integer::operator++() {
     this->ADD_ZZ_Z(Integer(1));
     return *this;
 }
 
-Integer Integer::operator++(int){
+Integer Integer::operator++(int) {
     Integer tmp(*this);
     ++(*this);
     return tmp;
 }
 
-Integer& Integer::operator--(){
+Integer& Integer::operator--() {
     this->SUB_ZZ_Z(Integer(1));
     return *this;
 }
 
-Integer Integer::operator--(int){
+Integer Integer::operator--(int) {
     Integer tmp(*this);
     --(*this);
     return tmp;

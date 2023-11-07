@@ -1,5 +1,8 @@
 //
 // Created by Mihail Fedorov (2382) on 31.10.2023.
+// Класс многочленов, в векторе из рациональных чисел хранятся коэффициенты.
+// На нулевой позиции находится свободный член, на последней старший.
+// Очень желательно не забывать убирать незначащие нули, если они могут появиться.
 //
 
 #ifndef DM_FALL_2023_POLYNOMIAL_H
@@ -27,12 +30,15 @@ class CLS Polynomial {
 public:
     explicit Polynomial(std::vector<Rational> coefficients);
     Polynomial();
+    bool is_zero();
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
 
+    void MUL_Pxk_P(unsigned long long int k);
     [[nodiscard]] int DEG_P_N() const;
 
 private:
-    std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты
+    std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
+    void clean_zero();
 };
 
 
