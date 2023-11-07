@@ -37,12 +37,14 @@ Polynomial::Polynomial(const std::string& content) {
         if (index_sub_left == std::string::npos)
             index_sub_left = singelton.size();
 
+        Rational coefficient = Rational((singelton.substr(0, index_sub_left) == "" || singelton.substr(0, index_sub_left) == "-") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
+
         if (index_sub_right != std::string::npos)
-            coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += Rational(singelton.substr(0, index_sub_left));
+            coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += coefficient;
         else if (singelton.find('x') == std::string::npos)
-            coefficients[0] += Rational(singelton.substr(0, index_sub_left));
+            coefficients[0] += coefficient;
         else
-            coefficients[1] += Rational(singelton.substr(0, index_sub_left));
+            coefficients[1] += coefficient;
 
     }
     this->coefficients = std::move(coefficients);
@@ -62,8 +64,10 @@ std::ostream& operator << (std::ostream& out, const Polynomial& polynomial) {
             flag_zero = false;
             if (i != polynomial.coefficients.size() - 1)
                 out << (polynomial.coefficients[i].is_sign() ? "" : "+");
-            if (polynomial.coefficients[i] != Rational("1"))
+            if (polynomial.coefficients[i] != Rational("1") && polynomial.coefficients[i] != Rational("-1") || i == 0)
                 out << polynomial.coefficients[i];
+            if (polynomial.coefficients[i] == Rational("-1") && i != 0)
+                out << "-";
             if (i > 0) {
                 out << (i == 1 ? "x" : "x^" + std::to_string(i));
             }

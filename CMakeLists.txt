@@ -33,6 +33,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Integer/SUB_ZZ_Z.cpp
         src/Integer/MOD_ZZ_Z.cpp
         src/Rational/RATIONAL.cpp
+        src/Rational/OPERATORS.cpp
 		    src/Rational/RED_Q_Q.cpp
         src/Rational/INT_Q_B.cpp
         src/Rational/TRANS_Z_Q.cpp
