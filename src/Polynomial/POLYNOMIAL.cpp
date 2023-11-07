@@ -37,7 +37,7 @@ Polynomial::Polynomial(const std::string& content) {
         if (index_sub_left == std::string::npos)
             index_sub_left = singelton.size();
 
-        Rational coefficient = Rational((singelton.substr(0, index_sub_left) == "" || singelton.substr(0, index_sub_left) == "-") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
+        Rational coefficient = Rational((singelton.substr(0, index_sub_left) == "" || singelton.substr(0, index_sub_left) == "-" || singelton.substr(0, index_sub_left) == "+") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
 
         if (index_sub_right != std::string::npos)
             coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += coefficient;
