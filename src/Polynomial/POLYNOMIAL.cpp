@@ -5,9 +5,13 @@
 #define CLS_EXPORTS
 #include "POLYNOMIAL.h"
 
-Polynomial::Polynomial(std::vector<Rational> coefficients): coefficients(coefficients) {}
+#include <utility>
 
-Polynomial::Polynomial() : Polynomial({Rational(0)}) {}
+Polynomial::Polynomial(std::vector<Rational> coefficients): coefficients(std::move(coefficients)) {
+    this->clean_zero();
+}
+
+Polynomial::Polynomial() : Polynomial({Rational()}) {}
 
 std::ostream& operator << (std::ostream& out, const Polynomial& polynomial) {
     bool flag_zero = true;
@@ -25,4 +29,13 @@ std::ostream& operator << (std::ostream& out, const Polynomial& polynomial) {
     if (flag_zero)
         out << 0;
     return out;
+}
+
+void Polynomial::clean_zero() {
+    while (coefficients.size() > 1 && coefficients.back().is_zero())
+        coefficients.pop_back();
+}
+
+bool Polynomial::is_zero() {
+    return std::ranges::all_of(coefficients.cbegin(), coefficients.cend(), [](auto i) { return i.is_zero(); });
 }
