@@ -35,6 +35,7 @@ public:
 
     void MUL_PQ_P(const Rational& number);
     void MUL_Pxk_P(unsigned long long int k);
+    [[nodiscard]] Rational LED_P_Q();
     [[nodiscard]] int DEG_P_N() const;
 
 private:

@@ -38,9 +38,8 @@ public:
     void RED_Q_Q();
     void ADD_QQ_Q(const Rational& number);
     void SUB_QQ_Q(const Rational& number);
-
     void MUL_QQ_Q(const Rational& number);
-
+    void DIV_QQ_Q(const Rational& number);
 
 private:
     Integer numerator; // числитель
