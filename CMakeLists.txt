@@ -40,6 +40,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Rational/ADD_QQ_Q.cpp
         src/Rational/SUB_QQ_Q.cpp
         src/Rational/MUL_QQ_Q.cpp
+        src/Rational/DIV_QQ_Q.cpp
         src/Polynomial/POLYNOMIAL.cpp
         src/Polynomial/DEG_P_N.cpp
 		    src/Polynomial/MUL_Pxk_P.cpp
