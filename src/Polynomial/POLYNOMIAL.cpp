@@ -62,7 +62,8 @@ std::ostream& operator << (std::ostream& out, const Polynomial& polynomial) {
             flag_zero = false;
             if (i != polynomial.coefficients.size() - 1)
                 out << (polynomial.coefficients[i].is_sign() ? "" : "+");
-            out << polynomial.coefficients[i];
+            if (polynomial.coefficients[i] != Rational("1"))
+                out << polynomial.coefficients[i];
             if (i > 0) {
                 out << (i == 1 ? "x" : "x^" + std::to_string(i));
             }
