@@ -1,4 +1,4 @@
-// Created by Kochurov Aleksandr (2382) on 05.11.2023.
+// Created by Aleksandr Kochurov (2382) on 05.11.2023.
 // Деление дробей (делитель отличен от нуля)
 
 
@@ -10,9 +10,9 @@ void Rational::DIV_QQ_Q(const Rational &number) {
     if (number.numerator.POZ_Z_D() == 1){ // учитываем знак
         buffer.numerator.MUL_ZM_Z();
     }
-    else if(number.numerator.POZ_Z_D() == 0){ // проверка деления на ноль
-        throw std::invalid_argument("The denominator cannot be zero.");
+    else if(number.numerator.POZ_Z_D() == 0) { // проверка деления на ноль
+        throw std::logic_error("Division by zero.");
     }
-    buffer.denominator = number.numerator.ABS_Z_Z().TRANS_Z_N();// добавляем знаменатель
+    buffer.denominator = number.numerator.ABS_Z_Z().TRANS_Z_N(); // добавляем знаменатель
     this->MUL_QQ_Q(buffer); // умножаем дроби
 }
