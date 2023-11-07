@@ -34,6 +34,7 @@ public:
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
 
     void MUL_Pxk_P(unsigned long long int k);
+    [[nodiscard]] int DEG_P_N() const;
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
