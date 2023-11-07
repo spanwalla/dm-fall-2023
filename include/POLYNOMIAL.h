@@ -33,6 +33,7 @@ public:
     bool is_zero();
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
 
+    void MUL_PQ_P(const Rational& number);
     void MUL_Pxk_P(unsigned long long int k);
     [[nodiscard]] Rational LED_P_Q();
     [[nodiscard]] int DEG_P_N() const;

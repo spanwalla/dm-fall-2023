@@ -291,8 +291,52 @@ public:
         std::cout << a << std::endl;
     }
 
+    void SUB_QQ_Q(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        Rational b(args[2]);
+        std::cout << "SUB_QQ_Q(" << a << ", " << b << "): ";
+        a.SUB_QQ_Q(b);
+        std::cout << a << std::endl;
+    }
+
+    void MUL_QQ_Q(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        Rational b(args[2]);
+        std::cout << "MUL_QQ_Q(" << a << ", " << b << "): ";
+        a.MUL_QQ_Q(b);
+        std::cout << a << std::endl;
+    }
+
+    void DIV_QQ_Q(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        Rational b(args[2]);
+        std::cout << "DIV_QQ_Q(" << a << ", " << b << "): ";
+        a.DIV_QQ_Q(b);
+        std::cout << a << std::endl;
+    }
+
+    void MUL_PQ_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a({Rational("1"), Rational("-2"), Rational("1")});
+        Rational b = Rational(args[2]);
+        std::cout << "MUL_PQ_P(" << a << ", " << b << "): ";
+        a.MUL_PQ_P(b);
+        std::cout << a << std::endl;
+    }
+
     void MUL_Pxk_P(const std::vector<std::string>& args) {
-        if (args.size() < 2)
+        if (args.size() < 3)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
 
         Polynomial a({Rational("1"), Rational("2"), Rational("1")});
@@ -363,6 +407,10 @@ private:
             {"TRANS_Z_Q", [this](auto && PH1) { TRANS_Z_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"TRANS_Q_Z", [this](auto && PH1) { TRANS_Q_Z(std::forward<decltype(PH1)>(PH1)); }},
             {"ADD_QQ_Q", [this](auto && PH1) { ADD_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"SUB_QQ_Q", [this](auto && PH1) { SUB_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"MUL_QQ_Q", [this](auto && PH1) { MUL_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"DIV_QQ_Q", [this](auto && PH1) { DIV_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"MUL_PQ_P", [this](auto && PH1) { MUL_PQ_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_Pxk_P", [this](auto && PH1) { MUL_Pxk_P(std::forward<decltype(PH1)>(PH1)); }},
             {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }}
     };
