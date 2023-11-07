@@ -27,12 +27,11 @@ Rational Rational::operator*(const Rational& other) const {
     return std::move(new_rational);
 }
 
-// Кагда Саня реализует DIV_QQ_Q
-// Rational Rational::operator/(const Rational& other) const {
-//     Rational new_rational(other);
-//     new_rational.DIV_QQ_Q(*this);
-//     return std::move(new_rational);
-// }
+Rational Rational::operator/(const Rational& other) const {
+    Rational new_rational(other);
+    new_rational.DIV_QQ_Q(*this);
+    return std::move(new_rational);
+}
 
 Rational& Rational::operator+=(const Rational& other) {
     *this = *this + other;
@@ -49,11 +48,10 @@ Rational& Rational::operator*=(const Rational& other) {
     return *this;
 }
 
-// Ждём Саню
-// Rational& Rational::operator/=(const Rational& other) {
-//     *this = *this / other;
-//     return *this;
-// }
+Rational& Rational::operator/=(const Rational& other) {
+    *this = *this / other;
+    return *this;
+}
 
 bool Rational::operator>(const Rational& other) const {
     if (this->numerator.POZ_Z_D() != other.numerator.POZ_Z_D()) {
