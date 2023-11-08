@@ -13,4 +13,5 @@ void Polynomial::ADD_PP_P(const Polynomial &polynomial) {
     for (;i < polynomial.coefficients.size(); ++i){ // на случай если polynomial оказался больше чем this
         this->coefficients.push_back(polynomial.coefficients[i]);
     }
+    this->clean_zero();
 }
