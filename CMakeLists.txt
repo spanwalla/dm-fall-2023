@@ -57,5 +57,8 @@ target_link_libraries(main cls)
 
 add_subdirectory(external/googletest)
 
-add_executable(test tests/natural_test.cpp)
-target_link_libraries(test cls gtest gmock pthread)
+add_executable(natural_test tests/natural_test.cpp)
+target_link_libraries(natural_test cls gtest gmock)
+
+add_executable(integer_test tests/integer_test.cpp)
+target_link_libraries(integer_test cls gtest gmock)
