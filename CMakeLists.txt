@@ -40,11 +40,13 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Rational/ADD_QQ_Q.cpp
         src/Rational/SUB_QQ_Q.cpp
         src/Rational/MUL_QQ_Q.cpp
-	src/Rational/DIV_QQ_Q.cpp
+        src/Rational/DIV_QQ_Q.cpp
         src/Polynomial/POLYNOMIAL.cpp
+        src/Polynomial/MUL_PQ_P.cpp
+        src/Polynomial/MUL_Pxk_P.cpp
+        src/Polynomial/LED_P_Q.cpp
         src/Polynomial/DEG_P_N.cpp
-	src/Polynomial/MUL_Pxk_P.cpp
-		src/Polynomial/ADD_PP_P.cpp
+        src/Polynomial/ADD_PP_P.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
@@ -53,3 +55,8 @@ target_link_libraries(calculator cls)
 
 add_executable(main examples/main.cpp)
 target_link_libraries(main cls)
+
+add_subdirectory(external/googletest)
+
+add_executable(test tests/natural_test.cpp)
+target_link_libraries(test cls gtest gmock pthread)
