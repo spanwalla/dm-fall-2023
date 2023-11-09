@@ -5,6 +5,9 @@
 #include "POLYNOMIAL.h"
 
 Rational Polynomial::LED_P_Q() {
-    this->clean_zero();
-    return this->coefficients.back();
+    for (auto & coefficient : std::ranges::reverse_view(coefficients)) { // Проходимся с конца массива
+        if (!coefficient.is_zero()) // Встретили ненулевой элемент
+            return coefficient;
+    }
+    return Rational("0");
 }

@@ -1,5 +1,6 @@
 //
 // Created by Mihail Fedorov (2382) on 31.10.2023.
+// Класс рациональных чисел. Состоит из целого числителя и натурального знаменателя.
 //
 
 #ifndef DM_FALL_2023_RATIONAL_H
@@ -26,7 +27,7 @@
 class CLS Rational {
 public:
     explicit Rational(const std::string& number);
-    explicit Rational(const Integer& number);
+    explicit Rational(Integer  number);
     Rational();
     [[nodiscard]] bool is_zero() const;
     [[nodiscard]] bool is_sign() const;

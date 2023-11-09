@@ -24,6 +24,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <ranges>
 #include <stdexcept>
 
 class CLS Polynomial {

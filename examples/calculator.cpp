@@ -324,6 +324,17 @@ public:
         std::cout << a << std::endl;
     }
 
+    void ADD_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a({Rational("1"), Rational("-2"), Rational("1")});
+        Polynomial b({Rational("8"), Rational("10"), Rational("3")});
+        std::cout << "ADD_PP_P(" << a << ", " << b << "): ";
+        a.ADD_PP_P(b);
+        std::cout << a << std::endl;
+    }
+
     void MUL_PQ_P(const std::vector<std::string>& args) {
         if (args.size() < 3)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
@@ -345,7 +356,15 @@ public:
         a.MUL_Pxk_P(k);
         std::cout << a << std::endl;
     }
-  
+
+    void LED_P_Q(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a({Rational("1"), Rational("2"), Rational("1")});
+        std::cout << "LED_P_Q(" << a << "): " << a.LED_P_Q() << std::endl;
+    }
+
     void DEG_P_N(const std::vector<std::string>& args) {
         if (args.size() < 2)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
@@ -410,8 +429,10 @@ private:
             {"SUB_QQ_Q", [this](auto && PH1) { SUB_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_QQ_Q", [this](auto && PH1) { MUL_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"DIV_QQ_Q", [this](auto && PH1) { DIV_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"ADD_PP_P", [this](auto && PH1) { ADD_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_PQ_P", [this](auto && PH1) { MUL_PQ_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_Pxk_P", [this](auto && PH1) { MUL_Pxk_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"LED_P_Q", [this](auto && PH1) { LED_P_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }}
     };
 };
