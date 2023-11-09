@@ -372,7 +372,18 @@ public:
         Polynomial a({Rational("1"), Rational("2"), Rational("1")});
         std::cout << "DEG_P_N(" << a << "): " << a.DEG_P_N() << std::endl;
     }
-  
+
+    void MUL_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a({Rational("1/2")});
+        Polynomial b({Rational("1"), Rational("2"), Rational("1")});
+        std::cout << "MUL_PP_P(" << a << ", " << b << "): ";
+        a.MUL_PP_P(b);
+        std::cout << a << std::endl;
+    }
+
     void ProcessCommand(const std::string& s, const std::string& delimiter) {
         size_t pos_start = 0, pos_end, delim_len = delimiter.length();
         std::string token;
@@ -433,7 +444,8 @@ private:
             {"MUL_PQ_P", [this](auto && PH1) { MUL_PQ_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_Pxk_P", [this](auto && PH1) { MUL_Pxk_P(std::forward<decltype(PH1)>(PH1)); }},
             {"LED_P_Q", [this](auto && PH1) { LED_P_Q(std::forward<decltype(PH1)>(PH1)); }},
-            {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }}
+            {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }},
+            {"MUL_PP_P", [this](auto && PH1) { MUL_PP_P(std::forward<decltype(PH1)>(PH1)); }}
     };
 };
 

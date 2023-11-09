@@ -31,7 +31,7 @@ class CLS Polynomial {
 public:
     explicit Polynomial(std::vector<Rational> coefficients);
     Polynomial();
-    bool is_zero();
+    [[nodiscard]] bool is_zero() const;
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
 
     void ADD_PP_P(const Polynomial &polynomial);
@@ -39,6 +39,7 @@ public:
     void MUL_Pxk_P(unsigned long long int k);
     Rational LED_P_Q();
     [[nodiscard]] int DEG_P_N() const;
+    void MUL_PP_P(Polynomial polynomial);
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
