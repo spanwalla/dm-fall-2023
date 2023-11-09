@@ -31,6 +31,16 @@ public:
     Natural();
     friend CLS std::ostream& operator << (std::ostream& out, const Natural& number); // оператор вывода в поток
     Natural& operator=(const Natural& number);
+    friend CLS bool operator==(const Natural& number1, const Natural& number2);
+    friend CLS bool operator!=(const Natural& number1, const Natural& number2);
+    friend CLS bool operator>=(const Natural& number1, const Natural& number2);
+    friend CLS bool operator<=(const Natural& number1, const Natural& number2);
+    friend CLS bool operator>(const Natural& number1, const Natural& number2);
+    friend CLS bool operator<(const Natural& number1, const Natural& number2);
+    Natural& operator++();
+    Natural operator++(int);
+    Natural& operator--();
+    Natural operator--(int);
 
     [[nodiscard]] int COM_NN_D(const Natural& cmp) const;
     [[nodiscard]] bool NZER_N_B() const;

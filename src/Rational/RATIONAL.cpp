@@ -5,6 +5,8 @@
 #define CLS_EXPORTS
 #include "RATIONAL.h"
 
+#include <utility>
+
 Rational::Rational(const std::string& number) {
     if (number.find('/') == std::string::npos)
         this->denominator = Natural("1");
@@ -15,7 +17,9 @@ Rational::Rational(const std::string& number) {
         throw std::invalid_argument("The denominator cannot be zero.");
 }
 
-Rational::Rational() : numerator("0"), denominator("1") {}
+Rational::Rational(Integer number): numerator(std::move(number)), denominator(Natural("1")) {}
+
+Rational::Rational(): numerator("0"), denominator("1") {}
 
 bool Rational::is_zero() const { return this->numerator.POZ_Z_D() == 0; }
 
