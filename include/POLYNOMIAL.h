@@ -37,6 +37,7 @@ public:
     [[nodiscard]] int DEG_P_N() const;
 
     void ADD_PP_P(const Polynomial &polynom);
+    void DEP_P_P();
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
