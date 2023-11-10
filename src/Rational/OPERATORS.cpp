@@ -16,10 +16,7 @@ Rational operator-(const Rational& num) {
     return std::move(new_rational);
 }
 
-Rational operator-(const Rational& num1, const Rational& num2) {
-    Rational new_rational(num2);
-    return num1 + (-new_rational);
-}
+Rational operator-(const Rational& num1, const Rational& num2) { return num1 + (-num2); }
 
 Rational operator*(const Rational& num1, const Rational& num2) {
     Rational new_rational(num2);
@@ -28,8 +25,8 @@ Rational operator*(const Rational& num1, const Rational& num2) {
 }
 
 Rational operator/(const Rational& num1, const Rational& num2) {
-    Rational new_rational(num2);
-    new_rational.DIV_QQ_Q(num1);
+    Rational new_rational(num1);
+    new_rational.DIV_QQ_Q(num2);
     return std::move(new_rational);
 }
 

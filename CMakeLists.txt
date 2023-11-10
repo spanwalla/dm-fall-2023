@@ -50,6 +50,8 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Polynomial/ADD_PP_P.cpp
         src/Polynomial/MUL_PP_P.cpp
         src/Polynomial/SUB_PP_P.cpp
+        src/Polynomial/DIV_PP_P.cpp
+        src/Polynomial/MOD_PP_P.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
