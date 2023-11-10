@@ -29,6 +29,7 @@
 
 class CLS Polynomial {
 public:
+    explicit Polynomial(const std::string&);
     explicit Polynomial(std::vector<Rational> coefficients);
     Polynomial();
     [[nodiscard]] bool is_zero() const;
