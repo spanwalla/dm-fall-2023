@@ -1,7 +1,6 @@
 // Created by Aleksandr Kochurov (2382) on 05.11.2023.
 // Сложение дробей.
 
-
 #define CLS_EXPORTS
 #include "RATIONAL.h"
 
