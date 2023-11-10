@@ -1,5 +1,5 @@
-// Created by Chepasov Dmitry (2382) 27.10.2023
-// Умножает на 10^k
+// Created by Dmitry Chepasov (2382) on 27.10.2023.
+// Умножение на 10^k.
 
 #define CLS_EXPORTS
 #include "NATURAL.h"
