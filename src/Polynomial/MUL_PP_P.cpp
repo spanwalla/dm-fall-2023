@@ -34,7 +34,6 @@ void Polynomial::MUL_PP_P(Polynomial polynomial) {
         }
 
         for (int k = first_degree + 1; k <= first_degree + second_degree; ++k) {
-            std::cout << k << ' ' << first_degree + 1 << ' ' << first_degree + second_degree << std::endl;
             for (int j = k - second_degree; j <= first_degree; ++j) {
                 Rational multiply_result(coefficients[j]);
                 multiply_result.MUL_QQ_Q(polynomial.coefficients[k-j]);
