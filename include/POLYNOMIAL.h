@@ -24,19 +24,23 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <ranges>
 #include <stdexcept>
 
 class CLS Polynomial {
 public:
+    explicit Polynomial(const std::string&);
     explicit Polynomial(std::vector<Rational> coefficients);
     Polynomial();
-    bool is_zero();
+    [[nodiscard]] bool is_zero() const;
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
 
+    void ADD_PP_P(const Polynomial &polynomial);
+    void MUL_PQ_P(const Rational &number);
     void MUL_Pxk_P(unsigned long long int k);
+    Rational LED_P_Q();
     [[nodiscard]] int DEG_P_N() const;
-
-    void ADD_PP_P(const Polynomial &polynom);
+    void MUL_PP_P(Polynomial polynomial);
     [[nodiscard]] Polynomial DEP_P_P() const;
 
 private:

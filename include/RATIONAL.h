@@ -1,5 +1,6 @@
 //
 // Created by Mihail Fedorov (2382) on 31.10.2023.
+// Класс рациональных чисел. Состоит из целого числителя и натурального знаменателя.
 //
 
 #ifndef DM_FALL_2023_RATIONAL_H
@@ -26,11 +27,10 @@
 class CLS Rational {
 public:
     explicit Rational(const std::string& number);
-    explicit Rational(const Integer& number);
+    explicit Rational(Integer  number);
     Rational();
     [[nodiscard]] bool is_zero() const;
     [[nodiscard]] bool is_sign() const;
-    friend CLS std::ostream& operator << (std::ostream& out, const Rational& number); // Оператор вывода в поток.
 
     [[nodiscard]] bool INT_Q_B() const;
     static Rational TRANS_Z_Q(const Integer& number);
@@ -40,6 +40,23 @@ public:
     void SUB_QQ_Q(const Rational& number);
     void MUL_QQ_Q(const Rational& number);
     void DIV_QQ_Q(const Rational& number);
+
+    friend CLS std::ostream& operator << (std::ostream& out, const Rational& number); // Оператор вывода в поток.
+    friend CLS Rational operator+(const Rational&, const Rational&);
+    friend CLS Rational operator-(const Rational&);
+    friend CLS Rational operator-(const Rational&, const Rational&);
+    friend CLS Rational operator*(const Rational&, const Rational&);
+    friend CLS Rational operator/(const Rational&, const Rational&);
+    Rational& operator+=(const Rational&);
+    Rational& operator-=(const Rational&);
+    Rational& operator*=(const Rational&);
+    Rational& operator/=(const Rational&);
+    friend CLS bool operator>(const Rational&, const Rational&);
+    friend CLS bool operator<(const Rational&, const Rational&);
+    friend CLS bool operator>=(const Rational&, const Rational&);
+    friend CLS bool operator<=(const Rational&, const Rational&);
+    friend CLS bool operator==(const Rational&, const Rational&);
+    friend CLS bool operator!=(const Rational&, const Rational&);
 
 private:
     Integer numerator; // числитель
