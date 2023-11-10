@@ -33,11 +33,14 @@ Polynomial::Polynomial(const std::string& content) {
     for (auto singelton : substr_pol) {
         size_t index_sub_left = std::min(singelton.find('x'), singelton.find('*'));
         size_t index_sub_right = singelton.find('^');
+        Rational coefficient;
 
-        if (index_sub_left == std::string::npos)
+        if (index_sub_left == std::string::npos) {
             index_sub_left = singelton.size();
-
-        Rational coefficient = Rational((singelton.substr(0, index_sub_left) == "" || singelton.substr(0, index_sub_left) == "-" || singelton.substr(0, index_sub_left) == "+") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
+            coefficient = Rational(singelton);
+        }
+        else
+            coefficient = Rational((singelton.substr(0, index_sub_left) == "" || singelton.substr(0, index_sub_left) == "-" || singelton.substr(0, index_sub_left) == "+") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
 
         if (index_sub_right != std::string::npos)
             coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += coefficient;
