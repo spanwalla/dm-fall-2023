@@ -41,6 +41,7 @@ public:
     Rational LED_P_Q();
     [[nodiscard]] int DEG_P_N() const;
     void MUL_PP_P(Polynomial polynomial);
+    void SUB_PP_P(const Polynomial&);
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
