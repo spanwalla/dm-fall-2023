@@ -4,32 +4,32 @@
 #define CLS_EXPORTS
 #include "RATIONAL.h"
 
-Rational Rational::operator+(const Rational& other) const {
-    Rational new_rational(other);
-    new_rational.ADD_QQ_Q(*this);
+Rational operator+(const Rational& num1, const Rational& num2) {
+    Rational new_rational(num2);
+    new_rational.ADD_QQ_Q(num1);
     return std::move(new_rational);
 }
 
-Rational Rational::operator-() const {
-    Rational new_rational(*this);
+Rational operator-(const Rational& num) {
+    Rational new_rational(num);
     new_rational.numerator.MUL_ZM_Z();
     return std::move(new_rational);
 }
 
-Rational Rational::operator-(const Rational& other) const {
-    Rational new_rational(other);
-    return *this + (-new_rational);
+Rational operator-(const Rational& num1, const Rational& num2) {
+    Rational new_rational(num2);
+    return num1 + (-new_rational);
 }
 
-Rational Rational::operator*(const Rational& other) const {
-    Rational new_rational(other);
-    new_rational.MUL_QQ_Q(*this);
+Rational operator*(const Rational& num1, const Rational& num2) {
+    Rational new_rational(num2);
+    new_rational.MUL_QQ_Q(num1);
     return std::move(new_rational);
 }
 
-Rational Rational::operator/(const Rational& other) const {
-    Rational new_rational(other);
-    new_rational.DIV_QQ_Q(*this);
+Rational operator/(const Rational& num1, const Rational& num2) {
+    Rational new_rational(num2);
+    new_rational.DIV_QQ_Q(num1);
     return std::move(new_rational);
 }
 
@@ -53,53 +53,53 @@ Rational& Rational::operator/=(const Rational& other) {
     return *this;
 }
 
-bool Rational::operator>(const Rational& other) const {
-    if (this->numerator.POZ_Z_D() != other.numerator.POZ_Z_D()) {
-        if (this->numerator.POZ_Z_D() == 2 && other.numerator.POZ_Z_D() != 2)
+bool operator>(const Rational& num1, const Rational& num2) {
+    if (num1.numerator.POZ_Z_D() != num2.numerator.POZ_Z_D()) {
+        if (num1.numerator.POZ_Z_D() == 2 && num2.numerator.POZ_Z_D() != 2)
             return true;
-        if (this->numerator.POZ_Z_D() == 0 && other.numerator.POZ_Z_D() == 1)
+        if (num1.numerator.POZ_Z_D() == 0 && num2.numerator.POZ_Z_D() == 1)
             return true;
         return false;
     }
 
-    Natural this_val(this->numerator.ABS_Z_Z().TRANS_Z_N());
-    Natural other_val(other.numerator.ABS_Z_Z().TRANS_Z_N());
-    this_val.MUL_NN_N(other.denominator);
-    other_val.MUL_NN_N(this->denominator);
+    Natural this_val(num1.numerator.ABS_Z_Z().TRANS_Z_N());
+    Natural other_val(num2.numerator.ABS_Z_Z().TRANS_Z_N());
+    this_val.MUL_NN_N(num2.denominator);
+    other_val.MUL_NN_N(num1.denominator);
     return this_val.COM_NN_D(other_val) == 2;
 }
 
-bool Rational::operator<(const Rational& other) const {
-    if (this->numerator.POZ_Z_D() != other.numerator.POZ_Z_D()) {
-        if (this->numerator.POZ_Z_D() == 1 && other.numerator.POZ_Z_D() != 1)
+bool operator<(const Rational& num1, const Rational& num2) {
+    if (num1.numerator.POZ_Z_D() != num2.numerator.POZ_Z_D()) {
+        if (num1.numerator.POZ_Z_D() == 1 && num2.numerator.POZ_Z_D() != 1)
             return true;
-        if (this->numerator.POZ_Z_D() == 0 && other.numerator.POZ_Z_D() == 2)
+        if (num1.numerator.POZ_Z_D() == 0 && num2.numerator.POZ_Z_D() == 2)
             return true;
         return false;
     }
 
-    Natural this_val(this->numerator.ABS_Z_Z().TRANS_Z_N());
-    Natural other_val(other.numerator.ABS_Z_Z().TRANS_Z_N());
-    this_val.MUL_NN_N(other.denominator);
-    other_val.MUL_NN_N(this->denominator);
+    Natural this_val(num1.numerator.ABS_Z_Z().TRANS_Z_N());
+    Natural other_val(num2.numerator.ABS_Z_Z().TRANS_Z_N());
+    this_val.MUL_NN_N(num2.denominator);
+    other_val.MUL_NN_N(num1.denominator);
     return this_val.COM_NN_D(other_val) == 1;
 }
 
-bool Rational::operator>=(const Rational& other) const { return !(*this < other); }
+bool operator>=(const Rational& num1, const Rational& num2) { return !(num1 < num2); }
 
-bool Rational::operator<=(const Rational& other) const { return !(*this > other); }
+bool operator<=(const Rational& num1, const Rational& num2) { return !(num1 > num2); }
 
-bool Rational::operator==(const Rational& other) const {
-    if (this->numerator.POZ_Z_D() != other.numerator.POZ_Z_D())
+bool operator==(const Rational& num1, const Rational& num2) {
+    if (num1.numerator.POZ_Z_D() != num2.numerator.POZ_Z_D())
         return false;
     
-    if (this->denominator.COM_NN_D(other.denominator)) 
+    if (num1.denominator.COM_NN_D(num2.denominator)) 
         return false;
     
-    if (this->numerator.ABS_Z_Z().TRANS_Z_N().COM_NN_D(other.numerator.ABS_Z_Z().TRANS_Z_N())) 
+    if (num1.numerator.ABS_Z_Z().TRANS_Z_N().COM_NN_D(num2.numerator.ABS_Z_Z().TRANS_Z_N())) 
         return false;
     
     return true;
 }
 
-bool Rational::operator!=(const Rational& other) const { return !(*this == other); }
+bool operator!=(const Rational& num1, const Rational& num2) { return !(num1 == num2); }

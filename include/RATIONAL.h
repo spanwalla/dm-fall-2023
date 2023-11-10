@@ -41,21 +41,21 @@ public:
 
     void MUL_QQ_Q(const Rational& number);
 
-    [[nodiscard]] Rational operator+(const Rational&) const;
-    [[nodiscard]] Rational operator-() const;
-    [[nodiscard]] Rational operator-(const Rational&) const;
-    [[nodiscard]] Rational operator*(const Rational&) const;
-    [[nodiscard]] Rational operator/(const Rational&) const;
-    Rational& operator+=(const Rational&);
-    Rational& operator-=(const Rational&);
-    Rational& operator*=(const Rational&);
-    Rational& operator/=(const Rational&);
-    [[nodiscard]] bool operator>(const Rational&) const;
-    [[nodiscard]] bool operator<(const Rational&) const;
-    [[nodiscard]] bool operator>=(const Rational&) const;
-    [[nodiscard]] bool operator<=(const Rational&) const;
-    [[nodiscard]] bool operator==(const Rational&) const;
-    [[nodiscard]] bool operator!=(const Rational&) const;
+    friend CLS Rational operator+(const Rational&, const Rational&);
+    friend CLS Rational operator-(const Rational&);
+    friend CLS Rational operator-(const Rational&, const Rational&);
+    friend CLS Rational operator*(const Rational&, const Rational&);
+    friend CLS Rational operator/(const Rational&, const Rational&);
+    [[nodiscard]] Rational& operator+=(const Rational&);
+    [[nodiscard]] Rational& operator-=(const Rational&);
+    [[nodiscard]] Rational& operator*=(const Rational&);
+    [[nodiscard]] Rational& operator/=(const Rational&);
+    friend CLS bool operator>(const Rational&, const Rational&);
+    friend CLS bool operator<(const Rational&, const Rational&);
+    friend CLS bool operator>=(const Rational&, const Rational&);
+    friend CLS bool operator<=(const Rational&, const Rational&);
+    friend CLS bool operator==(const Rational&, const Rational&);
+    friend CLS bool operator!=(const Rational&, const Rational&);
 
 
 private:
