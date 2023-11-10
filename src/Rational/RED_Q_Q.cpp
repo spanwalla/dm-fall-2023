@@ -1,5 +1,5 @@
-// Created by Bukharin Maxim (2382) on 06.11.2023.
-// Сокращение дроби
+// Created by Maxim Bukharin (2382) on 06.11.2023.
+// Сокращение дроби.
 
 #define CLS_EXPORTS
 #include "RATIONAL.h"

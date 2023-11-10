@@ -86,6 +86,6 @@ void Polynomial::clean_zero() {
         coefficients.pop_back();
 }
 
-bool Polynomial::is_zero() {
+bool Polynomial::is_zero() const {
     return std::ranges::all_of(coefficients.cbegin(), coefficients.cend(), [](auto i) { return i.is_zero(); });
 }

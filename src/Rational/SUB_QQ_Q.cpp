@@ -1,6 +1,5 @@
-// Created by Kochurov Aleksandr (2382) on 05.11.2023.
-// вычитание дробей.
-
+// Created by Aleksandr Kochurov (2382) on 05.11.2023.
+// Вычитание дробей.
 
 #define CLS_EXPORTS
 #include "RATIONAL.h"

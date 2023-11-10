@@ -1,4 +1,4 @@
-// Created by Bukharin Maxim (2382) on 04.11.2023.
+// Created by Maxim Bukharin (2382) on 04.11.2023.
 // Проверка сокращённого дробного числа на целое.
 
 #define CLS_EXPORTS
