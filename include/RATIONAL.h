@@ -46,10 +46,10 @@ public:
     friend CLS Rational operator-(const Rational&, const Rational&);
     friend CLS Rational operator*(const Rational&, const Rational&);
     friend CLS Rational operator/(const Rational&, const Rational&);
-    [[nodiscard]] Rational& operator+=(const Rational&);
-    [[nodiscard]] Rational& operator-=(const Rational&);
-    [[nodiscard]] Rational& operator*=(const Rational&);
-    [[nodiscard]] Rational& operator/=(const Rational&);
+    Rational& operator+=(const Rational&);
+    Rational& operator-=(const Rational&);
+    Rational& operator*=(const Rational&);
+    Rational& operator/=(const Rational&);
     friend CLS bool operator>(const Rational&, const Rational&);
     friend CLS bool operator<(const Rational&, const Rational&);
     friend CLS bool operator>=(const Rational&, const Rational&);
