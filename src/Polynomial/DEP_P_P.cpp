@@ -4,10 +4,13 @@
 #define CLS_EXPORTS
 #include "POLYNOMIAL.h"
 
-void Polynomial::DEP_P_P() {
+Polynomial Polynomial::DEP_P_P() const {
+    std::vector<Rational> new_coefficients(this->coefficients.size() > 1 ? this->coefficients.size() - 1 : 1, Rational("0")); // коэффиценты производного многочлена
     size_t i;
     for (i = 1; i < this->coefficients.size(); ++i) { // цикл, проходящий по всем индексам вектора коэффицентов многочлена
-        this->coefficients.at(i).MUL_QQ_Q(Rational(std::to_string(i))); // умножаем текущий коэффицент на значение позиции в векторе, т.е. на степень
+        new_coefficients[i - 1] = this->coefficients[i];
+        new_coefficients[i - 1].MUL_QQ_Q(Rational(std::to_string(i))); // умножаем текущий коэффицент на значение позиции в векторе, т.е. на степень
     }
-    this->coefficients.erase(this->coefficients.begin()); // удаляем элемент с 0 степенью
+
+    return Polynomial(new_coefficients);
 }
