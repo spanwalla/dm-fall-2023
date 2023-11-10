@@ -36,12 +36,13 @@ public:
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
 
     void ADD_PP_P(const Polynomial &polynomial);
+    void SUB_PP_P(const Polynomial&);
     void MUL_PQ_P(const Rational &number);
     void MUL_Pxk_P(unsigned long long int k);
     Rational LED_P_Q();
     [[nodiscard]] int DEG_P_N() const;
     void MUL_PP_P(Polynomial polynomial);
-    void SUB_PP_P(const Polynomial&);
+    [[nodiscard]] Polynomial DEP_P_P() const;
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
