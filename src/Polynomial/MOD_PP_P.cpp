@@ -19,7 +19,7 @@ Polynomial Polynomial::MOD_PP_P(const Polynomial& divisor) const {
     while (deg_dividend >= deg_divisor) {
         Rational coeff = remainder.LED_P_Q();
         Rational tmp_coeff = divisor.LED_P_Q();
-        coeff.MUL_QQ_Q(tmp_coeff);
+        coeff.DIV_QQ_Q(tmp_coeff);
 
         int degree_difference = deg_dividend - deg_divisor;
 

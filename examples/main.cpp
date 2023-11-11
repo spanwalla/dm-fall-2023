@@ -4,8 +4,8 @@
 
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
-    Polynomial a("x^10+2x+1");
-    Polynomial b(a.MOD_PP_P(Polynomial("-x^3+8x^2")));
+    Polynomial a("x^100+1");
+    Polynomial b(a.DIV_PP_P(Polynomial("8x^2+1")));
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> t = end - start;
     std::cout << t.count() << std::endl;
