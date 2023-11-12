@@ -536,6 +536,48 @@ TEST(DIV_QQ_Q_TEST, Div_divisor_neg_one){
 }
 
 
+// Тесты для функции INV_Q_Q - обратная дробь
+
+// №50 - 0 в числителе
+
+TEST(INV_Q_Q, Inv_error){
+    Rational r("0/10");
+
+    ASSERT_THROW(r.INV_Q_Q(), std::logic_error);
+}
+
+// №51 - положительная дробь
+
+TEST(INV_Q_Q, Inv_poz_numerator){
+    Rational r("5/2");
+
+    ASSERT_TRUE(r.INV_Q_Q() == Rational("2/5"));
+}
+
+// №52 - отрицательная дробь
+
+TEST(INV_Q_Q, Inv_neg_numerator){
+    Rational r("-7/8");
+
+    ASSERT_TRUE(r.INV_Q_Q() == Rational("8/7"));
+}
+
+// №53 - сократимая дробь
+
+TEST(INV_Q_Q, Inv_fraction){
+    Rational r("18/8");
+
+    ASSERT_TRUE(r.INV_Q_Q() == Rational("4/9"));
+}
+
+// №54 - несократимая дробь
+
+TEST(INV_Q_Q, Inv_not_fraction){
+    Rational r("19/11");
+
+    ASSERT_TRUE(r.INV_Q_Q() == Rational("11/19"));
+}
+
 
 int main(int argc, char** argv){
     testing::InitGoogleTest(&argc, argv);
