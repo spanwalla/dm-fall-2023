@@ -559,7 +559,7 @@ TEST(INV_Q_Q, Inv_poz_numerator){
 TEST(INV_Q_Q, Inv_neg_numerator){
     Rational r("-7/8");
 
-    ASSERT_TRUE(r.INV_Q_Q() == Rational("8/7"));
+    ASSERT_TRUE(r.INV_Q_Q() == Rational("-8/7"));
 }
 
 // №53 - сократимая дробь
