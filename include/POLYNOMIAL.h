@@ -34,6 +34,8 @@ public:
     Polynomial();
     [[nodiscard]] bool is_zero() const;
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
+    friend CLS bool operator==(const Polynomial& first, const Polynomial& second);
+    friend CLS bool operator!=(const Polynomial& first, const Polynomial& second);
 
     void ADD_PP_P(const Polynomial &polynomial);
     void SUB_PP_P(const Polynomial&);
