@@ -5,8 +5,8 @@
 #include "POLYNOMIAL.h"
 
 Rational Polynomial::FAC_P_Q() const {
-    Natural numerator = Natural("0");
-    Natural denominator = Natural("0");
+    Natural numerator = Natural("1");
+    Natural denominator = Natural("1");
 
     for (size_t i = 0; i < this->coefficients.size(); ++i) {
         numerator = std::move(numerator.GCF_NN_N(this->coefficients[i].get_numerator().ABS_Z_Z().TRANS_Z_N()));
