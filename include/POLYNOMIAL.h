@@ -44,6 +44,7 @@ public:
     void SUB_PP_P(const Polynomial&);
     Polynomial DIV_PP_P(const Polynomial&) const;
     Polynomial MOD_PP_P(const Polynomial&) const;
+    Rational FAC_P_Q() const;
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
