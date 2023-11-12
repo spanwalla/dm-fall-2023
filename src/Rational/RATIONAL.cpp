@@ -19,7 +19,10 @@ Rational::Rational(const std::string& number) {
 
 Rational::Rational(Integer number): numerator(std::move(number)), denominator(Natural("1")) {}
 
-Rational::Rational(Integer numerator, const Natural& denominator): numerator(std::move(numerator)), denominator(denominator) {}
+Rational::Rational(Integer numerator, const Natural& denominator): numerator(std::move(numerator)), denominator(denominator) {
+    if (!this->denominator.NZER_N_B())
+        throw std::invalid_argument("The denominator cannot be zero.");
+}
 
 Rational::Rational(): numerator("0"), denominator("1") {}
 
