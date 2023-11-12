@@ -11,7 +11,6 @@ Rational Polynomial::FAC_P_Q() const {
     for (size_t i = 0; i < this->coefficients.size() - 1; ++i) {
         numerator = std::move(numerator.GCF_NN_N(this->coefficients[i].get_numerator().ABS_Z_Z().TRANS_Z_N()));
         denominator = std::move(denominator.LCM_NN_N(this->coefficients[i].get_denominator()));
-        std::cout << "numerator: " << numerator << " " << "denominator: " << denominator << std::endl;
     }
 
     return Rational(Integer::TRANS_N_Z(numerator), denominator);
