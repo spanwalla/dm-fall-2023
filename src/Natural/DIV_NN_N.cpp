@@ -15,12 +15,13 @@ Natural Natural::DIV_NN_N(const Natural& number) const {
         Natural res;
         Natural tmp1 = *this;
         Natural tmp2;
-        while (tmp1.COM_NN_D(number) == 2) {
+        while (tmp1.COM_NN_D(number) == 2 || tmp1.COM_NN_D(number) == 0) {
             tmp2 = tmp1.DIV_NN_Dk(number); // находим первую цифру частного * 10^k (k - позиция)
             res.ADD_NN_N(tmp2); // прибавляем промежуточный результат к общему
             tmp2.MUL_NN_N(number);             
             tmp1.SUB_NN_N(tmp2);
         }
+
         return res;
     }
 }
