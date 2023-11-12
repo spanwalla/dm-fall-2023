@@ -8,7 +8,7 @@
 
 // №1 - число положительное
 
-TEST(Abs_pozitive_num, ABS_Z_Z_TEST){
+TEST(ABS_Z_Z_TEST, Abs_pozitive_num){
     Integer i(5);
 
     ASSERT_TRUE(i.ABS_Z_Z() == Integer(5));
@@ -16,7 +16,7 @@ TEST(Abs_pozitive_num, ABS_Z_Z_TEST){
 
 // №2 - число отрицательное
 
-TEST(Abs_negative_num, ABS_Z_Z_TEST){
+TEST(ABS_Z_Z_TEST, Abs_negative_num){
     Integer i(-10);
 
     ASSERT_TRUE(i.ABS_Z_Z() == Integer(10));
@@ -24,7 +24,7 @@ TEST(Abs_negative_num, ABS_Z_Z_TEST){
 
 // №3 - число 0
 
-TEST(Abs_for_zero, ABS_Z_Z_TEST){
+TEST(ABS_Z_Z_TEST, Abs_for_zero){
     Integer i(0);
 
     ASSERT_TRUE(i.ABS_Z_Z() == Integer(0));
@@ -36,7 +36,7 @@ TEST(Abs_for_zero, ABS_Z_Z_TEST){
 
 // №4 - положительное число
 
-TEST(Poz_pozitive_num, POZ_Z_D_TEST){
+TEST(POZ_Z_D_TEST, Poz_pozitive_num){
     Integer i(353);
 
     ASSERT_TRUE(i.POZ_Z_D() == 2);
@@ -44,7 +44,7 @@ TEST(Poz_pozitive_num, POZ_Z_D_TEST){
 
 // №5 - отрицательное число 
 
-TEST(Poz_negative_num, POZ_Z_D_TEST){
+TEST(POZ_Z_D_TEST, Poz_negative_num){
     Integer i(-24);
 
     ASSERT_TRUE(i.POZ_Z_D() == 1);
@@ -52,7 +52,7 @@ TEST(Poz_negative_num, POZ_Z_D_TEST){
 
 // №6 - число 0
 
-TEST(Poz_for_zero, POZ_Z_D_TEST){
+TEST(POZ_Z_D_TEST, Poz_for_zero){
     Integer i(0);
 
     ASSERT_TRUE(i.POZ_Z_D() == 0);
@@ -63,7 +63,7 @@ TEST(Poz_for_zero, POZ_Z_D_TEST){
 
 // №7 - число положительное
 
-TEST(Mul_zm_pozitive_num, MUL_ZM_Z_TEST){
+TEST(MUL_ZM_Z_TEST, Mul_zm_pozitive_num){
     Integer i(52);
 
     i.MUL_ZM_Z();
@@ -73,7 +73,7 @@ TEST(Mul_zm_pozitive_num, MUL_ZM_Z_TEST){
 
 // №8 - число отрицательное
 
-TEST(Mul_zm_negative, MUL_ZM_Z_TEST){
+TEST(MUL_ZM_Z_TEST, Mul_zm_negative){
     Integer i(-100);
 
     i.MUL_ZM_Z();
@@ -83,7 +83,7 @@ TEST(Mul_zm_negative, MUL_ZM_Z_TEST){
 
 // №9 - число 0
 
-TEST(Mul_zm_for_zero, MUL_ZM_Z_TEST){
+TEST(MUL_ZM_Z_TEST, Mul_zm_for_zero){
     Integer i(0);
 
     i.MUL_ZM_Z();
@@ -96,7 +96,7 @@ TEST(Mul_zm_for_zero, MUL_ZM_Z_TEST){
 
 // №10 - число не 0
 
-TEST(Trans_n_z_pozitive, TRANS_N_Z_TEST){
+TEST(TRANS_N_Z_TEST, Trans_n_z_pozitive){
     Natural n(423);
 
     Integer i;
@@ -106,7 +106,7 @@ TEST(Trans_n_z_pozitive, TRANS_N_Z_TEST){
 
 // №11 - число 0
 
-TEST(Trans_n_z_zero, TRANS_N_Z_TEST){
+TEST(TRANS_N_Z_TEST, Trans_n_z_zero){
     Natural n(0);
 
     Integer i;
@@ -119,7 +119,7 @@ TEST(Trans_n_z_zero, TRANS_N_Z_TEST){
 
 // №12 - число положительное
 
-TEST(Trans_z_n_pozitive, TRANS_Z_N_TEST){
+TEST(TRANS_Z_N_TEST, Trans_z_n_pozitive){
     Integer i(100);
 
     ASSERT_TRUE(i.TRANS_Z_N() == Natural(100));
@@ -127,7 +127,7 @@ TEST(Trans_z_n_pozitive, TRANS_Z_N_TEST){
 
 // №13 - число 0
 
-TEST(Trans_z_n_zero, TRANS_Z_N_TEST){
+TEST(TRANS_Z_N_TEST, Trans_z_n_zero){
     Integer i(0);
 
     ASSERT_TRUE(i.TRANS_Z_N() == Natural(0));
@@ -135,7 +135,7 @@ TEST(Trans_z_n_zero, TRANS_Z_N_TEST){
 
 // №14 - отрицательное число 
 
-TEST(Trans_z_n_error, TRANS_Z_N_TEST){
+TEST(TRANS_Z_N_TEST, Trans_z_n_error){
     Integer i(-754);
 
     ASSERT_THROW(i.TRANS_Z_N(), std::logic_error);
@@ -146,7 +146,7 @@ TEST(Trans_z_n_error, TRANS_Z_N_TEST){
 
 // №15 - отрицательное и положительное с положительным результатом
 
-TEST(Add_neg_poz_poz, ADD_ZZ_Z_TEST){
+TEST(ADD_ZZ_Z_TEST, Add_neg_poz_poz){
     Integer i1(-20);
     Integer i2(30);
 
@@ -157,7 +157,7 @@ TEST(Add_neg_poz_poz, ADD_ZZ_Z_TEST){
 
 // №16 - отрицательно и положительное с отрицательным результатом
 
-TEST(Add_neg_poz_neg, ADD_ZZ_Z_TEST){
+TEST(ADD_ZZ_Z_TEST, Add_neg_poz_neg){
     Integer i1(-867);
     Integer i2(67);
 
@@ -168,7 +168,7 @@ TEST(Add_neg_poz_neg, ADD_ZZ_Z_TEST){
 
 // №17 - положительное и отрицательное с отрицательным результатом
 
-TEST(Add_poz_neg_neg, ADD_ZZ_Z_TEST){
+TEST(ADD_ZZ_Z_TEST, Add_poz_neg_neg){
     Integer i1(30);
     Integer i2(-40);
 
@@ -179,7 +179,7 @@ TEST(Add_poz_neg_neg, ADD_ZZ_Z_TEST){
 
 // №18 - положительное и отрицательное с положительным результатом
 
-TEST(Add_poz_neg_poz, ADD_ZZ_Z_TEST){
+TEST(ADD_ZZ_Z_TEST, Add_poz_neg_poz){
     Integer i1(50);
     Integer i2(-5);
 
@@ -190,7 +190,7 @@ TEST(Add_poz_neg_poz, ADD_ZZ_Z_TEST){
 
 // №19 - положительное и положительное
 
-TEST(Add_poz_poz, ADD_ZZ_Z_TEST){
+TEST(ADD_ZZ_Z_TEST, Add_poz_poz){
     Integer i1(325);
     Integer i2(34);
 
@@ -201,7 +201,7 @@ TEST(Add_poz_poz, ADD_ZZ_Z_TEST){
 
 // №20 - отрицательное и отрицательное
 
-TEST(Add_neg_neg, ADD_ZZ_Z_TEST){
+TEST(ADD_ZZ_Z_TEST, Add_neg_neg){
     Integer i1(-685);
     Integer i2(-434);
 
@@ -212,7 +212,7 @@ TEST(Add_neg_neg, ADD_ZZ_Z_TEST){
 
 // №21 - общий случай
 
-TEST(Add_general_case, ADD_ZZ_Z_TEST){
+TEST(ADD_ZZ_Z_TEST, Add_general_case){
     Integer i1("3547653984568934658962456892634");
     Integer i2("436236436546463463643623643654649894017446932369193597100536268");
 
@@ -226,7 +226,7 @@ TEST(Add_general_case, ADD_ZZ_Z_TEST){
 
 // №22 - отрицательное и отрицательное с отрицательным результатом
 
-TEST(Sub_neg_neg_neg, SUB_ZZ_Z_TEST){
+TEST(SUB_ZZ_Z_TEST, Sub_neg_neg_neg){
     Integer i1(-500);
     Integer i2(-150);
 
@@ -237,7 +237,7 @@ TEST(Sub_neg_neg_neg, SUB_ZZ_Z_TEST){
 
 // №23 - отрицательное и отрицательное с положительным результатом
 
-TEST(Sub_neg_neg_poz, SUB_ZZ_Z_TEST){
+TEST(SUB_ZZ_Z_TEST, Sub_neg_neg_poz){
     Integer i1(-232);
     Integer i2(-400);
 
@@ -248,7 +248,7 @@ TEST(Sub_neg_neg_poz, SUB_ZZ_Z_TEST){
 
 // №24 - положительное и положительное с положительным результатом
 
-TEST(Sub_poz_poz_poz, SUB_ZZ_Z_TEST){
+TEST(SUB_ZZ_Z_TEST, Sub_poz_poz_poz){
     Integer i1(745);
     Integer i2(200);
 
@@ -259,7 +259,7 @@ TEST(Sub_poz_poz_poz, SUB_ZZ_Z_TEST){
 
 // №25 - положительное и положительное с отрицательным результатом
 
-TEST(Sub_poz_poz_neg, SUB_ZZ_Z_TEST){
+TEST(SUB_ZZ_Z_TEST, Sub_poz_poz_neg){
     Integer i1(83);
     Integer i2(980);
 
@@ -270,7 +270,7 @@ TEST(Sub_poz_poz_neg, SUB_ZZ_Z_TEST){
 
 // №26 - отрицательное и положительное
 
-TEST(Sub_neg_poz, SUB_ZZ_Z_TEST){
+TEST(SUB_ZZ_Z_TEST, Sub_neg_poz){
     Integer i1(-900);
     Integer i2(750);
 
@@ -281,7 +281,7 @@ TEST(Sub_neg_poz, SUB_ZZ_Z_TEST){
 
 // №27 - положительное и отрицательное
 
-TEST(Sub_poz_neg, SUB_ZZ_Z_TEST){
+TEST(SUB_ZZ_Z_TEST, Sub_poz_neg){
     Integer i1(834);
     Integer i2(-200);
 
@@ -292,7 +292,7 @@ TEST(Sub_poz_neg, SUB_ZZ_Z_TEST){
 
 // №28 - общий случай
 
-TEST(Sub_general_case, SUB_ZZ_Z_TEST){
+TEST(SUB_ZZ_Z_TEST, Sub_general_case){
     Integer i1("45863486709349054679074697924902734286943");
     Integer i2("23492379523908437974239");
 
@@ -306,7 +306,7 @@ TEST(Sub_general_case, SUB_ZZ_Z_TEST){
 
 // №29 - положительное и положительное
 
-TEST(Mul_poz_poz, MUL_ZZ_Z_TEST){
+TEST(MUL_ZZ_Z_TEST, Mul_poz_poz){
     Integer i1(5);
     Integer i2(10);
 
@@ -317,7 +317,7 @@ TEST(Mul_poz_poz, MUL_ZZ_Z_TEST){
 
 // №30 - отрицательное и отрицательное
 
-TEST(Mul_neg_neg, MUL_ZZ_Z_TEST){
+TEST(MUL_ZZ_Z_TEST, Mul_neg_neg){
     Integer i1(-30);
     Integer i2(-40);
 
@@ -328,7 +328,7 @@ TEST(Mul_neg_neg, MUL_ZZ_Z_TEST){
 
 // №31 - положительное и отрицательное
 
-TEST(Mul_poz_neg, MUL_ZZ_Z_TEST){
+TEST(MUL_ZZ_Z_TEST, Mul_poz_neg){
     Integer i1(100);
     Integer i2(-40);
 
@@ -339,7 +339,7 @@ TEST(Mul_poz_neg, MUL_ZZ_Z_TEST){
 
 // №32 - умножение на 0
 
-TEST(Mul_zero, MUL_ZZ_Z_TEST){
+TEST(MUL_ZZ_Z_TEST, Mul_zero){
     Integer i1("43235");
     Integer i2("0");
 
@@ -350,7 +350,7 @@ TEST(Mul_zero, MUL_ZZ_Z_TEST){
 
 // №33 - общий случай
 
-TEST(Mul_general_case, MUL_ZZ_Z_TEST){
+TEST(MUL_ZZ_Z_TEST, Mul_general_case){
     Integer i1("38275893645848659864958634");
     Integer i2("-23597239857347603");
 
@@ -365,7 +365,7 @@ TEST(Mul_general_case, MUL_ZZ_Z_TEST){
 
 // №34 - первое равно 0
 
-TEST(Div_first_zero, DIV_ZZ_Z_TEST){
+TEST(DIV_ZZ_Z_TEST, Div_first_zero){
     Integer i1(0);
     Integer i2(52353);
 
@@ -374,7 +374,7 @@ TEST(Div_first_zero, DIV_ZZ_Z_TEST){
 
 // №35 - деление на 0
 
-TEST(Div_error, DIV_ZZ_Z_TEST){
+TEST(DIV_ZZ_Z_TEST, Div_error){
     Integer i1(967856);
     Integer i2(0);
 
@@ -383,7 +383,7 @@ TEST(Div_error, DIV_ZZ_Z_TEST){
 
 // №36 - первое равно 1
 
-TEST(Div_first_one, DIV_ZZ_Z_TEST){
+TEST(DIV_ZZ_Z_TEST, Div_first_one){
     Integer i1(1);
     Integer i2(43234);
 
@@ -392,7 +392,7 @@ TEST(Div_first_one, DIV_ZZ_Z_TEST){
 
 // №37 - второе равно 1
 
-TEST(Div_second_one, DIV_ZZ_Z_TEST){
+TEST(DIV_ZZ_Z_TEST, Div_second_one){
     Integer i1(3534);
     Integer i2(1);
 
@@ -401,7 +401,7 @@ TEST(Div_second_one, DIV_ZZ_Z_TEST){
 
 // №38 - числа равны
 
-TEST(Div_equal_numbers, DIV_ZZ_Z_TEST){
+TEST(DIV_ZZ_Z_TEST, Div_equal_numbers){
     Integer i1(24);
     Integer i2(24);
 
@@ -410,7 +410,7 @@ TEST(Div_equal_numbers, DIV_ZZ_Z_TEST){
 
 // №39 - общий случай
 
-TEST(Div_general_case, DIV_ZZ_Z_TEST){
+TEST(DIV_ZZ_Z_TEST, Div_general_case){
     Integer i1("6346346345634675896");
     Integer i2("2579605967");
 
@@ -423,7 +423,7 @@ TEST(Div_general_case, DIV_ZZ_Z_TEST){
 
 // №40 - первое равно 0
 
-TEST(Mod_first_zero, MOD_ZZ_Z_TEST){
+TEST(MOD_ZZ_Z_TEST, Mod_first_zero){
     Integer i1(0);
     Integer i2(4235);
 
@@ -432,7 +432,7 @@ TEST(Mod_first_zero, MOD_ZZ_Z_TEST){
 
 // №41 - второе равно 0
 
-TEST(Mod_error, MOD_ZZ_Z_TEST){
+TEST(MOD_ZZ_Z_TEST, Mod_error){
     Integer i1(53);
     Integer i2(0);
 
@@ -441,7 +441,7 @@ TEST(Mod_error, MOD_ZZ_Z_TEST){
 
 // №42 - первое равно 1
 
-TEST(Mod_first_one, MOD_ZZ_Z_TEST){
+TEST(MOD_ZZ_Z_TEST, Mod_first_one){
     Integer i1("1");
     Integer i2("23423");
 
@@ -450,7 +450,7 @@ TEST(Mod_first_one, MOD_ZZ_Z_TEST){
 
 // №43 - второе равно 1
 
-TEST(Mod_second_two, MOD_ZZ_Z_TEST){
+TEST(MOD_ZZ_Z_TEST, Mod_second_two){
     Integer i1(3453);
     Integer i2(1);
 
@@ -459,7 +459,7 @@ TEST(Mod_second_two, MOD_ZZ_Z_TEST){
 
 // №44 - первое меньше второго
 
-TEST(Mod_first_less_than_second, MOD_ZZ_Z_TEST){
+TEST(MOD_ZZ_Z_TEST, Mod_first_less_than_second){
     Integer i1(35);
     Integer i2(243);
 
@@ -468,7 +468,7 @@ TEST(Mod_first_less_than_second, MOD_ZZ_Z_TEST){
 
 // №45 - числа равны
 
-TEST(Mod_equal_numbers, MOD_ZZ_Z_TEST){
+TEST(MOD_ZZ_Z_TEST, Mod_equal_numbers){
     Integer i1("532364");
     Integer i2("532364");
 
@@ -477,7 +477,7 @@ TEST(Mod_equal_numbers, MOD_ZZ_Z_TEST){
 
 // №46 - общий случай
 
-TEST(Mod_general_case, MOD_ZZ_Z_TEST){
+TEST(MOD_ZZ_Z_TEST, Mod_general_case){
     Integer i1("542363463463452");
     Integer i2("3058420856");
 
