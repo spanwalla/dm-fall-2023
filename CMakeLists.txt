@@ -38,6 +38,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Rational/INT_Q_B.cpp
         src/Rational/TRANS_Z_Q.cpp
         src/Rational/TRANS_Q_Z.cpp
+        src/Rational/INV_Q_Q.cpp
         src/Rational/ADD_QQ_Q.cpp
         src/Rational/SUB_QQ_Q.cpp
         src/Rational/MUL_QQ_Q.cpp
@@ -52,6 +53,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Polynomial/MUL_PP_P.cpp
         src/Polynomial/DIV_PP_P.cpp
         src/Polynomial/MOD_PP_P.cpp
+        src/Polynomial/GCF_PP_P.cpp
         src/Polynomial/DEP_P_P.cpp
 )
 target_include_directories(cls PUBLIC ${PROJECT_SOURCE_DIR}/include)

@@ -27,15 +27,17 @@
 class CLS Rational {
 public:
     explicit Rational(const std::string& number);
-    explicit Rational(Integer  number);
+    explicit Rational(Integer number);
+    Rational(Integer numerator, const Natural& denominator);
     Rational();
     [[nodiscard]] bool is_zero() const;
     [[nodiscard]] bool is_sign() const;
 
+    void RED_Q_Q();
     [[nodiscard]] bool INT_Q_B() const;
     static Rational TRANS_Z_Q(const Integer& number);
     [[nodiscard]] Integer TRANS_Q_Z() const;
-    void RED_Q_Q();
+    [[nodiscard]] Rational INV_Q_Q() const;
     void ADD_QQ_Q(const Rational& number);
     void SUB_QQ_Q(const Rational& number);
     void MUL_QQ_Q(const Rational& number);
