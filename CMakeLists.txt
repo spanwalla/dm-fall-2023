@@ -67,3 +67,6 @@ target_link_libraries(natural_test cls gtest gmock)
 
 add_executable(integer_test tests/integer_test.cpp)
 target_link_libraries(integer_test cls gtest gmock)
+
+add_executable(rational_test tests/rational_test.cpp)
+target_link_libraries(rational_test cls gtest gmock)
