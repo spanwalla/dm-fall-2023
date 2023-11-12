@@ -540,10 +540,10 @@ TEST(DIV_QQ_Q_TEST, Div_divisor_neg_one){
 
 // №50 - 0 в числителе
 
-TEST(INV_Q_Q, Inv_error){
+TEST(INV_Q_Q, Inv_zero_numerator){
     Rational r("0/10");
 
-    ASSERT_THROW(r.INV_Q_Q(), std::logic_error);
+    ASSERT_TRUE(r.INV_Q_Q() == Rational("0"));
 }
 
 // №51 - положительная дробь
