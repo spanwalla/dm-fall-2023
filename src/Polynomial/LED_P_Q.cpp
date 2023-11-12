@@ -4,7 +4,7 @@
 #define CLS_EXPORTS
 #include "POLYNOMIAL.h"
 
-Rational Polynomial::LED_P_Q() {
+Rational Polynomial::LED_P_Q() const {
     for (auto & coefficient : std::ranges::reverse_view(coefficients)) { // Проходимся с конца массива
         if (!coefficient.is_zero()) // Встретили ненулевой элемент
             return coefficient;

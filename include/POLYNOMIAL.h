@@ -39,9 +39,11 @@ public:
     void SUB_PP_P(const Polynomial&);
     void MUL_PQ_P(const Rational &number);
     void MUL_Pxk_P(unsigned long long int k);
-    Rational LED_P_Q();
+    Rational LED_P_Q() const;
     [[nodiscard]] int DEG_P_N() const;
     void MUL_PP_P(Polynomial polynomial);
+    Polynomial DIV_PP_P(const Polynomial&) const;
+    Polynomial MOD_PP_P(const Polynomial&) const;
     [[nodiscard]] Polynomial DEP_P_P() const;
 
 private:

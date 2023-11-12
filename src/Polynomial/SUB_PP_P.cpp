@@ -13,6 +13,7 @@ void Polynomial::SUB_PP_P(const Polynomial& other) {
                 this->coefficients.push_back(Rational("0"));
             this->coefficients[i].SUB_QQ_Q(other.coefficients[i]);
         }
-        this->clean_zero();
     }
+    this->clean_zero();
 }
+
