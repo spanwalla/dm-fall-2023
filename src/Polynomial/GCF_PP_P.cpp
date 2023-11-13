@@ -14,7 +14,6 @@ Polynomial Polynomial::GCF_PP_P(const Polynomial& polynomial) const {
         Polynomial tmp = divisor;
         divisor = dividend.MOD_PP_P(divisor);
         dividend = tmp;
-        std::cout << dividend << ' ' << divisor << std::endl;
     }
     Polynomial result = divisor.DEG_P_N() > dividend.DEG_P_N() ? divisor : dividend;
     result.clean_zero();

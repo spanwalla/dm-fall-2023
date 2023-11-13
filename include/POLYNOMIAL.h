@@ -49,6 +49,7 @@ public:
     [[nodiscard]] Rational FAC_P_Q() const;
     [[nodiscard]] Polynomial GCF_PP_P(const Polynomial& polynomial) const;
     [[nodiscard]] Polynomial DEP_P_P() const;
+    [[nodiscard]] Polynomial NMR_P_P() const;
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
