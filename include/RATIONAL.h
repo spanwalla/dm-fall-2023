@@ -32,6 +32,8 @@ public:
     Rational();
     [[nodiscard]] bool is_zero() const;
     [[nodiscard]] bool is_sign() const;
+    [[nodiscard]] Integer get_numerator() const;
+    [[nodiscard]] Natural get_denominator() const;
 
     void RED_Q_Q();
     [[nodiscard]] bool INT_Q_B() const;

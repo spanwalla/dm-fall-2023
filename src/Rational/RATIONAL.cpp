@@ -26,6 +26,10 @@ Rational::Rational(Integer numerator, const Natural& denominator): numerator(std
 
 Rational::Rational(): numerator("0"), denominator("1") {}
 
+Integer Rational::get_numerator() const { return this->numerator; }
+
+Natural Rational::get_denominator() const { return this->denominator; }
+
 bool Rational::is_zero() const { return this->numerator.POZ_Z_D() == 0; }
 
 bool Rational::is_sign() const { return this->numerator.POZ_Z_D() == 1; }

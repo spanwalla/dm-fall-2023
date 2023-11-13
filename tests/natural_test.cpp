@@ -9,7 +9,7 @@
 
 // №1 - в первом числе больше цифр, чем во втором
 
-TEST(First_more_digits, COM_NN_D_TEST){
+TEST(COM_NN_D_TEST, First_more_digits){
     Natural n1 ("12384723");
     Natural n2 ("342524");
 
@@ -19,7 +19,7 @@ TEST(First_more_digits, COM_NN_D_TEST){
 
 // №2 - в числах одинаковое количество цифр, но первое больше
 
-TEST(First_greater_and_same_number_of_digits, COM_NN_D_TEST){
+TEST(COM_NN_D_TEST, First_greater_and_same_number_of_digits){
     Natural n1("5555555555555");
     Natural n2("4444444444444");
 
@@ -28,7 +28,7 @@ TEST(First_greater_and_same_number_of_digits, COM_NN_D_TEST){
 
 
 // №3 - числа равны
-TEST(Equal_numbers, COM_NN_D_TEST){
+TEST(COM_NN_D_TEST, Equal_numbers){
     Natural n1("342353454");
     Natural n2("342353454");
 
@@ -38,7 +38,7 @@ TEST(Equal_numbers, COM_NN_D_TEST){
 
 // №4 - во втором числе больше цифр, чем в первом
 
-TEST(Second_more_digits, COM_NN_D_TEST){
+TEST(COM_NN_D_TEST, Second_more_digits){
     Natural n1("5439");
     Natural n2("738205");
 
@@ -48,7 +48,7 @@ TEST(Second_more_digits, COM_NN_D_TEST){
 
 // №5 - в числах одинаковое количество цифр, но второе больше
 
-TEST(Second_greater_and_same_number_of_digits, COM_NN_D_TEST){
+TEST(COM_NN_D_TEST, Second_greater_and_same_number_of_digits){
     Natural n1("8888888");
     Natural n2("8888889");
 
@@ -60,7 +60,7 @@ TEST(Second_greater_and_same_number_of_digits, COM_NN_D_TEST){
 
 // №6 - число равно 0
 
-TEST(Number_is_zero, NZER_N_B_TEST){
+TEST(NZER_N_B_TEST, Number_is_zero){
     Natural n("0");
 
     ASSERT_EQ(n.NZER_N_B(), false);
@@ -68,7 +68,7 @@ TEST(Number_is_zero, NZER_N_B_TEST){
 
 // №7 - число не равно 0
 
-TEST(Number_is_not_zero, NZER_N_B_TEST){
+TEST(NZER_N_B_TEST, Number_is_not_zero){
     Natural n("3856458436856238456236562");
 
     ASSERT_EQ(n.NZER_N_B(), true);
@@ -79,7 +79,7 @@ TEST(Number_is_not_zero, NZER_N_B_TEST){
 
 // №8 - без переноса разрядов
 
-TEST(Add_1_without_offset, ADD_1N_N_TEST){
+TEST(ADD_1N_N_TEST, Add_1_without_offset){
     Natural n(1000);
 
     n.ADD_1N_N();
@@ -89,7 +89,7 @@ TEST(Add_1_without_offset, ADD_1N_N_TEST){
 
 // №9 - с переносом разряда без увеличения количества цифр
 
-TEST(Add_1_with_offset_inplace, ADD_1N_N_TEST){
+TEST(ADD_1N_N_TEST, Add_1_with_offset_inplace){
     Natural n(1999);
     
     n.ADD_1N_N();
@@ -99,7 +99,7 @@ TEST(Add_1_with_offset_inplace, ADD_1N_N_TEST){
 
 // №10 - с переносом разряда с увеличением количества цифр
 
-TEST(Add_1_with_offset_not_inplace, ADD_1N_N_TEST){
+TEST(ADD_1N_N_TEST, Add_1_with_offset_not_inplace){
     Natural n(9999999999);
 
     n.ADD_1N_N();
@@ -109,7 +109,7 @@ TEST(Add_1_with_offset_not_inplace, ADD_1N_N_TEST){
 
 // №11 - прибавление к 0
 
-TEST(Add_1_to_zero, ADD_1N_N_TEST){
+TEST(ADD_1N_N_TEST, Add_1_to_zero){
     Natural n;
 
     n.ADD_1N_N();
@@ -122,7 +122,7 @@ TEST(Add_1_to_zero, ADD_1N_N_TEST){
 
 // №12 - без переноса разряда
 
-TEST(Add_without_offset, ADD_NN_N_TEST){
+TEST(ADD_NN_N_TEST, Add_without_offset){
     Natural n1 (123000);
     Natural n2 (6423);
 
@@ -133,7 +133,7 @@ TEST(Add_without_offset, ADD_NN_N_TEST){
 
 //№13 - с переносом разряда без увеличения количества цифр
 
-TEST(Add_with_offset_inplace, ADD_NN_N_TEST){
+TEST(ADD_NN_N_TEST, Add_with_offset_inplace){
     Natural n1(19999);
     Natural n2(2);
 
@@ -144,7 +144,7 @@ TEST(Add_with_offset_inplace, ADD_NN_N_TEST){
 
 // №14 - с переносом разряда с увеличением количества цифр
 
-TEST(Add_with_offset_not_inplace, ADD_NN_N_TEST){
+TEST(ADD_NN_N_TEST, Add_with_offset_not_inplace){
     Natural n1(99);
     Natural n2(6);
 
@@ -155,7 +155,7 @@ TEST(Add_with_offset_not_inplace, ADD_NN_N_TEST){
 
 // №15 - без переноса разряда с увеличением количества цифр
 
-TEST(Add_without_offset_but_not_inplace, ADD_NN_N_TEST){
+TEST(ADD_NN_N_TEST, Add_without_offset_but_not_inplace){
     Natural n1(64);
     Natural n2(100);
 
@@ -169,7 +169,7 @@ TEST(Add_without_offset_but_not_inplace, ADD_NN_N_TEST){
 
 // №16 - без займа разрядов и уменьшения количества цифр
 
-TEST(Sub_without_offset_and_loss_digits, SUB_NN_N_TEST){
+TEST(SUB_NN_N_TEST, Sub_without_offset_and_loss_digits){
     Natural n1("438293550345");
     Natural n2("342");
 
@@ -180,7 +180,7 @@ TEST(Sub_without_offset_and_loss_digits, SUB_NN_N_TEST){
 
 // №17 - с займом разрядов с уменьшением количества цифр
 
-TEST(Sub_with_offset_without_loss_digits, SUB_NN_N_TEST){
+TEST(SUB_NN_N_TEST, Sub_with_offset_without_loss_digits){
     Natural n1("83883494938");
     Natural n2("19");
 
@@ -191,7 +191,7 @@ TEST(Sub_with_offset_without_loss_digits, SUB_NN_N_TEST){
 
 // №18 - с займом разрядов и с уменьшением количества цифр
 
-TEST(Sub_with_offset_and_loss_digits, SUB_NN_N_TEST){
+TEST(SUB_NN_N_TEST, Sub_with_offset_and_loss_digits){
     Natural n1("1000000");
     Natural n2("5437");
 
@@ -202,7 +202,7 @@ TEST(Sub_with_offset_and_loss_digits, SUB_NN_N_TEST){
 
 // №19 - числа равны
 
-TEST(Sub_equal_digits, SUB_NN_N_TEST){
+TEST(SUB_NN_N_TEST, SUB_NN_N_TESTSub_equal_digits){
     Natural n1("54839");
     Natural n2("54839");
 
@@ -213,7 +213,7 @@ TEST(Sub_equal_digits, SUB_NN_N_TEST){
 
 // №20 - без занимания разрядов с уменьшением количества цифр
 
-TEST(Sub_without_offset_with_loss_digits, SUB_NN_N_TEST){
+TEST(SUB_NN_N_TEST, Sub_without_offset_with_loss_digits){
     Natural n1("245");
     Natural n2("240");
 
@@ -224,7 +224,7 @@ TEST(Sub_without_offset_with_loss_digits, SUB_NN_N_TEST){
 
 // №21 - второе больше первого
 
-TEST(Sub_error, SUB_NN_N_TEST){
+TEST(SUB_NN_N_TEST, Sub_error){
     Natural n1(15);
     Natural n2(21);
 
@@ -236,7 +236,7 @@ TEST(Sub_error, SUB_NN_N_TEST){
 
 // №22 - умножение на 0
 
-TEST(MulND_digit_is_zero, MUL_ND_N_TEST){
+TEST(MUL_ND_N_TEST, MulND_digit_is_zero){
     Natural n("4583454385925689265892");
 
     n.MUL_ND_N(0);
@@ -246,7 +246,7 @@ TEST(MulND_digit_is_zero, MUL_ND_N_TEST){
 
 // №23 - умножение на 1
 
-TEST(MulND_digit_is_one, MUL_ND_N_TEST){
+TEST(MUL_ND_N_TEST, MulND_digit_is_one){
     Natural n("4525");
 
     n.MUL_ND_N(1);
@@ -256,7 +256,7 @@ TEST(MulND_digit_is_one, MUL_ND_N_TEST){
 
 // №24 - умножение натурального нуля на цифру
 
-TEST(MulND_natural_is_zero, MUD_ND_N_TEST){
+TEST(MUL_ND_N_TEST, MulND_natural_is_zero){
     Natural n(0);
 
     n.MUL_ND_N(4);
@@ -266,7 +266,7 @@ TEST(MulND_natural_is_zero, MUD_ND_N_TEST){
 
 // №25 - умножение без увеличения количества цифр
 
-TEST(MulND_inplace, MUL_ND_N_TEST){
+TEST(MUL_ND_N_TEST, MulND_inplace){
     Natural n(15);
 
     n.MUL_ND_N(5);
@@ -276,7 +276,7 @@ TEST(MulND_inplace, MUL_ND_N_TEST){
 
 // №26 - умножение с увеличением количества цифр
 
-TEST(MulND_not_inplace, MUL_ND_N_TEST){
+TEST(MUL_ND_N_TEST, MulND_not_inplace){
     Natural n(21);
 
     n.MUL_ND_N(5);
@@ -286,7 +286,7 @@ TEST(MulND_not_inplace, MUL_ND_N_TEST){
 
 // №27 - попытка умножения на отрицательное
 
-TEST(MulND_negative_number, MUL_ND_N_TEST){
+TEST(MUL_ND_N_TEST, MulND_negative_number){
     Natural n(5435);
 
     n.MUL_ND_N(-3);
@@ -296,7 +296,7 @@ TEST(MulND_negative_number, MUL_ND_N_TEST){
 
 // №28 - попытка умножения не на цифру
 
-TEST(MulND_not_digit, MUL_ND_N_TEST){
+TEST(MUL_ND_N_TEST, MulND_not_digit){
     Natural n(5235);
 
     n.MUL_ND_N(4533);
@@ -309,7 +309,7 @@ TEST(MulND_not_digit, MUL_ND_N_TEST){
 
 // №29 - число равно 0
 
-TEST(MulNk_natural_is_zero, MUL_Nk_N_TEST){
+TEST(MUL_Nk_N_TEST, MulNk_natural_is_zero){
     Natural n(0);
 
     n.MUL_Nk_N(3942);
@@ -319,7 +319,7 @@ TEST(MulNk_natural_is_zero, MUL_Nk_N_TEST){
 
 // №30 - k равно 0
 
-TEST(MulNk_k_is_zero, MUL_Nk_N_TEST){
+TEST(MUL_Nk_N_TEST, MulNk_k_is_zero){
     Natural n(43);
 
     n.MUL_Nk_N(0);
@@ -329,7 +329,7 @@ TEST(MulNk_k_is_zero, MUL_Nk_N_TEST){
 
 // №31 - общий случай
 
-TEST(MulNk_general_case, MUL_Nk_N_TEST){
+TEST(MUL_Nk_N_TEST, MulNk_general_case){
     Natural n(1223);
 
     n.MUL_Nk_N(5);
@@ -342,7 +342,7 @@ TEST(MulNk_general_case, MUL_Nk_N_TEST){
 
 // №32 - без увеличения количества цифр
 
-TEST(Mul_inplace, MUL_NN_N_TEST){
+TEST(MUL_NN_N_TEST, Mul_inplace){
     Natural n1(33);
     Natural n2(3);
 
@@ -353,7 +353,7 @@ TEST(Mul_inplace, MUL_NN_N_TEST){
 
 // №33 - с увеличением количества цифр
 
-TEST(Mul_not_inplace, MUL_NN_N_TEST){
+TEST(MUL_NN_N_TEST, Mul_not_inplace){
     Natural n1(66);
     Natural n2(6);
 
@@ -364,7 +364,7 @@ TEST(Mul_not_inplace, MUL_NN_N_TEST){
 
 // №34 - общий случай
 
-TEST(Mul_general_case, MUL_NN_N_TEST){
+TEST(MUL_NN_N_TEST, Mul_general_case){
     Natural n1("53485738975");
     Natural n2("634683463");
 
@@ -379,7 +379,7 @@ TEST(Mul_general_case, MUL_NN_N_TEST){
 
 // №35 - после умножения на цифру вычитаемое становится больше уменьшаемого
 
-TEST(SubNDN_error, SUB_NDN_N_TEST){
+TEST(SUB_NDN_N_TEST, SubNDN_error){
     Natural n1(46);
     Natural n2(15);
 
@@ -388,7 +388,7 @@ TEST(SubNDN_error, SUB_NDN_N_TEST){
 
 // №36 - общий случай
 
-TEST(SubNDN_general_case, SUB_NDN_N_TEST){
+TEST(SUB_NDN_N_TEST, SubNDN_general_case){
     Natural n1("3458734753857348597234");
     Natural n2("5438579");
 
@@ -399,7 +399,7 @@ TEST(SubNDN_general_case, SUB_NDN_N_TEST){
 
 // №37 - умножение на 0
 
-TEST(Sub_NDN_digit_is_zero, SUB_NDN_N_TEST){
+TEST(SUB_NDN_N_TEST, Sub_NDN_digit_is_zero){
     Natural n1("242344235");
     Natural n2("243");
 
@@ -414,7 +414,7 @@ TEST(Sub_NDN_digit_is_zero, SUB_NDN_N_TEST){
 
 // №38 - числа равны
 
-TEST(DivDk_equal_naturals, DIV_NN_Dk_TEST){
+TEST(DIV_NN_Dk_TEST, DivDk_equal_naturals){
     Natural n1(100);
     Natural n2(100);
 
@@ -423,7 +423,7 @@ TEST(DivDk_equal_naturals, DIV_NN_Dk_TEST){
 
 // №39 - деление на 1
 
-TEST(DivDk_second_is_one, DIV_NN_Dk_TEST){
+TEST(DIV_NN_Dk_TEST, DivDk_second_is_one){
     Natural n1(153);
     Natural n2(1);
 
@@ -432,7 +432,7 @@ TEST(DivDk_second_is_one, DIV_NN_Dk_TEST){
 
 // №40 - делитель больше делимого 
 
-TEST(Div_Dk_error, DIV_NN_Dk_TEST){
+TEST(DIV_NN_Dk_TEST, Div_Dk_error){
     Natural n1(132);
     Natural n2(5452);
 
@@ -441,7 +441,7 @@ TEST(Div_Dk_error, DIV_NN_Dk_TEST){
 
 // №41 - общий случай
 
-TEST(Div_Dk_general_case, DIV_NN_Dk_TEST){
+TEST(DIV_NN_Dk_TEST, Div_Dk_general_case){
     Natural n1("52352354365765239789353453");
     Natural n2("32545768743652356");
 
@@ -454,7 +454,7 @@ TEST(Div_Dk_general_case, DIV_NN_Dk_TEST){
 
 // №42 - первое меньше второго
 
-TEST(Div_first_less_than_second, DIV_NN_N_TEST){
+TEST(DIV_NN_N_TEST, Div_first_less_than_second){
     Natural n1(10);
     Natural n2(64);
 
@@ -463,7 +463,7 @@ TEST(Div_first_less_than_second, DIV_NN_N_TEST){
 
 // №43 - первое равно 0
 
-TEST(Div_first_is_zero, DIV_NN_N_TEST){
+TEST(DIV_NN_N_TEST, Div_first_is_zero){
     Natural n1(0);
     Natural n2(354325);
 
@@ -472,7 +472,7 @@ TEST(Div_first_is_zero, DIV_NN_N_TEST){
 
 // №44 - числа равны
 
-TEST(Div_equal_naturals, DIV_NN_N_TEST){
+TEST(DIV_NN_N_TEST, Div_equal_naturals){
     Natural n1(342);
     Natural n2(342);
 
@@ -481,7 +481,7 @@ TEST(Div_equal_naturals, DIV_NN_N_TEST){
 
 // №45 - второе равно 1
 
-TEST(Div_second_is_one, DIV_NN_N_TEST){
+TEST(DIV_NN_N_TEST, Div_second_is_one){
     Natural n1(769);
     Natural n2(1);
 
@@ -490,7 +490,7 @@ TEST(Div_second_is_one, DIV_NN_N_TEST){
 
 // №46 - деление на 0
 
-TEST(Div_error, DIV_NN_N_TEST){
+TEST(DIV_NN_N_TEST, Div_error){
     Natural n1(352);
     Natural n2(0);
 
@@ -499,7 +499,7 @@ TEST(Div_error, DIV_NN_N_TEST){
 
 // №47 - общий случай
 
-TEST(Div_general_case, DIV_NN_N_TEST){
+TEST(DIV_NN_N_TEST, Div_general_case){
     Natural n1("5348758364583465364534");
     Natural n2("9534775");
 
@@ -512,7 +512,7 @@ TEST(Div_general_case, DIV_NN_N_TEST){
 
 // №48 - первое меньше второго
 
-TEST(Mod_first_less_than_second, MOD_NN_N_TEST){
+TEST(MOD_NN_N_TEST, Mod_first_less_than_second){
     Natural n1(345);
     Natural n2(79891);
 
@@ -521,7 +521,7 @@ TEST(Mod_first_less_than_second, MOD_NN_N_TEST){
 
 // №49 - первое равно 0
 
-TEST(Mod_first_is_zero, MOD_NN_N_TEST){
+TEST(MOD_NN_N_TEST, Mod_first_is_zero){
     Natural n1("0");
     Natural n2("54522542");
 
@@ -530,7 +530,7 @@ TEST(Mod_first_is_zero, MOD_NN_N_TEST){
 
 // №50 - числа равны
 
-TEST(Mod_equal_naturals, MOD_NN_N_TEST){
+TEST(MOD_NN_N_TEST, Mod_equal_naturals){
     Natural n1(653);
     Natural n2(653);
 
@@ -539,7 +539,7 @@ TEST(Mod_equal_naturals, MOD_NN_N_TEST){
 
 // №51 - второе равно 1
 
-TEST(Mod_second_is_one, MOD_NN_N_TEST){
+TEST(MOD_NN_N_TEST, Mod_second_is_one){
     Natural n1(46463);
     Natural n2(1);
 
@@ -548,7 +548,7 @@ TEST(Mod_second_is_one, MOD_NN_N_TEST){
 
 // №52 - второе равно 0
 
-TEST(Mod_error, MOD_NN_N_TEST){
+TEST(MOD_NN_N_TEST, Mod_error){
     Natural n1(453);
     Natural n2(0);
 
@@ -557,7 +557,7 @@ TEST(Mod_error, MOD_NN_N_TEST){
 
 //  №53 - общий случай
 
-TEST(Mod_general_case, MOD_NN_N_TEST){
+TEST(MOD_NN_N_TEST, Mod_general_case){
     Natural n1("94756347864263443634634523895892365");
     Natural n2("6345683475986485684");
 
@@ -569,7 +569,7 @@ TEST(Mod_general_case, MOD_NN_N_TEST){
 
 // №54 - Оба числа равны 0
 
-TEST(Gcf_error, GSF_NN_N_TEST){
+TEST(GSF_NN_N_TEST, Gcf_error){
     Natural n1(0);
     Natural n2(0);
 
@@ -578,7 +578,7 @@ TEST(Gcf_error, GSF_NN_N_TEST){
 
 // №55 - одно из чисел равно 1
 
-TEST(Gcf_with_one, GCF_NN_N_TEST){
+TEST(GSF_NN_N_TEST, Gcf_with_one){
     Natural n1(6345);
     Natural n2(1);
 
@@ -587,7 +587,7 @@ TEST(Gcf_with_one, GCF_NN_N_TEST){
 
 // №56 - первое число равно 0
 
-TEST(Gcf_first_is_zero, GCF_NN_N_TEST){
+TEST(GSF_NN_N_TEST, Gcf_first_is_zero){
     Natural n1(0);
     Natural n2(4235);
 
@@ -596,7 +596,7 @@ TEST(Gcf_first_is_zero, GCF_NN_N_TEST){
 
 // №57 - числа равны
 
-TEST(Gcf_equal_naturals, GCF_NN_N_TEST){
+TEST(GSF_NN_N_TEST, Gcf_equal_naturals){
     Natural n1(785);
     Natural n2(785);
 
@@ -605,7 +605,7 @@ TEST(Gcf_equal_naturals, GCF_NN_N_TEST){
 
 // №58 - одно из чисел кратно другому
 
-TEST(Gcf_one_number_is_a_multiple_of_another, GCF_NN_N_TEST){
+TEST(GSF_NN_N_TEST, Gcf_one_number_is_a_multiple_of_another){
     Natural n1(30);
     Natural n2(210);
 
@@ -614,7 +614,7 @@ TEST(Gcf_one_number_is_a_multiple_of_another, GCF_NN_N_TEST){
 
 // №59 - числа взаимно простые
 
-TEST(Gcf_mutually_prime_numbers, GCF_NN_N_TEST){
+TEST(GSF_NN_N_TEST, Gcf_mutually_prime_numbers){
     Natural n1(101);
     Natural n2(13);
 
@@ -623,7 +623,7 @@ TEST(Gcf_mutually_prime_numbers, GCF_NN_N_TEST){
 
 // №60 - общий случай
 
-TEST(Gcf_general_case, GCF_NN_N_TEST){
+TEST(GSF_NN_N_TEST, Gcf_general_case){
     Natural n1("97578237586235623787509234643634647563783684634");
     Natural n2("13452759874967396");
 
@@ -635,7 +635,7 @@ TEST(Gcf_general_case, GCF_NN_N_TEST){
 
 // №61 - одно из чисел 0
 
-TEST(Lcm_one_zero, LCM_NN_N_TEST){
+TEST(LCM_NN_N_TEST, Lcm_one_zero){
     Natural n1("345436");
     Natural n2(0);
 
@@ -644,7 +644,7 @@ TEST(Lcm_one_zero, LCM_NN_N_TEST){
 
 // №62 - оба числа 0
 
-TEST(Lcm_error, LCM_NN_N_TEST){
+TEST(LCM_NN_N_TEST, Lcm_error){
     Natural n1(0);
     Natural n2(0);
 
@@ -653,7 +653,7 @@ TEST(Lcm_error, LCM_NN_N_TEST){
 
 // №63 - одно из чисел равно 1
 
-TEST(Lcm_one_is_one, LCM_NN_N_TEST){
+TEST(LCM_NN_N_TEST, Lcm_one_is_one){
     Natural n1("156876");
     Natural n2(1);
 
@@ -662,7 +662,7 @@ TEST(Lcm_one_is_one, LCM_NN_N_TEST){
 
 // №64 - числа равны
 
-TEST(Lcm_equal_naturals, LCM_NN_N_TEST){
+TEST(LCM_NN_N_TEST, Lcm_equal_naturals){
     Natural n1(987);
     Natural n2(987);
 
@@ -671,7 +671,7 @@ TEST(Lcm_equal_naturals, LCM_NN_N_TEST){
 
 // №65 - одно из чисел кратно другому
 
-TEST(Lcm_one_number_is_a_multiple_of_another, LCM_NN_N_TEST){
+TEST(LCM_NN_N_TEST, Lcm_one_number_is_a_multiple_of_another){
     Natural n1(256);
     Natural n2(64);
 
@@ -680,7 +680,7 @@ TEST(Lcm_one_number_is_a_multiple_of_another, LCM_NN_N_TEST){
 
 // №66 - числа взаимно простые
 
-TEST(Lcm_mutually_prime_numbers, LCM_NN_N_TEST){
+TEST(LCM_NN_N_TEST, Lcm_mutually_prime_numbers){
     Natural n1(13);
     Natural n2(17);
 
@@ -689,7 +689,7 @@ TEST(Lcm_mutually_prime_numbers, LCM_NN_N_TEST){
 
 // №67 - общий случай
 
-TEST(Lcm_general_case, LCM_NN_N_TEST){
+TEST(LCM_NN_N_TEST, Lcm_general_case){
     Natural n1("2397592375972364");
     Natural n2("634663264657547879987");
 

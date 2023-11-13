@@ -29,8 +29,8 @@ Polynomial::Polynomial(const std::string& content) {
             pol = pol.substr(index_sub);
     }
 
-    std::vector<Rational> coefficients(size + 1, Rational());
-    for (auto singelton : substr_pol) {
+    std::vector<Rational> input_coefficients(size + 1, Rational());
+    for (const auto& singelton : substr_pol) {
         size_t index_sub_left = std::min(singelton.find('x'), singelton.find('*'));
         size_t index_sub_right = singelton.find('^');
         Rational coefficient;
@@ -40,17 +40,17 @@ Polynomial::Polynomial(const std::string& content) {
             coefficient = Rational(singelton);
         }
         else
-            coefficient = Rational((singelton.substr(0, index_sub_left) == "" || singelton.substr(0, index_sub_left) == "-" || singelton.substr(0, index_sub_left) == "+") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
+            coefficient = Rational((singelton.substr(0, index_sub_left).empty() || singelton.substr(0, index_sub_left) == "-" || singelton.substr(0, index_sub_left) == "+") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
 
         if (index_sub_right != std::string::npos)
-            coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += coefficient;
+            input_coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += coefficient;
         else if (singelton.find('x') == std::string::npos)
-            coefficients[0] += coefficient;
+            input_coefficients[0] += coefficient;
         else
-            coefficients[1] += coefficient;
+            input_coefficients[1] += coefficient;
 
     }
-    this->coefficients = std::move(coefficients);
+    this->coefficients = std::move(input_coefficients);
     this->clean_zero();
 }
 
@@ -88,4 +88,16 @@ void Polynomial::clean_zero() {
 
 bool Polynomial::is_zero() const {
     return std::ranges::all_of(coefficients.cbegin(), coefficients.cend(), [](auto i) { return i.is_zero(); });
+}
+
+bool operator==(const Polynomial& first, const Polynomial& second) {
+    Polynomial a = first;
+    Polynomial b = second;
+    a.clean_zero();
+    b.clean_zero();
+    return a.coefficients == b.coefficients;
+}
+
+bool operator!=(const Polynomial& first, const Polynomial& second) {
+    return !(first == second);
 }
