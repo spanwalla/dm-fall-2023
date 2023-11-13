@@ -6,15 +6,16 @@
 #include "POLYNOMIAL.h"
 
 bool operator==(const Polynomial& first, const Polynomial& second) {
-    if (first.coefficients.size() != second.coefficients.size())
-        return false;
-    for (size_t i = 0; i < first.coefficients.size(); ++i)
-        if (first.coefficients[i] != second.coefficients[i])
-            return false;
-    return true;
+    Polynomial a = first;
+    Polynomial b = second;
+    a.clean_zero();
+    b.clean_zero();
+    return a.coefficients == b.coefficients;
 }
 
-bool operator!=(const Polynomial& first, const Polynomial& second) { return !(first == second); }
+bool operator!=(const Polynomial& first, const Polynomial& second) {
+    return !(first == second);
+}
 
 Polynomial operator+(const Polynomial& first, const Polynomial& second) {
     Polynomial new_polynom(first);
