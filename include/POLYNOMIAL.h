@@ -51,6 +51,19 @@ public:
     [[nodiscard]] Polynomial DEP_P_P() const;
     [[nodiscard]] Polynomial NMR_P_P() const;
 
+    friend CLS Polynomial operator+(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator-(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator*(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator/(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator%(const Polynomial& first, const Polynomial& second);
+
+    Polynomial& operator+=(const Polynomial& other);
+    Polynomial& operator-=(const Polynomial& other);
+    Polynomial& operator*=(const Polynomial& other);
+    Polynomial& operator/=(const Polynomial& other);
+    Polynomial& operator%=(const Polynomial& other);
+
+
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена
     void clean_zero();
