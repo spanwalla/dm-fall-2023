@@ -1,5 +1,5 @@
-//created by Sofya Bodareva on 13.11.23
-//модульное тестирование функций многочленов чисел
+// Created by Sofya Bodareva (2382) on 13.11.2023.
+// Модульное тестирование функций многочленов чисел.
 
 #include <gtest/gtest.h>
 #include "../include/CLS.h"

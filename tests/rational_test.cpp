@@ -1,5 +1,5 @@
-//created by Sofya Bodareva on 12.11.23
-//модульное тестирование функций рациональных чисел
+// Created by Sofya Bodareva (2382) on 12.11.2023.
+// Модульное тестирование функций рациональных чисел.
 
 #include <gtest/gtest.h>
 #include "../include/CLS.h"

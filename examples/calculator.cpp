@@ -1,5 +1,6 @@
 //
 // Created by Leonid Ivashinnikov (2382) on 04.11.2023.
+// Простой калькулятор для демонстрации примера работы с библиотекой.
 //
 
 #include <iostream>

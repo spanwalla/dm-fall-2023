@@ -1,5 +1,5 @@
-//created by Sofya Bodareva on 08.11.23
-//модульное тестирование функций целых чисел
+// Created by Sofya Bodareva (2382) on 08.11.2023.
+// Модульное тестирование функций целых чисел.
 
 #include <gtest/gtest.h>
 #include "../include/CLS.h"
