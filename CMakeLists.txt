@@ -77,3 +77,6 @@ target_link_libraries(integer_test cls gtest gmock)
 
 add_executable(rational_test tests/rational_test.cpp)
 target_link_libraries(rational_test cls gtest gmock)
+
+add_executable(polynomial_test tests/polynomial_test.cpp)
+target_link_libraries(polynomial_test cls gtest gmock)
