@@ -44,6 +44,7 @@ add_library(cls SHARED src/Natural/NATURAL.cpp
         src/Rational/MUL_QQ_Q.cpp
         src/Rational/DIV_QQ_Q.cpp
         src/Polynomial/POLYNOMIAL.cpp
+        src/Polynomial/OPERATORS.cpp
         src/Polynomial/ADD_PP_P.cpp
         src/Polynomial/SUB_PP_P.cpp
         src/Polynomial/MUL_PQ_P.cpp
@@ -76,3 +77,6 @@ target_link_libraries(integer_test cls gtest gmock)
 
 add_executable(rational_test tests/rational_test.cpp)
 target_link_libraries(rational_test cls gtest gmock)
+
+add_executable(polynomial_test tests/polynomial_test.cpp)
+target_link_libraries(polynomial_test cls gtest gmock)
