@@ -343,6 +343,17 @@ public:
         std::cout << a << std::endl;
     }
 
+    void SUB_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
+        std::cout << "SUB_PP_P(" << a << ", " << b << "): ";
+        a.SUB_PP_P(b);
+        std::cout << a << std::endl;
+    }
+
     void MUL_PQ_P(const std::vector<std::string>& args) {
         if (args.size() < 3)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
@@ -379,6 +390,14 @@ public:
 
         Polynomial a(args[1]);
         std::cout << "DEG_P_N(" << a << "): " << a.DEG_P_N() << std::endl;
+    }
+
+    void FAC_P_Q(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        std::cout << "FAC_P_Q(" << a << "): " << a.FAC_P_Q() << std::endl;
     }
 
     void MUL_PP_P(const std::vector<std::string>& args) {
@@ -426,6 +445,14 @@ public:
         Polynomial a(args[1]);
         Polynomial b(args[2]);
         std::cout << "DEP_P_P(" << a << "): " << a.DEP_P_P() << std::endl;
+    }
+
+    void NMR_P_P(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        std::cout << "NMR_P_P(" << a << "): " << a.NMR_P_P() << std::endl;
     }
 
     void ProcessCommand(const std::string& s, const std::string& delimiter) {
@@ -486,15 +513,18 @@ private:
             {"MUL_QQ_Q", [this](auto && PH1) { MUL_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"DIV_QQ_Q", [this](auto && PH1) { DIV_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"ADD_PP_P", [this](auto && PH1) { ADD_PP_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"SUB_PP_P", [this](auto && PH1) { SUB_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_PQ_P", [this](auto && PH1) { MUL_PQ_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_Pxk_P", [this](auto && PH1) { MUL_Pxk_P(std::forward<decltype(PH1)>(PH1)); }},
             {"LED_P_Q", [this](auto && PH1) { LED_P_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }},
+            {"FAC_P_Q", [this](auto && PH1) { FAC_P_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_PP_P", [this](auto && PH1) { MUL_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"DIV_PP_P", [this](auto && PH1) { DIV_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MOD_PP_P", [this](auto && PH1) { MOD_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"GCF_PP_P", [this](auto && PH1) { GCF_PP_P(std::forward<decltype(PH1)>(PH1)); }},
-            {"DEP_P_P", [this](auto && PH1) { DEP_P_P(std::forward<decltype(PH1)>(PH1)); }}
+            {"DEP_P_P", [this](auto && PH1) { DEP_P_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"NMR_P_P", [this](auto && PH1) { NMR_P_P(std::forward<decltype(PH1)>(PH1)); }}
     };
 };
 

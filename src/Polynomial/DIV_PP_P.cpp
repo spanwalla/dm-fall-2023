@@ -1,15 +1,14 @@
 //
 // Created by Mihail Fedorov (2382) on 11.11.2023.
-// деление с целой частью
+// Деление с целой частью.
 //
 
 #define CLS_EXPORTS
 #include "POLYNOMIAL.h"
 
 Polynomial Polynomial::DIV_PP_P(const Polynomial& divisor) const {
-    if (divisor.is_zero()) {
+    if (divisor.is_zero())
         throw std::invalid_argument("Division by zero");
-    }
     
     Polynomial quotient("0");
     Polynomial remainder(*this);

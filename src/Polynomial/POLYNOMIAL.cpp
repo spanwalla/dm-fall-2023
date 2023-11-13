@@ -36,7 +36,6 @@ Polynomial::Polynomial(const std::string& content) {
         Rational coefficient;
 
         if (index_sub_left == std::string::npos) {
-            index_sub_left = singelton.size();
             coefficient = Rational(singelton);
         }
         else

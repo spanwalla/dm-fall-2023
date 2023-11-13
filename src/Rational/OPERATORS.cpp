@@ -1,5 +1,5 @@
-// Created by Fedorov Mihail (2382) on 07.11.2023.
-// Перегрузка операторов для работы с дробями
+// Created by Mihail Fedorov (2382) on 07.11.2023.
+// Перегрузка операторов для работы с дробями.
 
 #define CLS_EXPORTS
 #include "RATIONAL.h"
