@@ -88,15 +88,3 @@ void Polynomial::clean_zero() {
 bool Polynomial::is_zero() const {
     return std::ranges::all_of(coefficients.cbegin(), coefficients.cend(), [](auto i) { return i.is_zero(); });
 }
-
-bool operator==(const Polynomial& first, const Polynomial& second) {
-    Polynomial a = first;
-    Polynomial b = second;
-    a.clean_zero();
-    b.clean_zero();
-    return a.coefficients == b.coefficients;
-}
-
-bool operator!=(const Polynomial& first, const Polynomial& second) {
-    return !(first == second);
-}
