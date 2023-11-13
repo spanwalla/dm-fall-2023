@@ -439,11 +439,10 @@ public:
     }
 
     void DEP_P_P(const std::vector<std::string>& args) {
-        if (args.size() < 3)
+        if (args.size() < 2)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
 
         Polynomial a(args[1]);
-        Polynomial b(args[2]);
         std::cout << "DEP_P_P(" << a << "): " << a.DEP_P_P() << std::endl;
     }
 

@@ -53,7 +53,7 @@ Polynomial::Polynomial(const std::string& content) {
     this->clean_zero();
 }
 
-Polynomial::Polynomial(std::vector<Rational> coefficients): coefficients(std::move(coefficients)) {
+Polynomial::Polynomial(std::vector<Rational> new_coefficients): coefficients(std::move(new_coefficients)) {
     this->clean_zero();
 }
 
