@@ -5,13 +5,8 @@
 #include "RATIONAL.h"
 
 void Rational::DIV_QQ_Q(const Rational &number) {
-    Rational buffer(Integer(number.denominator)); // временная переменная для хранения number
-    if (number.numerator.POZ_Z_D() == 1) // учитываем знак
-        buffer.numerator.MUL_ZM_Z();
-
-    else if(number.numerator.POZ_Z_D() == 0) // проверка деления на ноль
+    if(number.numerator.POZ_Z_D() == 0) // Проверка деления на ноль.
         throw std::logic_error("Division by zero.");
 
-    buffer.denominator = number.numerator.ABS_Z_Z().TRANS_Z_N(); // добавляем знаменатель
-    this->MUL_QQ_Q(buffer); // умножаем дроби
+    this->MUL_QQ_Q(number.INV_Q_Q()); // Умножаем дробь на обратную.
 }

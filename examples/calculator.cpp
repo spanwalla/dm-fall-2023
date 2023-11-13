@@ -272,6 +272,14 @@ public:
         std::cout << "TRANS_Z_Q(" << a << "): " << Rational::TRANS_Z_Q(a) << std::endl;
     }
 
+    void INV_Q_Q(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        std::cout << "INV_Q_Q(" << a << "): " << a.INV_Q_Q() << std::endl;
+    }
+
     void TRANS_Q_Z(const std::vector<std::string>& args) {
         if (args.size() < 2)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
@@ -402,6 +410,15 @@ public:
         std::cout << "MOD_PP_P(" << a << ", " << b << "): " << a.MOD_PP_P(b) << std::endl;
     }
 
+    void GCF_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
+        std::cout << "GCF_PP_P(" << a << ", " << b << "): " << a.GCF_PP_P(b) << std::endl;
+    }
+
     void DEP_P_P(const std::vector<std::string>& args) {
         if (args.size() < 3)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
@@ -463,6 +480,7 @@ private:
             {"INT_Q_B", [this](auto && PH1) { INT_Q_B(std::forward<decltype(PH1)>(PH1)); }},
             {"TRANS_Z_Q", [this](auto && PH1) { TRANS_Z_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"TRANS_Q_Z", [this](auto && PH1) { TRANS_Q_Z(std::forward<decltype(PH1)>(PH1)); }},
+            {"INV_Q_Q", [this](auto && PH1) { INV_Q_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"ADD_QQ_Q", [this](auto && PH1) { ADD_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"SUB_QQ_Q", [this](auto && PH1) { SUB_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_QQ_Q", [this](auto && PH1) { MUL_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
@@ -475,6 +493,7 @@ private:
             {"MUL_PP_P", [this](auto && PH1) { MUL_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"DIV_PP_P", [this](auto && PH1) { DIV_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MOD_PP_P", [this](auto && PH1) { MOD_PP_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"GCF_PP_P", [this](auto && PH1) { GCF_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"DEP_P_P", [this](auto && PH1) { DEP_P_P(std::forward<decltype(PH1)>(PH1)); }}
     };
 };
