@@ -29,16 +29,40 @@
 
 class CLS Polynomial {
 public:
+    explicit Polynomial(const std::string&);
     explicit Polynomial(std::vector<Rational> coefficients);
     Polynomial();
-    bool is_zero();
+    [[nodiscard]] bool is_zero() const;
     friend CLS std::ostream& operator << (std::ostream& out, const Polynomial& polynomial); // Оператор вывода в поток.
+    friend CLS bool operator==(const Polynomial& first, const Polynomial& second);
+    friend CLS bool operator!=(const Polynomial& first, const Polynomial& second);
 
-    void ADD_PP_P(const Polynomial &polynomial);
-    void MUL_PQ_P(const Rational &number);
+    void ADD_PP_P(const Polynomial& polynomial);
+    void SUB_PP_P(const Polynomial&);
+    void MUL_PQ_P(const Rational& number);
     void MUL_Pxk_P(unsigned long long int k);
-    Rational LED_P_Q();
+    [[nodiscard]] Rational LED_P_Q() const;
     [[nodiscard]] int DEG_P_N() const;
+    void MUL_PP_P(Polynomial polynomial);
+    [[nodiscard]] Polynomial DIV_PP_P(const Polynomial& polynomial) const;
+    [[nodiscard]] Polynomial MOD_PP_P(const Polynomial& polynomial) const;
+    [[nodiscard]] Rational FAC_P_Q() const;
+    [[nodiscard]] Polynomial GCF_PP_P(const Polynomial& polynomial) const;
+    [[nodiscard]] Polynomial DEP_P_P() const;
+    [[nodiscard]] Polynomial NMR_P_P() const;
+
+    friend CLS Polynomial operator+(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator-(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator*(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator/(const Polynomial& first, const Polynomial& second);
+    friend CLS Polynomial operator%(const Polynomial& first, const Polynomial& second);
+
+    Polynomial& operator+=(const Polynomial& other);
+    Polynomial& operator-=(const Polynomial& other);
+    Polynomial& operator*=(const Polynomial& other);
+    Polynomial& operator/=(const Polynomial& other);
+    Polynomial& operator%=(const Polynomial& other);
+
 
 private:
     std::vector<Rational> coefficients; // вектор, хранящий рациональные коэффициенты, индекс - степень члена

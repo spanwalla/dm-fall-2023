@@ -1,6 +1,6 @@
 //
-// Created by Muravin Egor (2382) on 30.10.2023.
-// НОК натуральных чисел
+// Created by Egor Muravin (2382) on 30.10.2023.
+// НОК натуральных чисел.
 // 
 
 #define CLS_EXPORTS

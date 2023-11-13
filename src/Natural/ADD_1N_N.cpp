@@ -1,4 +1,4 @@
-// Created by Dmitriy Chepasov (2382) on 29.10.2023.
+// Created by Dmitry Chepasov (2382) on 29.10.2023.
 // Прибавление единицы к натуральному числу (инкремент).
 
 #define CLS_EXPORTS

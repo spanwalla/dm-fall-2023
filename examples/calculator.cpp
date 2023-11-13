@@ -1,5 +1,6 @@
 //
 // Created by Leonid Ivashinnikov (2382) on 04.11.2023.
+// Простой калькулятор для демонстрации примера работы с библиотекой.
 //
 
 #include <iostream>
@@ -272,6 +273,14 @@ public:
         std::cout << "TRANS_Z_Q(" << a << "): " << Rational::TRANS_Z_Q(a) << std::endl;
     }
 
+    void INV_Q_Q(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Rational a(args[1]);
+        std::cout << "INV_Q_Q(" << a << "): " << a.INV_Q_Q() << std::endl;
+    }
+
     void TRANS_Q_Z(const std::vector<std::string>& args) {
         if (args.size() < 2)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
@@ -328,10 +337,21 @@ public:
         if (args.size() < 3)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
 
-        Polynomial a({Rational("1"), Rational("-2"), Rational("1")});
-        Polynomial b({Rational("8"), Rational("10"), Rational("3")});
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
         std::cout << "ADD_PP_P(" << a << ", " << b << "): ";
         a.ADD_PP_P(b);
+        std::cout << a << std::endl;
+    }
+
+    void SUB_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
+        std::cout << "SUB_PP_P(" << a << ", " << b << "): ";
+        a.SUB_PP_P(b);
         std::cout << a << std::endl;
     }
 
@@ -339,7 +359,7 @@ public:
         if (args.size() < 3)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
 
-        Polynomial a({Rational("1"), Rational("-2"), Rational("1")});
+        Polynomial a(args[1]);
         Rational b = Rational(args[2]);
         std::cout << "MUL_PQ_P(" << a << ", " << b << "): ";
         a.MUL_PQ_P(b);
@@ -350,7 +370,7 @@ public:
         if (args.size() < 3)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
 
-        Polynomial a({Rational("1"), Rational("2"), Rational("1")});
+        Polynomial a(args[1]);
         unsigned long long int k = std::stoi(args[2]);
         std::cout << "MUL_Pxk_P(" << a << ", " << k << "): ";
         a.MUL_Pxk_P(k);
@@ -361,7 +381,7 @@ public:
         if (args.size() < 2)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
 
-        Polynomial a({Rational("1"), Rational("2"), Rational("1")});
+        Polynomial a(args[1]);
         std::cout << "LED_P_Q(" << a << "): " << a.LED_P_Q() << std::endl;
     }
 
@@ -369,10 +389,72 @@ public:
         if (args.size() < 2)
             throw std::invalid_argument(NOT_ENOUGH_ERROR);
 
-        Polynomial a({Rational("1"), Rational("2"), Rational("1")});
+        Polynomial a(args[1]);
         std::cout << "DEG_P_N(" << a << "): " << a.DEG_P_N() << std::endl;
     }
-  
+
+    void FAC_P_Q(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        std::cout << "FAC_P_Q(" << a << "): " << a.FAC_P_Q() << std::endl;
+    }
+
+    void MUL_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
+        std::cout << "MUL_PP_P(" << a << ", " << b << "): ";
+        a.MUL_PP_P(b);
+        std::cout << a << std::endl;
+    }
+
+    void DIV_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
+        std::cout << "DIV_PP_P(" << a << ", " << b << "): " << a.DIV_PP_P(b) << std::endl;
+    }
+
+    void MOD_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
+        std::cout << "MOD_PP_P(" << a << ", " << b << "): " << a.MOD_PP_P(b) << std::endl;
+    }
+
+    void GCF_PP_P(const std::vector<std::string>& args) {
+        if (args.size() < 3)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        Polynomial b(args[2]);
+        std::cout << "GCF_PP_P(" << a << ", " << b << "): " << a.GCF_PP_P(b) << std::endl;
+    }
+
+    void DEP_P_P(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        std::cout << "DEP_P_P(" << a << "): " << a.DEP_P_P() << std::endl;
+    }
+
+    void NMR_P_P(const std::vector<std::string>& args) {
+        if (args.size() < 2)
+            throw std::invalid_argument(NOT_ENOUGH_ERROR);
+
+        Polynomial a(args[1]);
+        std::cout << "NMR_P_P(" << a << "): " << a.NMR_P_P() << std::endl;
+    }
+
     void ProcessCommand(const std::string& s, const std::string& delimiter) {
         size_t pos_start = 0, pos_end, delim_len = delimiter.length();
         std::string token;
@@ -425,15 +507,24 @@ private:
             {"INT_Q_B", [this](auto && PH1) { INT_Q_B(std::forward<decltype(PH1)>(PH1)); }},
             {"TRANS_Z_Q", [this](auto && PH1) { TRANS_Z_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"TRANS_Q_Z", [this](auto && PH1) { TRANS_Q_Z(std::forward<decltype(PH1)>(PH1)); }},
+            {"INV_Q_Q", [this](auto && PH1) { INV_Q_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"ADD_QQ_Q", [this](auto && PH1) { ADD_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"SUB_QQ_Q", [this](auto && PH1) { SUB_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_QQ_Q", [this](auto && PH1) { MUL_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"DIV_QQ_Q", [this](auto && PH1) { DIV_QQ_Q(std::forward<decltype(PH1)>(PH1)); }},
             {"ADD_PP_P", [this](auto && PH1) { ADD_PP_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"SUB_PP_P", [this](auto && PH1) { SUB_PP_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_PQ_P", [this](auto && PH1) { MUL_PQ_P(std::forward<decltype(PH1)>(PH1)); }},
             {"MUL_Pxk_P", [this](auto && PH1) { MUL_Pxk_P(std::forward<decltype(PH1)>(PH1)); }},
             {"LED_P_Q", [this](auto && PH1) { LED_P_Q(std::forward<decltype(PH1)>(PH1)); }},
-            {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }}
+            {"DEG_P_N", [this](auto && PH1) { DEG_P_N(std::forward<decltype(PH1)>(PH1)); }},
+            {"FAC_P_Q", [this](auto && PH1) { FAC_P_Q(std::forward<decltype(PH1)>(PH1)); }},
+            {"MUL_PP_P", [this](auto && PH1) { MUL_PP_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"DIV_PP_P", [this](auto && PH1) { DIV_PP_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"MOD_PP_P", [this](auto && PH1) { MOD_PP_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"GCF_PP_P", [this](auto && PH1) { GCF_PP_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"DEP_P_P", [this](auto && PH1) { DEP_P_P(std::forward<decltype(PH1)>(PH1)); }},
+            {"NMR_P_P", [this](auto && PH1) { NMR_P_P(std::forward<decltype(PH1)>(PH1)); }}
     };
 };
 

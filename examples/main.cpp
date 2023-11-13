@@ -1,10 +1,9 @@
 #include <iostream>
 #include <CLS.h>
+#include <chrono>
 
 int main() {
-    Polynomial b({Rational("-10"), Rational("2"), Rational("1")});
-    std::cout << b << ' ' << b.DEG_P_N() << std::endl;
-    b.MUL_Pxk_P(4);
-    std::cout << b << std::endl;
+    Polynomial a("x^5-15x^3+10x^2+60x-72");
+    std::cout << a.NMR_P_P();
     return 0;
 }
