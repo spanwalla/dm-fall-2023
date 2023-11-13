@@ -28,9 +28,12 @@ class CLS Rational {
 public:
     explicit Rational(const std::string& number);
     explicit Rational(Integer  number);
+    explicit Rational(Integer  number, Natural den);
     Rational();
     [[nodiscard]] bool is_zero() const;
     [[nodiscard]] bool is_sign() const;
+    [[nodiscard]] Integer get_numerator() const;
+    [[nodiscard]] Natural get_denominator() const;
 
     [[nodiscard]] bool INT_Q_B() const;
     static Rational TRANS_Z_Q(const Integer& number);

@@ -46,6 +46,7 @@ public:
     void MUL_PP_P(Polynomial polynomial);
     Polynomial DIV_PP_P(const Polynomial&) const;
     Polynomial MOD_PP_P(const Polynomial&) const;
+    Rational FAC_P_Q() const;
     [[nodiscard]] Polynomial DEP_P_P() const;
 
 private:
