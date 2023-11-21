@@ -9,5 +9,5 @@
 #include "NATURAL.h"
 
 bool Natural::NZER_N_B() const {
-    return std::ranges::any_of(digits.cbegin(), digits.cend(), [](auto i) { return i != 0; });
+    return std::ranges::any_of(digits.crbegin(), digits.crend(), [](auto i) { return i != 0; });
 }

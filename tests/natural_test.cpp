@@ -569,7 +569,7 @@ TEST(MOD_NN_N_TEST, Mod_general_case){
 
 // №54 - Оба числа равны 0
 
-TEST(GSF_NN_N_TEST, Gcf_error){
+TEST(GCF_NN_N_TEST, Gcf_error){
     Natural n1(0);
     Natural n2(0);
 
@@ -578,7 +578,7 @@ TEST(GSF_NN_N_TEST, Gcf_error){
 
 // №55 - одно из чисел равно 1
 
-TEST(GSF_NN_N_TEST, Gcf_with_one){
+TEST(GCF_NN_N_TEST, Gcf_with_one){
     Natural n1(6345);
     Natural n2(1);
 
@@ -587,7 +587,7 @@ TEST(GSF_NN_N_TEST, Gcf_with_one){
 
 // №56 - первое число равно 0
 
-TEST(GSF_NN_N_TEST, Gcf_first_is_zero){
+TEST(GCF_NN_N_TEST, Gcf_first_is_zero){
     Natural n1(0);
     Natural n2(4235);
 
@@ -596,7 +596,7 @@ TEST(GSF_NN_N_TEST, Gcf_first_is_zero){
 
 // №57 - числа равны
 
-TEST(GSF_NN_N_TEST, Gcf_equal_naturals){
+TEST(GCF_NN_N_TEST, Gcf_equal_naturals){
     Natural n1(785);
     Natural n2(785);
 
@@ -605,7 +605,7 @@ TEST(GSF_NN_N_TEST, Gcf_equal_naturals){
 
 // №58 - одно из чисел кратно другому
 
-TEST(GSF_NN_N_TEST, Gcf_one_number_is_a_multiple_of_another){
+TEST(GCF_NN_N_TEST, Gcf_one_number_is_a_multiple_of_another){
     Natural n1(30);
     Natural n2(210);
 
@@ -614,7 +614,7 @@ TEST(GSF_NN_N_TEST, Gcf_one_number_is_a_multiple_of_another){
 
 // №59 - числа взаимно простые
 
-TEST(GSF_NN_N_TEST, Gcf_mutually_prime_numbers){
+TEST(GCF_NN_N_TEST, Gcf_mutually_prime_numbers){
     Natural n1(101);
     Natural n2(13);
 
@@ -623,7 +623,7 @@ TEST(GSF_NN_N_TEST, Gcf_mutually_prime_numbers){
 
 // №60 - общий случай
 
-TEST(GSF_NN_N_TEST, Gcf_general_case){
+TEST(GCF_NN_N_TEST, Gcf_general_case){
     Natural n1("97578237586235623787509234643634647563783684634");
     Natural n2("13452759874967396");
 
