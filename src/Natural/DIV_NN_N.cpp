@@ -5,6 +5,8 @@
 #include "NATURAL.h"
 
 Natural Natural::DIV_NN_N(const Natural& number) const {
+    if (!number.NZER_N_B())
+        throw std::logic_error("The number must not be zero!");
     if (this->COM_NN_D(number) == 0) // если числа равны, их неполное частное равно 1
         return Natural(1);
     else if (this->COM_NN_D(number) == 1) // если делимое меньше делителя, их неполное частное 0
