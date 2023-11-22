@@ -7,7 +7,9 @@
 #include "POLYNOMIAL.h"
 
 void Polynomial::SUB_PP_P(const Polynomial& other) {
+    // проверка на ноль
     if (!other.is_zero()) {
+        // складываем многочлены по коэффициентам, если коэффициентов не хватает, дописываем нули
         for (int i = 0; i <= other.DEG_P_N(); ++i) {
             if (i > this->DEG_P_N())
                 this->coefficients.emplace_back("0");
