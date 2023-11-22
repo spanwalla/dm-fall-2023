@@ -10,9 +10,9 @@
 
 // SUB_NDN_N считает n1 - n2*k >= 0
 void Natural::SUB_NDN_N(const Natural &number, short digit) {
-    Natural temp = number;
-    temp.MUL_ND_N(digit);
-    SUB_NN_N(temp);
+    Natural temp = number; // записываем в буфер входное число, чтобы случайно не изменить его
+    temp.MUL_ND_N(digit); //умножаем на входное число на входную переменную  digit
+    SUB_NN_N(temp); // находим разность чисел
 }
 
 
