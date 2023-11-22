@@ -8,15 +8,16 @@
 #include <utility>
 
 Polynomial::Polynomial(const std::string& content) {
-    std::string pol(content);
+    std::string pol(content); // копируем строку, отвечающую за будущий полином
 
-    std::vector<std::string> substr_pol;
-    size_t size = 0;
+    std::vector<std::string> substr_pol; // вектор одночленов, на которые разделяется данный многочлен
+    size_t size = 0; // старшая степень полинома
 
-    while (!pol.empty()) {
+    while (!pol.empty()) { // разделяем полином по знакам + и -
         size_t index_sub = std::min(pol.find('-', 1), pol.find('+', 1));
         substr_pol.push_back(pol.substr(0, index_sub));
 
+        // находим старшую степень многочлена
         size_t index_degree = pol.find('^');
         if (index_degree == std::string::npos && pol.find('x') != std::string::npos)
             size = std::max(size, (size_t)1);
@@ -29,18 +30,20 @@ Polynomial::Polynomial(const std::string& content) {
             pol = pol.substr(index_sub);
     }
 
+    // создаём вектор коэффициентов
     std::vector<Rational> input_coefficients(size + 1, Rational());
     for (const auto& singelton : substr_pol) {
+        // отделяем коэффициент от икса
         size_t index_sub_left = std::min(singelton.find('x'), singelton.find('*'));
         size_t index_sub_right = singelton.find('^');
         Rational coefficient;
 
-        if (index_sub_left == std::string::npos) {
+        if (index_sub_left == std::string::npos)
             coefficient = Rational(singelton);
-        }
         else
             coefficient = Rational((singelton.substr(0, index_sub_left).empty() || singelton.substr(0, index_sub_left) == "-" || singelton.substr(0, index_sub_left) == "+") ? (singelton.substr(0, index_sub_left) + "1") : singelton.substr(0, index_sub_left));
 
+        // определяем степень одночлена и изменяем соответствующий коэффициент
         if (index_sub_right != std::string::npos)
             input_coefficients[std::stoi(singelton.substr(index_sub_right + 1, singelton.size()))] += coefficient;
         else if (singelton.find('x') == std::string::npos)
@@ -49,6 +52,7 @@ Polynomial::Polynomial(const std::string& content) {
             input_coefficients[1] += coefficient;
 
     }
+    // перемещаем полученные коэффициенты в поле класса
     this->coefficients = std::move(input_coefficients);
     this->clean_zero();
 }

@@ -6,6 +6,7 @@
 #define CLS_EXPORTS
 #include "POLYNOMIAL.h"
 
+// аналогично DIV_PP_P
 Polynomial Polynomial::MOD_PP_P(const Polynomial& divisor) const {
     if (divisor.is_zero()) {
         throw std::invalid_argument("Division by zero");
