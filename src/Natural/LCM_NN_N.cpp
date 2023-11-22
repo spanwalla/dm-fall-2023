@@ -7,9 +7,9 @@
 #include "NATURAL.h"
 
 Natural Natural::LCM_NN_N(const Natural& number) const {
-    Natural temp_one = *this;
-    const Natural& temp_two = number;
-    Natural nod = temp_one.GCF_NN_N(temp_two);
-    temp_one.MUL_NN_N(temp_two);
-    return temp_one.DIV_NN_N(nod);
+    Natural temp_one = *this; // записываем в буфер первое число
+    const Natural& temp_two = number; // записываем в буфер второе число
+    Natural nod = temp_one.GCF_NN_N(temp_two); // находим НОД двух чисел
+    temp_one.MUL_NN_N(temp_two); // умножаем первое число на второе число
+    return temp_one.DIV_NN_N(nod); // делим произведение двух чисел на их НОД
 }
